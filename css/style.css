@@ -40,6 +40,7 @@ body{
 .nav-linkk:hover{
     color: rgb(168, 168, 168);
 }
+
 .logo-banner{
     height: 80px;
     text-align: center;
@@ -50,6 +51,9 @@ body{
 }
 .nav-item{
     border-radius: 5px;
+}
+.nav-item:active{
+    background-color: rgb(46, 46, 46);
 }
 .nav{
     padding-bottom: 20px;
@@ -105,6 +109,7 @@ body{
     margin-left: 250px;
     background-color: rgb(22, 22, 22);
     float: left;
+    width: auto;
 }
 .main-inner-vien{
     margin: 0px 30px 0 30px;
@@ -133,6 +138,9 @@ body{
 .text{
     color: white;
 }
+.card-imggg{
+    border-radius: 10px;
+}
 .cardd{
     position: relative;
     display: flex;
@@ -142,7 +150,18 @@ body{
     background-clip: border-box;
 }
 .card-img-topp{
-    border-radius: 10px;
+    object-fit: cover;
+    object-position: center center;
+}
+.image-item{
+    right: 0;
+    transform: rotate(
+    25deg) translate(18%,-2%);
+    bottom: 0;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+    height: 100px;
+    position: absolute;
+    width: 100px;
 }
 .img-topp{
     border-radius: 3px;
@@ -218,12 +237,16 @@ body{
 .clear{
     margin-top: 20px;
 }
+.vien-item{
+    margin-bottom: 25px;
+}
 .image-content{
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
     height:183px ;
     width:183px;
-    /* margin-top: 10px; */
-    margin-bottom: 25px;
-    position: relative;
 }
 .cardd>a{
     text-decoration: none;
@@ -240,6 +263,9 @@ body{
     font-weight:700; 
     letter-spacing:-1.5px;
 }
+/*======== postcard======== */
+
+/*----- end search---- */
 /*=========== footer=========== */
 .footer-main{
     height:95px;
@@ -350,3 +376,18 @@ body{
   .infor-more .bi-volume-mute{
       display: none;
   }
+
+  /*========= css for playlist======== */
+ .title-banner{
+     width: 100%;
+    background-image: url("https://t.scdn.co/images/1a8b7a2d15224432824276e086493324");
+ }  
+.img-tk{
+    width: 100%;
+    or
+}
+/*======== end css for playlist ==========*/
+
+
+
+

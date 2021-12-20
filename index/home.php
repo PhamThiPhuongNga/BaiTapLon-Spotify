@@ -1,12 +1,12 @@
 <?php include('../template/header_main.php');?>
 <div class="contain-right">
-    <div class="control-page space">
-        <div class="control-left control-sty">
-            <i class="material-icon bi bi-arrow-left-short"></i>
-        </div>
-        <div class="control-right control-sty">
-            <i class="material-icon bi bi-arrow-right-short"></i>
-        </div>
+    <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
+        <i class="material-icon fas fa-chevron-circle-left fs-3 ml-5 myIconArrow ">
+            <a href="#" target="_blank"
+                rel="noopener noreferrer">
+            </a>
+        </i>
+        <i class="material-icon fas fa-chevron-circle-right fs-3 pl-5 myIconArrow "></i>
     </div>
     <div class="header-material space">
         <button class="nangcap vien">NÂNG CẤP</button>  
@@ -35,7 +35,7 @@
                     <div  class="box">
                         <div class="cardd">
                             <a href="">
-                                <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="155px">
+                                <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-imggg" alt="..."width="auto" height="155px">
                                 <div class="card-bodyy mauchu">
                                     <span class="title-item text">Tri Kỷ Cảm Xúc</span>
                                     <span class="card-text ">Web5Ngay</span>
@@ -44,72 +44,6 @@
                         </div>
                     </div>
                 </div>
-                <div class=" col-md-2 ">
-                    <div  class="box">
-                        <div class="cardd">
-                            <a href="">
-                                <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="155px">
-                                <div class="card-bodyy mauchu">
-                                    <span class="title-item text">Tri Kỷ Cảm Xúc</span>
-                                    <span class="card-text ">Web5Ngay</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="box">
-                        <div class="cardd">
-                            <a href="">
-                                <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="155px">
-                                <div class="card-bodyy mauchu">
-                                    <span class="title-item text">Tri Kỷ Cảm Xúc</span>
-                                    <span class="card-text ">Web5Ngay</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="box">
-                        <div class="cardd">
-                            <a href="">
-                                <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="155px">
-                                <div class="card-bodyy mauchu">
-                                    <span class="title-item text">Tri Kỷ Cảm Xúc</span>
-                                    <span class="card-text ">Web5Ngay</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="box">
-                        <div class="cardd">
-                            <a href="">
-                                <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="155px">
-                                <div class="card-bodyy mauchu">
-                                    <span class="title-item text">Tri Kỷ Cảm Xúc</span>
-                                    <span class="card-text ">Web5Ngay</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="box">
-                        <div class="cardd">
-                            <a href="">
-                                <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="155px">
-                                <div class="card-bodyy mauchu">
-                                    <span class="title-item text">Tri Kỷ Cảm Xúc</span>
-                                    <span class="card-text ">Web5Ngay</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-               
             </div>                
         </div>
         <div class="form-item text">
@@ -150,4 +84,4 @@
         </div>
     </div>
 </div> 
-<?php include('../template/footer-main.php');?>
+<?php include('../template/footer_main.php');?>

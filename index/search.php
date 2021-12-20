@@ -1,4 +1,5 @@
-<?php include('../template/header_main.php');?>   
+<?php include('../template/header_main.php');?> 
+ 
 <div class="contain-right">
     <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
         <i class="material-icon fas fa-chevron-circle-left fs-3 ml-5 myIconArrow ">
@@ -17,7 +18,6 @@
         </div>
     </div>
     <div class="header-material space">
-        
         <div class=" dropdown space">
             <i class="material-icon bi bi-person-circle"></i>
             <a class="nav-linkk dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Phạm Thị Phương Nga</a>
@@ -37,89 +37,32 @@
                 <h4 class=""style="font-weight:700; letter-spacing:-1.5px;">Duyệt tìm tất cả</h4>
             </div>
             <div class="clear"></div>
-            <div class="row ">
-                <div class=" col-md-2 ">
-                    <div  class="image-content">
-                        <a href="">
-                            <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="183px">
-                            <div class="caption mauchu">
-                                <h4 style="font-weight:700;">Postcard</h4>
+            <div class="row">
+            <?php 
+                $conn= mysqli_connect('localhost','root','','spotify');
+                if(!$conn)
+                {
+                    die('Kết nối thất bại');
+                }
+                $sql = "SELECT * FROM `categories`";
+                $result = mysqli_query($conn,$sql);
+                if(mysqli_num_rows($result) > 0){
+                    while($row = mysqli_fetch_assoc($result)){
+            ?> 
+                
+                    <div class="col-md-2 vien-item">
+                        <a href="postcards.php">
+                            <div  class="image-content"style="background-color: <?php echo $row['maunen'] ?>;">
+                                <img src="<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
+                                <div class="caption mauchu">
+                                    <h4 style="font-weight:700;"><?php echo $row['ten'] ?></h4>
+                                </div>
                             </div>
                         </a>
                     </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="image-content">
-                        <a href="">
-                            <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="183px">
-                            <div class="caption mauchu">
-                                <h4 style="font-weight:700;">Postcard</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="image-content">
-                        <a href="">
-                            <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="183px">
-                            <div class="caption mauchu">
-                                <h4 style="font-weight:700;">Postcard</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="image-content">
-                        <a href="">
-                            <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="183px">
-                            <div class="caption mauchu">
-                                <h4 style="font-weight:700;">Postcard</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="image-content">
-                        <a href="">
-                            <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="183px">
-                            <div class="caption mauchu">
-                                <h4 style="font-weight:700;">Postcard</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="image-content">
-                        <a href="">
-                            <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="183px">
-                            <div class="caption mauchu">
-                                <h4 style="font-weight:700;">Postcard</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="image-content">
-                        <a href="">
-                            <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="183px">
-                            <div class="caption mauchu">
-                                <h4 style="font-weight:700;">Postcard</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class=" col-md-2 ">
-                    <div  class="image-content">
-                        <a href="">
-                            <img src="../img/anh-mang-dep-nhat-24.jpg" class="card-img-topp" alt="..."width="auto" height="183px">
-                            <div class="caption mauchu">
-                                <h4 style="font-weight:700;">Postcard</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+            <?php }}?>
             </div>
         </div>
     </div>
 </div>
-<?php include('../template/footer-main.php');?>
+<?php include('../template/footer_main.php');?>
