@@ -51,7 +51,7 @@
             ?> 
                 
                     <div class="col-md-2 vien-item">
-                        <a href="postcards.php">
+                        <a href="<?php echo $row['link']?>">
                             <div  class="image-content"style="background-color: <?php echo $row['maunen'] ?>;">
                                 <img src="<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
                                 <div class="caption mauchu">

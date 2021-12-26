@@ -7,7 +7,7 @@
     <title>Nghe đa chiều, sống đa sắc - Spotify</title>
     <link rel="icon" href="../img/imageslogo.png" type="image/png">
 
-    <link rel="stylesheet" href="../css/style.css?v=5">
+    <link rel="stylesheet" href="../css/style.css?v=8">
     <!-- css bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- icons -->
@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="home-main">
-        <div class="roww">
+        <!-- <div class="roww"> -->
             <div class="banner-left">
                 <div class="logo-banner">
                     <a class="nav-item-logo" href="#"><img src="../img/LogoSpotify.PNG" alt="Logo Spotify" width="170px"></a>
@@ -58,7 +58,7 @@
                 </div>
                 
             </div>
-            <div class="contain-right">
+            <!-- <div class="contain-right">
                 <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
                     <i class="material-icon fas fa-chevron-circle-left fs-3 ml-5 myIconArrow ">
                         <a href="#" target="_blank"
@@ -80,8 +80,8 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div> -->
+        <!-- </div> -->
     </div>
     
 </body>
