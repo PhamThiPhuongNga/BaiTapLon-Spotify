@@ -8,7 +8,6 @@
     <title>Nghe đa chiều, sống đa sắc - Spotify</title>
     <link rel="icon" href="public\img\imageslogo.png" type="image/png">
 
-    
     <!-- css bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -48,13 +47,13 @@
                                 xuống</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-linkk co-text" href="#">|</a>
+                            <a class="nav-linkk co-text" >|</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-linkk co-text">Đăng ký</a>
+                            <a class="nav-linkk co-text" href="#">Đăng ký</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-linkk co-text">Đăng nhập</a>
+                            <a class="nav-linkk co-text" href="#">Đăng nhập</a>
                         </li>
                     </ul>
                 </div>

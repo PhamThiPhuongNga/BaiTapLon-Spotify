@@ -37,7 +37,6 @@
 
                         </nav>
                     </div>
-                    <div class="col-md-2"></div>
                     <div class="col-md-2">
                         <div class="social-icon">
                             <div class="roww">

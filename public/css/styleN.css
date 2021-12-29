@@ -20,6 +20,7 @@ body{
     display:flex;
     /* justify-content: space-between; */
 }
+
 .material-icon{
     color: rgb(214, 214, 214);
     font-weight: 500;
@@ -644,11 +645,115 @@ body{
 .maumau{
     color: var(--primary-color);
 }
-.cent{
-        border-bottom: 1px solid rgb(217 218 220);
-        padding: 25px 0 10px;
-        margin-bottom: 30px;
-        text-align: center;
-
+.head {
+    border-bottom: 1px solid rgb(217 218 220);
+    padding: 25px 0 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    /* height:120px; */
 }
+.head .spotify-logo {
+    background-image: url(../../public/img/Logo/Logolg.PNG);
+    
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-size: 100%;
+    display: inline-block;
+    max-width: 100%;
+    width: 200px;
+}
+.head a {
+    border-bottom: 0;
+}
+.container-fluid{
+    text-align: center;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+.btn-default {
+    color: rgb(97 100 103);
+    background-color: rgb(255 255 255);
+    border-color: rgb(204 204 204);
+    box-shadow: inset 0 0 0 2px #616467;
+    background-color: rgb(0 0 0 / 0%);
+}
+.btnn{
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid rgb(0 0 0 / 0%);
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 7px 12px 5px;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 16px 48px 18px;
+    /* transition-property: background-color,border-color,color,box-shadow,filter; */
+    /* transition-duration: .3s; */
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    text-decoration: none;
+}
+.col-xs-12{
+    width: 100%;
+}
+.content {
+    margin: 0 auto;
+    max-width: 450px;
+}
+.btn-facebook {
+    color: rgb(255 255 255);
+    background-color: rgb(59 89 152);
+}
+.cach{
+    margin-bottom: 15px;
+}
+.btn-apple{
+    color: rgb(255 255 255);
+    background-color: rgb(0 0 0);
+}
+.btn-default:hover{
+    color:white;
+    background-color: gray;
+}
+.btn-apple:hover{
+    color: white;
+    background-color:rgb(32, 32, 32) ;
+}
+.btn-facebook:hover{
+    color: white;
+    background-color:rgb(75, 106, 173);
+}
+.divider {
+    border-top: 1px solid rgb(217 218 220);
+    display: block;
+    line-height: 1px;
+    margin: 15px 0;
+    position: relative;
+    text-align: center;
+}
+.divider .divider-title {
+    background: rgb(255 255 255);
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    text-transform: uppercase;
+}
+strong{
+    font-weight: 700;
+}
+
 /*====== end-login===== */
