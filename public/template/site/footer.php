@@ -4,7 +4,7 @@
                 <div class="row">
                     <div class="col-md-2">
                         <div class=" d-flex">
-                            <a class="nav-item-logo" href="#"><img src="public\img\LogoSpotify.PNG" alt="Logo Spotify"
+                            <a class="nav-item-logo" href="#"><img src="public/img/Logo/LogoSpotify.PNG" alt="Logo Spotify"
                                     width="150px"></a>
                             <!-- <i class="material-icon fab fa-spotify fs-1 text-light "></i>
                             <p><span class="text-lightt fs-4 mauchu"> Spotify</span></p> -->

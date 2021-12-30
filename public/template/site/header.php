@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nghe đa chiều, sống đa sắc - Spotify</title>
-    <link rel="icon" href="public\img\imageslogo.png" type="image/png">
+    <link rel="icon" href="public/img/Logo/imageslogo.png" type="image/png">
 
     <!-- css bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -29,7 +29,7 @@
         <div class="container">
             <div class="space " style="padding-top:20px;">
                 <div class=" d-flex">
-                    <a class="nav-item-logo" href="#"><img src="public\img\LogoSpotify.PNG" alt="Logo Spotify"
+                    <a class="nav-item-logo" href="#"><img src="public/img/Logo/LogoSpotify.PNG" alt="Logo Spotify"
                             width="170px"></a>
                     <!-- <i class="material-icon fab fa-spotify fs-1 text-light "></i>
                     <p><span class="text-lightt fs-4 mauchu"> Spotify</span></p> -->
