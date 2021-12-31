@@ -50,10 +50,10 @@
                             <a class="nav-linkk co-text" >|</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-linkk co-text" href="#">Đăng ký</a>
+                            <a class="nav-linkk co-text" href="site/view/register.php">Đăng ký</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-linkk co-text" href="#">Đăng nhập</a>
+                            <a class="nav-linkk co-text" href="site/view/login.php">Đăng nhập</a>
                         </li>
                     </ul>
                 </div>

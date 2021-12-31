@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nghe đa chiều, sống đa sắc - Spotify</title>
+    <title>Đăng nhập - Spotify</title>
     <link rel="icon" href="../../public/img/Logo/imageslogo.png" type="image/png">
 
     <link rel="stylesheet" href="../../public/css/styleN.css?v=8">
@@ -120,7 +120,7 @@
               <div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <a id="sign-up-link" ng-href="/vi-VN/login/signup?continue=https%3A%2F%2Faccounts.spotify.com%2Fvi-VN%2Fstatus" class="btnn btn-block btn-default " href="/vi-VN/login/signup?continue=https%3A%2F%2Faccounts.spotify.com%2Fvi-VN%2Fstatus">Đăng ký Spotify</a>
+                        <a id="sign-up-link" href="register.php" class="btnn btn-block btn-default ">Đăng ký Spotify</a>
                     </div>
                 </div>
               </div>
