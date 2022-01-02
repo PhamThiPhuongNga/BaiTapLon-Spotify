@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nghe đa chiều, sống đa sắc - Spotify</title>
-    <link rel="icon" href="../img/imageslogo.png" type="image/png">
+    <link rel="icon" href="../../public/img/Logo/imageslogo.png" type="image/png">
 
     
     <!-- css bootstrap -->
@@ -15,24 +15,24 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../../public\css\styleN.css">
+    <link rel="stylesheet" href="../../public/css/styleN.css">
 </head>
 <body>
     <div class="home-main">
         <!-- <div class="roww"> -->
             <div class="banner-left">
                 <div class="logo-banner">
-                    <a class="nav-item-logo" href="#"><img src="../../public\img\LogoSpotify.PNG" alt="Logo Spotify" width="170px"></a>
+                    <a class="nav-item-logo" href="#"><img src="../../public/img/Logo/LogoSpotify.PNG" alt="Logo Spotify" width="170px"></a>
                 </div>
                 <div class="contain-ban">
                     <ul class="nav flex-column">
                         <li class="nav-item roww">
                             <i class="material-icon bi bi-house-door"></i> 
-                            <a class="nav-linkk "href="../index/home.php">Trang chủ</a>
+                            <a class="nav-linkk "href="index.php">Trang chủ</a>
                         </li>
                         <li class="nav-item roww">
                             <i class="material-icon bi bi-search"></i>
-                            <a class="nav-linkk" href="../index/search.php">Tìm kiếm</a>
+                            <a class="nav-linkk" href="search.php">Tìm kiếm</a>
                         </li>
                         <li class="nav-item roww">
                             <i class="material-icon bi bi-book"></i>

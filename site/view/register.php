@@ -7,7 +7,7 @@
     <title>Đăng nhập - Spotify</title>
     <link rel="icon" href="../../public/img/Logo/imageslogo.png" type="image/png">
 
-    <link rel="stylesheet" href="../../public/css/styleN.css?v=8">
+    <link rel="stylesheet" href="../../public/css/styleN.css?v=9">
     <!-- css bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- icons -->
@@ -19,7 +19,7 @@
 <body style="font-family: spotify-circular, Helvetica, Arial, sans-serif;">
 <div id="__next">
     <main>
-    <style>  @font-face {
+    <!-- <style>  @font-face {
             font-family: spotify-circular;
             src: url('https://open.scdn.co/fonts/CircularSpUIv3T-Book.woff2') format('woff2'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Book.woff')
                 format('woff'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Book.ttf') format('ttf');
@@ -43,8 +43,8 @@
             font-style: normal;
             font-display: swap;
         }
-    </style>
-    <script nonce="">
+    </style> -->
+    <!-- <script nonce="">
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             language: 'vi_VN',
@@ -52,28 +52,28 @@
             loggedIn: false,
             userCountry: ''
         });
-    </script>
+    </script> -->
     <div></div>
     <div class="encore-light-theme">
         <div class=" cUBnIY">
-            <div></div>
-            <p class="eLLLKd">Rất tiếc, trình duyệt của bạn không được hỗ trợ. Vui lòng thử bằng trình duyệt mới hơn.</p>
+            <!-- <div></div>
+            <p class="eLLLKd">Rất tiếc, trình duyệt của bạn không được hỗ trợ. Vui lòng thử bằng trình duyệt mới hơn.</p> -->
             <div class="cLyTtM">
                 <div class="head ">
                     <a data-testid="spotify-logo" class="spotify-logo" tabindex="-1" title="Spotify" ng-href="/vi-VN" href="/vi-VN"><img src="../../public/img/Logo/Logolg.PNG" width="200px"></a>
                 </div>
                 <a class="lXGct"></a>
-                <h2 class=" kCSAnu  bkLUvq">Đăng ký miễn phí để bắt đầu nghe.</h2>
+                <h2 class=" loide  bkLUvq">Đăng ký miễn phí để bắt đầu nghe.</h2>
             </div>
             <div class="iHYwIu">
                 <a href="" class="etheig">
-                    <div class=" kDOdzL cASlYr">Đăng ký bằng Facebook</div>
+                    <div class=" kDOdzL ">Đăng ký bằng Facebook</div>
                 </a>
             </div>
             <div class="divider">
                 <strong class="divider-title ">hoặc</strong>
             </div>
-            <form novalidate="" method="POST" >
+            <form method="POST" action="../controller/process-register.php" >
                 <div class="bXxIjv">
                     <div class="biNheR">
                         <label for="email" class="hyIrKV">Email của bạn là gì?</label>
@@ -85,7 +85,7 @@
                     <div class=" biNheR">
                         <label for="confirm"class="hyIrKV">Xác nhận email của bạn</label>
                     </div>
-                    <input type="email"  id="confirm" name="confirm"  placeholder="Nhập lại email của bạn."  value="" class="hUAscM">
+                    <input type="email"  id="confirm" name="confirm-email"  placeholder="Nhập lại email của bạn."  value="" class="hUAscM">
                 </div>
                 <div class="bXxIjv">
                     <div class=" biNheR">
@@ -154,19 +154,19 @@
                     <legend class=" biNheR">Giới tính của bạn là gì?</legend>
                     <div class="kgAGaJ jAZzMT">
                         <div class=" dYEnUC">
-                            <input type="radio" id="gender_option_male" name="gender" required="" value="male" class=" jjQdzI">
+                            <input type="radio" id="gender_option_male" name="gender" required="" value="Nam" class=" jjQdzI">
                             <label for="gender_option_male">
                                 <span class="jUctcY kDURAo">Nam</span>
                             </label>
                         </div>
                         <div class=" dYEnUC">
-                            <input type="radio" id="gender_option_female" name="gender"value="female"class="jjQdzI"><label >
+                            <input type="radio" id="gender_option_female" name="gender"value="Nữ"class="jjQdzI"><label >
                                 <span class=" kLhpUW"></span>
                                 <span class=" jUctcY kDURAo">Nữ</span>
                             </label>
                         </div>
                         <div class=" dYEnUC">
-                            <input type="radio" id="gender_option_nonbinary" name="gender" required="" value="neutral" class="jjQdzI">
+                            <input type="radio" id="gender_option_nonbinary" name="gender" required="" value="N/N" class="jjQdzI">
                             <label >
                                 <span class="kLhpUW"></span>
                                 <span class=" jUctcY kDURAo">Không phân biệt giới tính</span>
@@ -214,7 +214,7 @@
                         <span class=" fPyYIP">Để tìm hiểu thêm về cách thức Spotify thu thập, sử dụng, chia sẻ và bảo vệ dữ liệu cá nhân của bạn, vui lòng xem <a href="/vn-vi/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Chính sách quyền riêng tư của Spotify</a>.</span>
                     </p>
                     <div class="gvwzIR">
-                        <button type="submit" class="dmJlSg">
+                        <button type="submit" name="btnRegister" class="dmJlSg">
                             <div class=" flmFpd gzFCtx">Đăng ký</div>
                         </button>
                     </div>
@@ -225,6 +225,7 @@
             </form>
         </div>
     </div>
+    <script src="../../public/js/validateForm.js"></script>
 </main>
 </div>
 </body>
