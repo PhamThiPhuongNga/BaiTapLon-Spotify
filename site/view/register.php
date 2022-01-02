@@ -8,52 +8,25 @@
     <link rel="icon" href="../../public/img/Logo/imageslogo.png" type="image/png">
 
     <link rel="stylesheet" href="../../public/css/styleN.css?v=9">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
     <!-- css bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <!-- JavaScript Bundle with Popper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 </head>
 <body style="font-family: spotify-circular, Helvetica, Arial, sans-serif;">
+
 <div id="__next">
     <main>
-    <!-- <style>  @font-face {
-            font-family: spotify-circular;
-            src: url('https://open.scdn.co/fonts/CircularSpUIv3T-Book.woff2') format('woff2'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Book.woff')
-                format('woff'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Book.ttf') format('ttf');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: spotify-circular;
-            src: url('https://open.scdn.co/fonts/CircularSpUIv3T-Bold.woff2') format('woff2'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Bold.woff')
-                format('woff'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Bold.ttf') format('ttf');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: spotify-circular;
-            src: url('https://open.scdn.co/fonts/CircularSpUIv3T-Black.woff2') format('woff2'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Black.woff')
-                format('woff'), url('https://open.scdn.co/fonts/CircularSpUIv3T-Black.ttf') format('ttf');
-            font-weight: 900;
-            font-style: normal;
-            font-display: swap;
-        }
-    </style> -->
-    <!-- <script nonce="">
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            language: 'vi_VN',
-            market: 'vn-vi',
-            loggedIn: false,
-            userCountry: ''
-        });
-    </script> -->
-    <div></div>
     <div class="encore-light-theme">
         <div class=" cUBnIY">
             <!-- <div></div>
@@ -73,32 +46,47 @@
             <div class="divider">
                 <strong class="divider-title ">hoặc</strong>
             </div>
-            <form method="POST" action="../controller/process-register.php" >
+            <form method="POST" id="form" name="accounts" >
+            <!-- action="../controller/process-register.php" -->
                 <div class="bXxIjv">
                     <div class="biNheR">
                         <label for="email" class="hyIrKV">Email của bạn là gì?</label>
                     </div>
-                    <input type="email"id="email" name="email" placeholder="Nhập email của bạn."  value="" class="hUAscM">
+                    
+                    <input type="email" id="email" name="email" placeholder="email@address.com"  required value="" class="hUAscM">
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
                     <a href="" class="jGldrj dwjdDB">Dùng số điện thoại.</a>
                 </div>
                 <div class="bXxIjv">
                     <div class=" biNheR">
                         <label for="confirm"class="hyIrKV">Xác nhận email của bạn</label>
                     </div>
-                    <input type="email"  id="confirm" name="confirm-email"  placeholder="Nhập lại email của bạn."  value="" class="hUAscM">
+                    <input type="email"  id="confirmemail" name="confirm-email"  placeholder="Nhập lại email của bạn." required value="" class="hUAscM">
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
                 </div>
                 <div class="bXxIjv">
                     <div class=" biNheR">
                         <label for="password" class=" hyIrKV">Tạo mật khẩu</label>
                     </div>
-                    <input type="password" 
-                        id="password"  name="password" placeholder="Tạo mật khẩu." value="" class="hUAscM">
+                    <input type="password" id="password"  name="password" placeholder="Tạo mật khẩu."required
+                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                    title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." value="" class="hUAscM">
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
                 </div>
                 <div class=" bXxIjv">
                     <div class="biNheR">
-                        <label  class="Label-sc-1c0cv3r-0 hyIrKV">Bạn tên là gì?</label>
+                        <label  class=" hyIrKV">Bạn tên là gì?</label>
                     </div>
                     <input type="text" id="displayname" name="displayname" placeholder="Nhập tên hồ sơ." value="" class="hUAscM">
+                    <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i>
+                    <div class="error"></div>
                     <div class="jOtNmg iRPJBk">Tên này sẽ xuất  hiện trên hồ sơ của bạn.
                     </div>
                 </div>
@@ -113,6 +101,9 @@
                                     <label class=" hyIrKV">Ngày</label>
                                 </div>
                                 <input type="text"  id="day"  maxlength="2" name="day"  placeholder="DD" value="" class="hUAscM">
+                                <i class="fas fa-exclamation-circle failure-icon"></i>
+                                <i class="far fa-check-circle success-icon"></i>
+                                <div class="error"></div>
                             </div>
                         </div>
                         <div class=" uMRZZ">
@@ -121,7 +112,7 @@
                                     <label  class="hyIrKV">Tháng</label>
                                 </div>
                                 <div class="btkRyt">
-                                    <select id="month"name="month"class="bxcbdF ">
+                                    <select id="month" name ="month" class = "bxcbdF ">
                                         <option selected=""  value="">Tháng</option
                                         ><option value="01">Tháng 1</option>
                                         <option value="02">Tháng 2</option>
@@ -137,6 +128,9 @@
                                         <option value="12">Tháng 12</option>
                                     <select>
                                 </div>
+                                <i class="fas fa-exclamation-circle failure-icon"></i>
+                                <i class="far fa-check-circle success-icon"></i>
+                                <div class="error"></div>
                             </div>
                         </div>
                         <div  class=" hyfXpC">
@@ -145,6 +139,9 @@
                                     <label class="hyIrKV">Năm</label>
                                 </div>
                                 <input type="text" id="year" inputmode="numeric" maxlength="4" name="year" pattern="(19[0-9]{2})|(200)[0-8]" placeholder="YYYY"  value="" class="hUAscM">
+                                <i class="fas fa-exclamation-circle failure-icon"></i>
+                                <i class="far fa-check-circle success-icon"></i>
+                                <div class="error"></div>
                             </div>
                         </div>
                     </div>
@@ -158,6 +155,9 @@
                             <label for="gender_option_male">
                                 <span class="jUctcY kDURAo">Nam</span>
                             </label>
+                            <i class="fas fa-exclamation-circle failure-icon"></i>
+                            <i class="far fa-check-circle success-icon"></i>
+                            <div class="error"></div>
                         </div>
                         <div class=" dYEnUC">
                             <input type="radio" id="gender_option_female" name="gender"value="Nữ"class="jjQdzI"><label >
@@ -214,7 +214,7 @@
                         <span class=" fPyYIP">Để tìm hiểu thêm về cách thức Spotify thu thập, sử dụng, chia sẻ và bảo vệ dữ liệu cá nhân của bạn, vui lòng xem <a href="/vn-vi/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Chính sách quyền riêng tư của Spotify</a>.</span>
                     </p>
                     <div class="gvwzIR">
-                        <button type="submit" name="btnRegister" class="dmJlSg">
+                        <button type="submit" id="submit" name="btnRegister" class="dmJlSg">
                             <div class=" flmFpd gzFCtx">Đăng ký</div>
                         </button>
                     </div>
@@ -225,8 +225,9 @@
             </form>
         </div>
     </div>
-    <script src="../../public/js/validateForm.js"></script>
 </main>
 </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="../../public/js/validateForm.js"></script>
 </html>
