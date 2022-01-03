@@ -40,3 +40,16 @@ let engine = (id, serial, message) => {
     successIcon[serial].style.opacity = "1";
   }
 };
+
+// function validateForm()
+// {
+//   let displayname = document.getElementById(displayname);
+//   let errorUser = document.getElementsById(errorUser);
+//   if(displayname.value == ''){
+//     alert("Name can't be blank");  
+//     // errorUser.textContent='Bạn chưa nhập tên';
+//     // errorUser.style.color='red';
+//     displayname.focus();
+//     return false;
+//   }
+// }

@@ -811,7 +811,7 @@ form div i {
   
   .success-icon,
   .failure-icon {
-    right: 0;
+    right:50px;
     opacity: 0;
   }
   
@@ -848,12 +848,12 @@ form div i {
     font-weight: 400;
     margin-top: 24px;
 }
-@media (min-width: 768px)
+/* @media (min-width: 768px)
 {
 .cLyTtM {
     padding: 40px 0px 32px;
 }
-}
+} */
 .cLyTtM {
     display: flex;
     flex-direction: column;
@@ -862,6 +862,7 @@ form div i {
     display: flex;
     justify-content: space-around;
     margin-bottom: 22px;
+    margin-top: 22px;
 }
 @media (min-width: 768px)
 {
@@ -1170,6 +1171,9 @@ form div i {
     border-radius: 500px;
     font-size: inherit;
     padding: 16px 48px;
+}
+.flmFpd:hover{
+    opacity: 0.5;
 }
 /*===========end register========= */
 

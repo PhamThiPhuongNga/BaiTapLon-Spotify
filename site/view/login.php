@@ -60,7 +60,7 @@
       </div>
     </div>
 
-    <form name="accounts" method="post"  class="" action="../controller/process-login.php">
+    <form name="accounts" method="post"  class="" action="../controller/controll-login.php">
 
       <div class="row" >
         <div class="col-xs-12">

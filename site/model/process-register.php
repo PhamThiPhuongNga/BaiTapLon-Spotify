@@ -2,7 +2,7 @@
 if(isset($_POST['btnRegister']) && $_POST['email']) //Kiểm tra Người dùng có nhấp vào nút SUBMIT chưa và đã nhập dữ liệu Email chưa
 {
     // B1. Gọi lại cái đoạn kết nối DB Server
-    require "../model/connect_db.php";
+    require "../../connect_db.php";
 
     // B2. Thực hiện truy vấn
     $result = mysqli_query($conn,"SELECT * FROM nguoidung WHERE email='" . $_POST['email'] . "'");
@@ -21,8 +21,13 @@ if(isset($_POST['btnRegister']) && $_POST['email']) //Kiểm tra Người dùng 
         $confemail  = $_POST['confirm-email'];
         $pass   = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $gioitinh =$_POST['gender']; 
+        if($name == ''){
+            $error1='Bạn chưa nhập tên';
+            header("location: ../view/register.php?error=$error1");
+        }
         if($email ==  $confemail){
-            $sql    = "INSERT INTO `nguoidung`(`ten_nguoidung`, `ngay`, `thang`, `nam`, `email`, `matkhau`, `gioitinh`) VALUES ('$name','$ngay','$thang','$nam','$email','$pass', '$gioitinh')";
+            $sql    = "INSERT INTO `nguoidung`(`ten_nguoidung`, `ngay`, `thang`, `nam`, `email`, `matkhau`, `gioitinh`) 
+            VALUES ('$name','$ngay','$thang','$nam','$email','$pass', '$gioitinh')";
             // Ra lệnh lưu vào CSDL
             mysqli_query($conn, $sql);
         }

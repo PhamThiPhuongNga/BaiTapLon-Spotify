@@ -7,7 +7,7 @@
     <title>Đăng nhập - Spotify</title>
     <link rel="icon" href="../../public/img/Logo/imageslogo.png" type="image/png">
 
-    <link rel="stylesheet" href="../../public/css/styleN.css?v=9">
+    <link rel="stylesheet" href="../../public/css/styleN.css">
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
@@ -46,14 +46,14 @@
             <div class="divider">
                 <strong class="divider-title ">hoặc</strong>
             </div>
-            <form method="POST" id="form" name="accounts" >
+            <form method="POST" id="form" name="accounts" action="../controller/controll-register.php" onsubmit="return validateForm()">
             <!-- action="../controller/process-register.php" -->
                 <div class="bXxIjv">
                     <div class="biNheR">
                         <label for="email" class="hyIrKV">Email của bạn là gì?</label>
                     </div>
                     
-                    <input type="email" id="email" name="email" placeholder="email@address.com"  required value="" class="hUAscM">
+                    <input type="email" id="email" name="email" placeholder="email@address.com" value="" class="hUAscM">
                     <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i>
                     <div class="error"></div>
@@ -63,7 +63,7 @@
                     <div class=" biNheR">
                         <label for="confirm"class="hyIrKV">Xác nhận email của bạn</label>
                     </div>
-                    <input type="email"  id="confirmemail" name="confirm-email"  placeholder="Nhập lại email của bạn." required value="" class="hUAscM">
+                    <input type="email"  id="confirmemail" name="confirm-email"  placeholder="Nhập lại email của bạn." value="" class="hUAscM">
                     <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i>
                     <div class="error"></div>
@@ -72,8 +72,8 @@
                     <div class=" biNheR">
                         <label for="password" class=" hyIrKV">Tạo mật khẩu</label>
                     </div>
-                    <input type="password" id="password"  name="password" placeholder="Tạo mật khẩu."required
-                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+                    <input type="password" id="password"  name="password" placeholder="Tạo mật khẩu."
+                   
                     title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." value="" class="hUAscM">
                     <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i>
@@ -84,9 +84,14 @@
                         <label  class=" hyIrKV">Bạn tên là gì?</label>
                     </div>
                     <input type="text" id="displayname" name="displayname" placeholder="Nhập tên hồ sơ." value="" class="hUAscM">
+                    <?php 
+                        if(isset($_POST['error'])){
+                        echo "<h6 style='color:red;'>{$_POST['error']}</h6>";
+                        }
+                    ?>
                     <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i>
-                    <div class="error"></div>
+                    <div id="errorUser" class="error"></div>
                     <div class="jOtNmg iRPJBk">Tên này sẽ xuất  hiện trên hồ sơ của bạn.
                     </div>
                 </div>
@@ -151,7 +156,7 @@
                     <legend class=" biNheR">Giới tính của bạn là gì?</legend>
                     <div class="kgAGaJ jAZzMT">
                         <div class=" dYEnUC">
-                            <input type="radio" id="gender_option_male" name="gender" required="" value="Nam" class=" jjQdzI">
+                            <input type="radio" id="gender_option_male" name="gender" value="Nam" class=" jjQdzI">
                             <label for="gender_option_male">
                                 <span class="jUctcY kDURAo">Nam</span>
                             </label>
@@ -166,7 +171,7 @@
                             </label>
                         </div>
                         <div class=" dYEnUC">
-                            <input type="radio" id="gender_option_nonbinary" name="gender" required="" value="N/N" class="jjQdzI">
+                            <input type="radio" id="gender_option_nonbinary" name="gender"  value="N/N" class="jjQdzI">
                             <label >
                                 <span class="kLhpUW"></span>
                                 <span class=" jUctcY kDURAo">Không phân biệt giới tính</span>
@@ -228,6 +233,6 @@
 </main>
 </div>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
 <script src="../../public/js/validateForm.js"></script>
 </html>

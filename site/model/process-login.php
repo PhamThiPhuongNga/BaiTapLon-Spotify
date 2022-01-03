@@ -8,13 +8,18 @@
         $tenKH = $_POST['username'];
         $passKH = $_POST['password'];
         $remem = $_POST['remember'];
+        
+        if(!$tenKH){
+            $error1 = "Bạn chưa nhập tên";
+        }
+        
         // if(!$tenKH || !$passK || !$remem){
         //     echo 
         // }
         //Ở đây còn phải kiểm tra người dùng đã nhập chưa
 
         // Bước 01: Kết nối Database Server
-        include("../model/connect_db.php");
+        include("../../connect_db.php");
         // Bước 02: Thực hiện truy vấn
         $sql = "SELECT * FROM `nguoidung` WHERE ten_nguoidung = '$tenKH' and matkhau = '$passKH'";
         // Ở đây còn có các vấn đề về tính hợp lệ dữ liệu nhập vào FORM
