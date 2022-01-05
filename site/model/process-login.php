@@ -8,24 +8,18 @@
         $tenKH = $_POST['username'];
         $passKH = $_POST['password'];
         $remem = $_POST['remember'];
-        
-        if(!$tenKH){
-            $error1 = "Bạn chưa nhập tên";
-        }
-        
-        // if(!$tenKH || !$passK || !$remem){
-        //     echo 
-        // }
-        //Ở đây còn phải kiểm tra người dùng đã nhập chưa
-
         // Bước 01: Kết nối Database Server
         include("../../connect_db.php");
         // Bước 02: Thực hiện truy vấn
-        $sql = "SELECT * FROM `nguoidung` WHERE ten_nguoidung = '$tenKH' and matkhau = '$passKH'";
+        $sql = "SELECT * FROM `nguoidung` WHERE ten_nguoidung = '$tenKH' or email = '$tenKH'";
         // Ở đây còn có các vấn đề về tính hợp lệ dữ liệu nhập vào FORM
         // Nghiêm trọng: lỗi SQL Injection
 
         $result = mysqli_query($conn,$sql);
+        $data=mysqli_fetch_assoc($result);
+      
+        $passcheck = password_verify($passKH,$data['matkhau']);
+        
         if(mysqli_num_rows($result) > 0){
             // CẤP THẺ LÀM VIỆC
              $_SESSION['isLoginOK'] = $tenKH;

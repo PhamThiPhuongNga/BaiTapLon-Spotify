@@ -833,6 +833,14 @@ form div i {
     line-height: 36px;
     letter-spacing: -0.04em;
 }
+.errorr{
+    color: rgb(90 92 105);
+    font-size: 7rem;
+    position: relative;
+    line-height: 1;
+    width: 12.5rem;
+    margin-top:50px;
+}
 @media (min-width: 768px)
 {
 .kCSAnu {

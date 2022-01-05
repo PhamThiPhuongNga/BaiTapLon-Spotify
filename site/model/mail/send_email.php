@@ -27,7 +27,7 @@ function sendEmailForAccountActive($email, $link){
         $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true; 
         $mail->Username = 'phamnga.bibi89@gmail.com';
-        $mail->Password = 'ooztsifqydcbvguk';                                  //Enable SMTP authentication
+        $mail->Password = 'mzfchdmjfamplmvc';                                  //Enable SMTP authentication
         // $mail->Username   = $username;                              //Địa chỉ Email đóng vai trò gửi thư
         // $mail->Password   = $password;                               //SMTP password
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
@@ -48,8 +48,8 @@ function sendEmailForAccountActive($email, $link){
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = '[vietcodedi.com] Active your account';
-        $mail->Body    = 'Chào mừng bạn đến với localhost.com. Để sử dụng tài khoản, '.$link;
+        $mail->Subject = '[spotify.com] Active your account';
+        $mail->Body    = 'Chào mừng bạn đến với spotify.com. Để sử dụng tài khoản, '.$link;
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         if($mail->send()){

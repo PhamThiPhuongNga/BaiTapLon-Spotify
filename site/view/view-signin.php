@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="../../public/css/styleN.css">
 </head>
 <body>
-<div class="header-material space">
-    <div class=" dropdown space">
+<div class="header-material">
+    <div class=" dropdown roww ">
         <i class="material-icon bi bi-person-circle"></i>
         <?php
             if(isset($_SESSION['isLoginOK']))
@@ -28,7 +28,7 @@
             <li><a class="dropdown-item" href="#">Tài khoản</a></li>
             <li><a class="dropdown-item" href="#">Hồ sơ</a></li>
             <li><a class="dropdown-item" href="#">Nâng cấp lên Premium</a></li>
-            <li><a class="dropdown-item" href="../controller/process-logout.php">Đăng xuất</a></li>
+            <li><a class="dropdown-item" href="../controller/controll-logout.php">Đăng xuất</a></li>
         </ul>
     
      <?php   }

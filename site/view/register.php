@@ -1,3 +1,86 @@
+
+<?php
+if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nút SUBMIT chưa và đã nhập dữ liệu Email chưa
+{
+    // B1. Gọi lại cái đoạn kết nối DB Server
+    require "../../connect_db.php";
+
+    // B2. Thực hiện truy vấn
+    $result = mysqli_query($conn,"SELECT * FROM nguoidung WHERE email='" . $_POST['email'] . "'");
+
+    $token = md5($_POST['email']).rand(10,9999); //Sử dụng giải thuật md5 để sinh ra chuỗi ngẫu nhiên được băm
+    // echo $token;
+    // Lưu lại thông tin đăng kí vào CSDL (Dữ liệu lấy từ index.php [FORM] gửi sang)
+    $email  = $_POST['email'];
+    $confemail  = $_POST['confirm-email'];
+    $pass   = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $name   = $_POST['displayname'];
+    $ngay   = $_POST['day'];
+    $thang   = $_POST['month'];
+    $nam   = $_POST['year'];
+    $gioitinh =$_POST['gender'];
+
+    $regex = "/([a-z0-9_]+|[a-z0-9_]+\.[a-z0-9_]+)@(([a-z0-9]|[a-z0-9]+\.[a-z0-9]+)+\.([a-z]{2,4}))/i";  
+    if(empty($email) || !preg_match($regex, $email)){
+        $err['email'] = 'x Vui lòng kiểm tra lại email';
+    }
+    if($confemail != $email ){
+        $err['confirm-email'] = ' x Email nhập lại chưa đúng';
+    }
+    if(empty($pass) || $pass < 6 ){
+        $err['password'] = 'x Vui lòng kiểm tra lại mật khẩu';
+    } 
+    // $regexname = "/^{5,20}$/i";
+    // || !preg_match($regexname, $name) 
+    if(empty($name)){
+        $err['displayname'] = ' x Vui lòng kiểm tra lại tên';
+    }
+    if(empty($ngay) ){
+        $err['day'] = ' x Bạn chưa nhập ngày sinh';
+    }
+    if(empty($thang) ){
+        $err['month'] = ' x Bạn chưa nhập tháng sinh';
+    }
+    if(empty($nam) ){
+        $err['year'] = ' x Bạn chưa nhập năm sinh';
+    }
+    if($gioitinh == false ){
+        $err['gender'] = ' x Bạn chưa chọn giơi tính';
+    }
+// B3. Xử lý kết quả
+    elseif(mysqli_num_rows($result) > 0) //Kiểm tra Email chưa được dùng
+    {
+        $err['emaill'] = ' x Email đã tồn tại';
+    }else
+    {
+        $sql  = "INSERT INTO nguoidung(ten_nguoidung,ngay,thang,nam, email,matkhau,gioitinh ,quoctich,email_verification_link ) VALUES('$name','$ngay','$thang','$nam', '$email','$pass','$gioitinh','Việt Nam','$token')";
+        // Ra lệnh lưu vào CSDL
+        mysqli_query($conn, $sql);
+        
+        // Sau khi lưu xong, chúng ta sẽ cần gửi tới Email đăng kí 1 đường link tới Website của chúng ta
+        // Yêu cầu người dùng nhấp để kích hoạt; Biến link (đường dẫn kích hoạt) sẽ gửi vào Email
+        $link = "<a href='http://localhost/BaiTapLon-Spotify/site/model/mail/activation.php?key=".$email."&token=".$token."'>Nhấp vào đây để kích hoạt</a>";
+        
+
+        // Quá trình gửi Email
+        include "../model/mail/send_email.php";
+        if(sendEmailForAccountActive($email, $link)){
+            $err= "Vui lòng kiểm tra Hộp thư của Bạn để kích hoạt tài khoản";
+            header("location:../view/404.php?err=$err");
+        }else{
+            $err= "Xin lỗi. Email chưa được gửi đi. Vui lòng kiểm tra lại thông tin Đăng kí tài khoản";
+            header("location:../view/404.php?err=$err");
+            // echo "Xin lỗi. Email chưa được gửi đi. Vui lòng kiểm tra lại thông tin Đăng kí tài khoản";
+        }
+        
+    }
+        
+}
+// else{
+//     echo '<script type="text/javascript">alert("Vui lòng nhập đầy đủ thông tin")</script>';
+    
+// }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,52 +129,60 @@
             <div class="divider">
                 <strong class="divider-title ">hoặc</strong>
             </div>
-            <form method="POST" id="form" name="accounts" action="../controller/controll-register.php" onsubmit="return validateForm()">
-            <!-- action="../controller/process-register.php" -->
+            <form method="POST" id="form" name="accounts"  >
+            <!-- action="../model/process-register.php" -->
+                <div class="bXxIjv">
+                    <div class="error"> 
+                        <?php  if(isset($_GET['err'])){echo "<h6 style='color:red;'>{$_GET['err']}</h6>";}?>
+                    </div>
+                </div>
                 <div class="bXxIjv">
                     <div class="biNheR">
                         <label for="email" class="hyIrKV">Email của bạn là gì?</label>
                     </div>
-                    
-                    <input type="email" id="email" name="email" placeholder="email@address.com" value="" class="hUAscM">
-                    <i class="fas fa-exclamation-circle failure-icon"></i>
-                    <i class="far fa-check-circle success-icon"></i>
-                    <div class="error"></div>
+                    <input type="email" id="email" name="email" placeholder="email@address.com" value="<?php if(isset($email)){echo $email;}?>" class="hUAscM">
+                     <i class="fas fa-exclamation-circle failure-icon"></i>
+                    <i class="far fa-check-circle success-icon"></i> 
+                    <div class="error"> 
+                        <?php if(isset($err['email'])){ echo(isset($err['email'])?$err['email']:'');}else
+                        echo (isset($err['emaill'])?$err['emaill']:'')?>
+                    </div>
                     <a href="" class="jGldrj dwjdDB">Dùng số điện thoại.</a>
                 </div>
                 <div class="bXxIjv">
                     <div class=" biNheR">
                         <label for="confirm"class="hyIrKV">Xác nhận email của bạn</label>
                     </div>
-                    <input type="email"  id="confirmemail" name="confirm-email"  placeholder="Nhập lại email của bạn." value="" class="hUAscM">
+                    <input type="email"  id="confirmemail" name="confirm-email"  placeholder="Nhập lại email của bạn." value="<?php if(isset($email)){echo $email;}?>" class="hUAscM">
                     <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i>
-                    <div class="error"></div>
+                    <div class="error">
+                        <?php echo(isset($err['confirm-email'])?$err['confirm-email']:'')?>
+                    </div>
                 </div>
                 <div class="bXxIjv">
                     <div class=" biNheR">
                         <label for="password" class=" hyIrKV">Tạo mật khẩu</label>
                     </div>
                     <input type="password" id="password"  name="password" placeholder="Tạo mật khẩu."
-                   
                     title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." value="" class="hUAscM">
                     <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i>
-                    <div class="error"></div>
+                    <!-- <div class="error"> </div> -->
+                    <div class="error">
+                        <?php echo(isset($err['password'])?$err['password']:'')?>
+                    </div>
                 </div>
                 <div class=" bXxIjv">
                     <div class="biNheR">
                         <label  class=" hyIrKV">Bạn tên là gì?</label>
                     </div>
-                    <input type="text" id="displayname" name="displayname" placeholder="Nhập tên hồ sơ." value="" class="hUAscM">
-                    <?php 
-                        if(isset($_POST['error'])){
-                        echo "<h6 style='color:red;'>{$_POST['error']}</h6>";
-                        }
-                    ?>
+                    <input type="text" id="displayname" name="displayname" placeholder="Nhập tên hồ sơ." value="<?php if(isset($name)){echo $name;}?>" class="hUAscM" title="Tên không được chứa kí tự đặc biệt">
                     <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i>
-                    <div id="errorUser" class="error"></div>
+                    <div id="errorUser" class="error">
+                        <?php echo(isset($err['displayname'])?$err['displayname']:'')?>
+                    </div>
                     <div class="jOtNmg iRPJBk">Tên này sẽ xuất  hiện trên hồ sơ của bạn.
                     </div>
                 </div>
@@ -105,7 +196,7 @@
                                 <div class=" biNheR">
                                     <label class=" hyIrKV">Ngày</label>
                                 </div>
-                                <input type="text"  id="day"  maxlength="2" name="day"  placeholder="DD" value="" class="hUAscM">
+                                <input type="text"  id="day"  maxlength="2" name="day"  placeholder="DD" value="<?php if(isset($ngay)){echo $ngay;}?>" class="hUAscM">
                                 <i class="fas fa-exclamation-circle failure-icon"></i>
                                 <i class="far fa-check-circle success-icon"></i>
                                 <div class="error"></div>
@@ -118,7 +209,7 @@
                                 </div>
                                 <div class="btkRyt">
                                     <select id="month" name ="month" class = "bxcbdF ">
-                                        <option selected=""  value="">Tháng</option
+                                        <option selected=""  value="<?php if(isset($thang)){echo $thang;}?>">Tháng</option
                                         ><option value="01">Tháng 1</option>
                                         <option value="02">Tháng 2</option>
                                         <option value="03">Tháng 3</option>
@@ -143,20 +234,26 @@
                                 <div class=" biNheR">
                                     <label class="hyIrKV">Năm</label>
                                 </div>
-                                <input type="text" id="year" inputmode="numeric" maxlength="4" name="year" pattern="(19[0-9]{2})|(200)[0-8]" placeholder="YYYY"  value="" class="hUAscM">
+                                <input type="text" id="year" inputmode="numeric" maxlength="4" name="year" pattern="(19[0-9]{2})|(200)[0-8]" placeholder="YYYY"  value="<?php if(isset($nam)){echo $nam;}?>" class="hUAscM">
                                 <i class="fas fa-exclamation-circle failure-icon"></i>
                                 <i class="far fa-check-circle success-icon"></i>
                                 <div class="error"></div>
                             </div>
                         </div>
+                        
                     </div>
-                    <div></div>
+                    <div>
+                        <div class="error"><?php echo(isset($err['day'])?$err['day']:'')?></div>
+                        <div class="error"><?php echo(isset($err['month'])?$err['month']:'')?></div>
+                        <div class="error"><?php echo(isset($err['year'])?$err['year']:'')?></div>
+                    </div>
                 </div>
                 <fieldset role="radiogroup" class=" iEDNAE">
                     <legend class=" biNheR">Giới tính của bạn là gì?</legend>
                     <div class="kgAGaJ jAZzMT">
                         <div class=" dYEnUC">
-                            <input type="radio" id="gender_option_male" name="gender" value="Nam" class=" jjQdzI">
+                            <input type="radio" id="gender_option_male" checked name="gender" value="Nam" class=" jjQdzI" <?php if (isset($gender) && $gender=="Nam") echo "checked";?>>
+                           
                             <label for="gender_option_male">
                                 <span class="jUctcY kDURAo">Nam</span>
                             </label>
@@ -165,13 +262,15 @@
                             <div class="error"></div>
                         </div>
                         <div class=" dYEnUC">
-                            <input type="radio" id="gender_option_female" name="gender"value="Nữ"class="jjQdzI"><label >
-                                <span class=" kLhpUW"></span>
+                            <input type="radio" id="gender_option_female" name="gender"value="Nữ"class="jjQdzI"<?php if (isset($gender) && $gender=="Nữ") echo "checked";?>>
+                            
+                            <label >
                                 <span class=" jUctcY kDURAo">Nữ</span>
                             </label>
                         </div>
                         <div class=" dYEnUC">
-                            <input type="radio" id="gender_option_nonbinary" name="gender"  value="N/N" class="jjQdzI">
+                            <input type="radio" id="gender_option_nonbinary" name="gender"  value="N/N" class="jjQdzI"<?php if (isset($gender) && $gender=="N/N") echo "checked";?>>
+                            
                             <label >
                                 <span class="kLhpUW"></span>
                                 <span class=" jUctcY kDURAo">Không phân biệt giới tính</span>
@@ -190,7 +289,7 @@
                 </div>
                 <div class=" bXxIjv">
                     <div class=" iuhOXU">
-                        <input type="checkbox" id="third-party-checkbox" name="thirdParty" class="jjQdzI">
+                        <input type="checkbox" id="third-party-checkbox" name="thirdParty" class="jjQdzI" checked>
                         <label >
                             <span class=" hmDuGC"></span>
                             <span class=" ipROSy">
@@ -234,5 +333,5 @@
 </div>
 </body>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
-<script src="../../public/js/validateForm.js"></script>
+<!-- <script src="../../public/js/validateForm.js"></script> -->
 </html>
