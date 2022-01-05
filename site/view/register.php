@@ -119,7 +119,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                     <a data-testid="spotify-logo" class="spotify-logo" tabindex="-1" title="Spotify" ng-href="/vi-VN" href="/vi-VN"><img src="../../public/img/Logo/Logolg.PNG" width="200px"></a>
                 </div>
                 <a class="lXGct"></a>
-                <h2 class=" loide  bkLUvq">Đăng ký miễn phí để bắt đầu nghe.</h2>
+                <h2 class=" loide  bkLUvq ">Đăng ký miễn phí để bắt đầu nghe.</h2>
             </div>
             <div class="iHYwIu">
                 <a href="" class="etheig">

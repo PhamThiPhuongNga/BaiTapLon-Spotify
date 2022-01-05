@@ -23,7 +23,7 @@ body{
 
 .material-icon{
     color: rgb(214, 214, 214);
-    font-weight: 500;
+    /* font-weight: 500; */
     font-size: 20px;
     width: 50px;
     text-align: center;
@@ -1185,7 +1185,13 @@ form div i {
 }
 /*===========end register========= */
 
+/*css for acount */
 
+.border-acc-bottom{
+    border-bottom: 1px solid #837676;
+}
+
+/* enr css for account */
 
 
 
