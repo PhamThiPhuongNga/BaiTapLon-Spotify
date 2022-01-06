@@ -7,7 +7,7 @@
     }
    
 ?>
-<?php include('../../public/template/site/header_main.php');?>
+<?php include('template/header_main.php');?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 <div class="contain-right">
     <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
@@ -97,4 +97,4 @@
         </div>
     </div>
 </div> 
-<?php include('../../public/template/site/footer_main.php');?>
+<?php include('template/footer_main.php');?>
