@@ -375,8 +375,8 @@ body{
   }
   
   .control .btn-toggle-play {
-    width: 45px;
-    height: 45px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     font-size: 20px;
     color: black;
@@ -460,6 +460,10 @@ body{
 }
 .kc-ic{
     margin-right: 15px;
+}
+
+.track-name{
+    width: 150px;
 }
 /* ==============end footer============= */
 
