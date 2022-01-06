@@ -16,18 +16,18 @@
     <link rel="stylesheet" href="../../public/css/styleN.css">
 </head>
 <body>
-<div class="header-material">
-    <div class=" dropdown roww ">
-        <i class="material-icon bi bi-person-circle"></i>
+
+    <div class=" dropdown  ">
+        <!-- <i class="material-icon bi bi-person-circle"></i> -->
         <?php
             if(isset($_SESSION['isLoginOK']))
             {
-                echo " <a class='nav-linkk dropdown-toggle' data-bs-toggle='dropdown' href='' role='button' aria-expanded='false'>".$_SESSION['isLoginOK']."</a>";          
+                echo " <a class=' align-items-center d-flex nav-linkk dropdown-toggle' data-bs-toggle='dropdown' href='' role='button' aria-expanded='true' id='dropdownMenuLink'style='border-radius: 30px;margin-top:0;'><i class='material-icon bi bi-person-circle'></i>".$_SESSION['isLoginOK']."</a>";          
         ?>
-        <ul class="dropdown-menu mauchu"style="">
-            <li><a class="dropdown-item" href="#">Tài khoản</a></li>
-            <li><a class="dropdown-item" href="#">Hồ sơ</a></li>
-            <li><a class="dropdown-item" href="#">Nâng cấp lên Premium</a></li>
+        <ul class="dropdown-menu dropdown-menu-dark"style="">
+            <li><a class="dropdown-item " href="../view/account/overview.php">Tài khoản</a></li>
+            <li><a class="dropdown-item " href="#">Hồ sơ</a></li>
+            <li><a class="dropdown-item " href="#">Nâng cấp lên Premium</a></li>
             <li><a class="dropdown-item" href="../controller/controll-logout.php">Đăng xuất</a></li>
         </ul>
     
@@ -35,6 +35,6 @@
 
     ?>
     </div>
-</div>
+
 </body>
 </html>

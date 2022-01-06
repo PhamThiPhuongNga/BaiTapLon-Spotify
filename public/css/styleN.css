@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 body{
+    /* background-color: rgb(22, 22, 22); */
     padding:0;
     border:0;
     font-family: spotify-circular, Helvetica, Arial, sans-serif;
@@ -89,7 +90,6 @@ body{
     height: 40px;
     width: 250px;
     border-radius: 20px;
-    margin: 10px;
     font-size: 15px;
     color: white;
 }
@@ -133,7 +133,7 @@ body{
     margin-left: 250px;
     background-color: rgb(22, 22, 22);
     float: left;
-    width: 100%;
+    /* width: 100%; */
 }
 .dropdown-item:active{
     background-color: gray;
@@ -428,10 +428,9 @@ body{
 }
 .font{
     font-size: 12px;
-    font-size: 400;
-    color: rgb(114, 114, 114);
+    color: var(--text-color);
 }
-.text-co-link:hover{
+.sty-icon:hover,.text-co-link:hover{
     color: var(--green-color);
 }
 .language{
@@ -457,6 +456,7 @@ body{
     color: var(--text-color);
     font-size: 25px;
     justify-content: center;
+    padding-top: 10px;
 }
 .kc-ic{
     margin-right: 15px;
@@ -1186,14 +1186,43 @@ form div i {
 /*===========end register========= */
 
 /*css for acount */
-
-.border-acc-bottom{
-    border-bottom: 1px solid #837676;
-}
-
+    .ff-title{
+        font-family:spotify-circular, Helvetica, Arial, sans-serif;
+        font-size: 48px;
+    }
+    .border-acc-bottom{
+        border-bottom: 1px solid #837676;
+    }
+    .border-acc-bottom:hover{
+        border-left: 6px solid var(--green-color);
+    }
+    li>a.dropdown-item:active    {
+        background-color: #2a2f30;
+    }
+    a#dropdownMenuLink {
+        border-radius: 30px;
+    }
+    .main-acc-right{
+        width: 75%;
+        background-color:white;;
+    }
+    .main-acc-left{
+        width: 25%;
+    }
 /* enr css for account */
 
 
 
 
 /* =========================================================================== */
+/*======= admin======== */
+.banner-left-ad{
+    background-color: rgb(50, 50, 139);
+}
+.content-right-ad{
+    width: 100%;
+}
+.main-add{
+    height: 100%;
+}
+/*=======end  admin======== */

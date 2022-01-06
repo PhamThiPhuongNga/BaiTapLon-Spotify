@@ -4,10 +4,13 @@
                 <div class="row">
                     <div class="col-md-2">
                         <div class=" d-flex">
-                            <a class="nav-item-logo" href="#"><img src="public/img/Logo/LogoSpotify.PNG" alt="Logo Spotify"
-                                    width="150px"></a>
-                            <!-- <i class="material-icon fab fa-spotify fs-1 text-light "></i>
-                            <p><span class="text-lightt fs-4 mauchu"> Spotify</span></p> -->
+                            <a class="nav-item-logo d-flex nav-linkk" href="../../../site/view/index.php">
+                                <!-- <img src="public/img/Logo/LogoSpotify.PNG" alt="Logo Spotify"
+                                    width="150px"></a> -->
+                                    <div class="d-flex">
+                                        <i class="material-icon fab fa-spotify fs-1 text-light "></i>
+                                        <p class="text-light fs-4 "style="padding-top:10px"> Spotify</p></a>
+                                    </div>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -42,20 +45,20 @@
                             <div class="roww">
                                 <li class="svelte-1ad7r0v kc-ic">
                                     <a href="https://instagram.com/spotify" title="Instagram"
-                                        class=" sty-icon text-co-link">
-                                        <span aria-label="Instagram" class="bi bi-instagram mh-ft "></span>
+                                        class="  text-co-link">
+                                        <p aria-label="Instagram" class="bi bi-instagram sty-icon "></p>
                                     </a>
                                 </li>
                                 <li class="svelte-1ad7r0v kc-ic">
                                     <a href="https://twitter.com/spotify" title="Twitter"
-                                        class="sty-icon text-co-link ">
-                                        <span role="img" aria-label="Twitter" class="bi bi-twitter"></span>
+                                        class=" text-co-link ">
+                                        <p aria-label="Twitter" class="bi bi-twitter sty-icon"></p>
                                     </a>
                                 </li>
                                 <li class="svelte-1ad7r0v">
                                     <a href="https://www.facebook.com/Spotify" title="Facebook"
-                                        class="sty-icon text-co-link  ">
-                                        <span role="img" aria-label="Facebook" class="bi bi-facebook "></span>
+                                        class=" text-co-link  ">
+                                        <p aria-label="Facebook" class="bi bi-facebook sty-icon"></p>
                                     </a>
                                 </li>
                             </div>
@@ -66,7 +69,7 @@
                     <div class="lang-right">
                         <div class="roww font">
                             <i class="bi bi-globe"></i>
-                            <span>Việt Nam (Tiếng việt)</span>
+                            <p>Việt Nam (Tiếng việt)</p>
                         </div>
                     </div>
                 </div>
@@ -96,7 +99,7 @@
                                     cáo</a>
                             </li>
                         </div>
-                        <span class="font" style="padding:10px;">© 2021 Spotify AB</span>
+                        <p class="font" style="padding:10px;">© 2021 Spotify AB</p>
                     </div>
                 </div>
             </div>

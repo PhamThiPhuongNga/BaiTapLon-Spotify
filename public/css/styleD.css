@@ -101,7 +101,7 @@ body{
     color: #fff;
     background-color: #333333;
 }
-a.dropdown-item:hover {
+li>a.dropdown-item:active {
     background-color: #2a2f30;
 }
 a#dropdownMenuLink {
