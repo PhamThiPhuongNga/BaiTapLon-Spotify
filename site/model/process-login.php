@@ -7,7 +7,11 @@
     if(isset($_POST['btnlogin'])){
         $tenKH = $_POST['username'];
         $passKH = $_POST['password'];
-        $remem = $_POST['remember'];
+        // $remem = $_POST['remember'];
+        // if($remem == false)
+        // {
+        //     echo '<script type = text/javascript> alert("Hãy nhớ tôi!");</script>';
+        // }
         // Bước 01: Kết nối Database Server
         include("../../connect_db.php");
         // Bước 02: Thực hiện truy vấn
@@ -22,8 +26,11 @@
         
         if(mysqli_num_rows($result) > 0){
             // CẤP THẺ LÀM VIỆC
-             $_SESSION['isLoginOK'] = $tenKH;
-            header("location: ../view/index.php"); //Chuyển hướng về Trang quản trị
+            $idkh = $data['ten_nguoidung'];
+            $_SESSION['isLoginOK'] = $idkh;
+            header("location:../view/index.php");
+            //  $_SESSION['isLoginOK'] = $tenKH;
+            // header("location: ../view/index.php"); //Chuyển hướng về Trang quản trị
         }else{
             $error = "Bạn nhập thông tin Email hoặc mật khẩu chưa chính xác";
             header("location: ../view/login.php?error=$error"); //Chuyển hướng, hiển thị thông báo lỗi

@@ -209,7 +209,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                                 </div>
                                 <div class="btkRyt">
                                     <select id="month" name ="month" class = "bxcbdF ">
-                                        <option selected=""  value="<?php if(isset($thang)){echo $thang;}?>">Tháng</option
+                                        <option selected="" value="<?php if(isset($thang)){echo $thang;}?>"></option
                                         ><option value="01">Tháng 1</option>
                                         <option value="02">Tháng 2</option>
                                         <option value="03">Tháng 3</option>

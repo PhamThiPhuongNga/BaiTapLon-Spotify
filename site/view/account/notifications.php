@@ -1,3 +1,6 @@
+<head>
+    <title>Cài đặt thông báo - Spotify</title>
+</head>
 <?php include('../../../public/template/site/header-account.php');?>
 <style>
 .bl-4{
@@ -17,7 +20,7 @@
                                 Email
                             </label>
                         </div>
-                        <div class="col-md-1 ng-binding fs-6">
+                        <div class="col-md-2 ng-binding fs-6">
                             <label class="form-check-label" for="flexCheckDefault">
                                 Đẩy
                             </label>

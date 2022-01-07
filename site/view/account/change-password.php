@@ -1,3 +1,6 @@
+<head>
+    <title>Đổi mật khẩu của bạn - Spotify</title>
+</head>
 <?php include('../../../public/template/site/header-account.php');?>
 <style>
 .bl-3{

@@ -1,3 +1,6 @@
+<head>
+    <title>Cài đặt bảo mật - Spotify</title>
+</head>
 <?php include('../../../public/template/site/header-account.php');?>
 <style>
 .bl-5{

@@ -1,3 +1,6 @@
+<head>
+    <title>Appproved applications - Spotify</title>
+</head>
 <?php include('../../../public/template/site/header-account.php');?>
 <style>
 .bl-6{

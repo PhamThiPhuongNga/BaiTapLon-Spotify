@@ -977,7 +977,7 @@ form div i {
     padding: 14px;
     background-color: var(--background-base,#ffffff);
     box-shadow: inset 0 0 0 1px var(--essential-subdued,#878787);
-    color: var(--text-base,#000000);
+    color: var(--primary-color);
 }
 .dwjdDB {
     font-size: 14px;
@@ -1232,6 +1232,12 @@ form div i {
     .dropdown-itemm:hover{
         background-color: rgb(233, 232, 232);
         color:black;
+    }
+    .color-suscess{
+        background-color: var(--green-color);
+    }
+    .alert-sus{
+        height: 40px;
     }
 /* enr css for account */
 
