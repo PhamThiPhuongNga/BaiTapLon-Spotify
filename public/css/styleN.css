@@ -88,7 +88,6 @@ body{
 }
 .dropdown{
     height: 40px;
-    width: 250px;
     border-radius: 20px;
     font-size: 15px;
     color: white;
@@ -134,9 +133,6 @@ body{
     background-color: rgb(22, 22, 22);
     float: left;
     /* width: 100%; */
-}
-.dropdown-item:active{
-    background-color: gray;
 }
 .main-inner-vien{
     margin: 0px 30px 0 30px;
@@ -1200,18 +1196,40 @@ form div i {
     .border-acc-bottom:hover{
         border-left: 6px solid var(--green-color);
     }
-    li>a.dropdown-item:active    {
+    li>a.itemmm:active    {
         background-color: #2a2f30;
     }
+    li>a.itemmm:hover    {
+        width: 100%;
+    }
+
     a#dropdownMenuLink {
         border-radius: 30px;
     }
+
     .main-acc-right{
         width: 75%;
         background-color:white;;
     }
     .main-acc-left{
         width: 25%;
+    }
+    .dropdown-itemm{
+        display: block;
+        /* width: 100%; */
+        padding: 0.25rem 1rem;
+        clear: both;
+        font-weight: 400;
+        color: rgb(33 37 41);
+        text-align: inherit;
+        text-decoration: none;
+        white-space: nowrap;
+        background-color: rgb(0 0 0 / 0%);
+        border: 0;
+    }
+    .dropdown-itemm:hover{
+        background-color: rgb(233, 232, 232);
+        color:black;
     }
 /* enr css for account */
 
@@ -1223,10 +1241,28 @@ form div i {
 .banner-left-ad{
     background-color: rgb(50, 50, 139);
 }
-.content-right-ad{
-    width: 100%;
-}
 .main-add{
     height: 100%;
+}
+.sticky-footer{
+    /* z-index: 10; */
+    position: relative;
+    bottom: 0;
+}
+.containerrr{
+    margin: 30px;
+}
+.link-mananger{
+    height: 50px;
+}
+.link-mananger:hover{
+    background-color: rgb(65, 65, 65);
+}
+.kcvien{
+    padding-bottom: 30px;
+}
+.text-gr{
+    color: gray;
+    font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 /*=======end  admin======== */

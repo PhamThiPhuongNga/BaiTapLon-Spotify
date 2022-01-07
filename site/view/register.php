@@ -3,12 +3,6 @@
 if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nút SUBMIT chưa và đã nhập dữ liệu Email chưa
 {
     // B1. Gọi lại cái đoạn kết nối DB Server
-    require "../../connect_db.php";
-
-    // B2. Thực hiện truy vấn
-    $result = mysqli_query($conn,"SELECT * FROM nguoidung WHERE email='" . $_POST['email'] . "'");
-
-    $token = md5($_POST['email']).rand(10,9999); //Sử dụng giải thuật md5 để sinh ra chuỗi ngẫu nhiên được băm
     // echo $token;
     // Lưu lại thông tin đăng kí vào CSDL (Dữ liệu lấy từ index.php [FORM] gửi sang)
     $email  = $_POST['email'];
@@ -48,11 +42,19 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
         $err['gender'] = ' x Bạn chưa chọn giơi tính';
     }
 // B3. Xử lý kết quả
-    elseif(mysqli_num_rows($result) > 0) //Kiểm tra Email chưa được dùng
+    // if(mysqli_num_rows($result) > 0) //Kiểm tra Email chưa được dùng
+    // {
+    //     $err['emaill'] = ' x Email đã tồn tại';
+    // }
+    require "../../connect_db.php";
+
+        // B2. Thực hiện truy vấn
+    $result = mysqli_query($conn,"SELECT * FROM nguoidung WHERE email='" . $_POST['email'] . "'");
+    if(mysqli_num_rows($result) <= 0)
     {
-        $err['emaill'] = ' x Email đã tồn tại';
-    }else
-    {
+        
+    
+        $token = md5($_POST['email']).rand(10,9999); //Sử dụng giải thuật md5 để sinh ra chuỗi ngẫu nhiên được băm
         $sql  = "INSERT INTO nguoidung(ten_nguoidung,ngay,thang,nam, email,matkhau,gioitinh ,quoctich,email_verification_link ) VALUES('$name','$ngay','$thang','$nam', '$email','$pass','$gioitinh','Việt Nam','$token')";
         // Ra lệnh lưu vào CSDL
         mysqli_query($conn, $sql);
@@ -70,16 +72,14 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
         }else{
             $err= "Xin lỗi. Email chưa được gửi đi. Vui lòng kiểm tra lại thông tin Đăng kí tài khoản";
             header("location:../view/404.php?err=$err");
-            // echo "Xin lỗi. Email chưa được gửi đi. Vui lòng kiểm tra lại thông tin Đăng kí tài khoản";
         }
         
     }
+    else{
+        $err['emaill'] = ' x Email đã tồn tại';
+    }
         
 }
-// else{
-//     echo '<script type="text/javascript">alert("Vui lòng nhập đầy đủ thông tin")</script>';
-    
-// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +87,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng nhập - Spotify</title>
+    <title>Đăng ký - Spotify</title>
     <link rel="icon" href="../../public/img/Logo/imageslogo.png" type="image/png">
 
     <link rel="stylesheet" href="../../public/css/styleN.css">
@@ -144,8 +144,8 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                      <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i> 
                     <div class="error"> 
-                        <?php if(isset($err['email'])){ echo(isset($err['email'])?$err['email']:'');}else
-                        echo (isset($err['emaill'])?$err['emaill']:'')?>
+                        <?php if(isset($err['email'])){ echo(isset($err['email'])?$err['email']:'');}else{
+                        if(isset($err['emaill'])){ echo(isset($err['emaill'])?$err['emaill']:'');}}?>
                     </div>
                     <a href="" class="jGldrj dwjdDB">Dùng số điện thoại.</a>
                 </div>

@@ -1,6 +1,4 @@
 <?php
-// $username   = 'kitudu99@gmail.com';
-// $password   ='pjsudtgltsjyumgh';
 
 // Thư viện xử lý Gửi nhận Email: phpMailer, sendMail
 // 1. Khai báo thư viện Send Mail
@@ -8,16 +6,18 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
+require 'PHPmailer/Exception.php';
+require 'PHPmailer/OAuth.php';
+require 'PHPmailer/PHPMailer.php';
+require 'PHPmailer/POP3.php';
+require 'PHPmailer/SMTP.php';
 
 // 2. Sử dụng thư viện này để gửi Email (localhóst) tới 1 tài khoản Email bất kì
 
 function sendEmailForAccountActive($email, $link){
     //Create an instance; passing `true` enables exceptions
-    global $username;
-    global $password;
+    // global $username;
+    // global $password;
     $mail = new PHPMailer(true);
 
     try {
