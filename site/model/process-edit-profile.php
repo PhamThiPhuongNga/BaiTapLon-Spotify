@@ -7,7 +7,7 @@
     $Thang = $_POST['month'];
     $Nam = $_POST['txtNam'];
     $Gioitinh = $_POST['gender'];
-    $Quoctich = $_POST['country'];
+    $Quoctich = $_POST['country'];  
 
     // Bước 01: Kết nối Database Server
     include('../../connect_db.php');

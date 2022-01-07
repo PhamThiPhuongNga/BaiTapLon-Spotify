@@ -29,7 +29,7 @@
                     </div>";
                 }
                 ?>
-                <form action="../../../site/model/process-edit-profile.php" method="post">
+                <form action="../../../site/controller/controll-edit-profile.php" method="post">
                     <div class="form-group mb-3">
                         <label class="biNheR" for="txtHoTen">Họ và tên</label>
                         <input type="text" value="<?php echo $row['ten_nguoidung'];?>" class="hUAscM" id="txtHoTen" name="txtHoTen" placeholder="Nhập họ tên">

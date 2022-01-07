@@ -39,16 +39,21 @@
                                     <div class="text-center">
                                         <h1 class="h4  mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <form class="user" method="post">
                                         <div class="form-group mb-3">
-                                            <input type="email" name= "email"class="form-control form-control-user "
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                            <input type="text" name= "name"class="form-control form-control-user "
+                                                id="exampleInputEmail" aria-describedby="namelHelp"
+                                                placeholder="Enter Name...">
                                         </div>
                                         <div class="form-group mb-3">
                                             <input type="password" name="password" class="form-control form-control-user"
                                                 id="exampleInputPassword" placeholder="Password">
                                         </div>
+                                        <?php 
+                                            if(isset($_GET['error'])){
+                                            echo "<h6 class=''style='color:red;'>{$_GET['error']}</h6>";
+                                            }
+                                        ?>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" name="remember" class="custom-control-input" id="customCheck">
@@ -56,7 +61,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="admin.php" class="btn btn-primary form-control-user mb-3 ">
+                                        <a href="../../admin/controller/controll-login-admin.php" class="btn btn-primary form-control-user mb-3 ">
                                             Login
                                         </a>
                                         <hr>

@@ -11,18 +11,19 @@
                 <form action="">
                     <div class="form-group mb-3">
                         <label class="biNheR"for="formGroupExampleInput">Mật khẩu hiện nay</label>
-                        <input type="text" class="hUAscM " id="formGroupExampleInput" placeholder="">
+                        <input type="password" class="hUAscM " id="formGroupExampleInput" placeholder="">
                     </div>
                     <div class="form-group mb-3">
                         <label class="biNheR" for="formGroupExampleInput">Mật khẩu mới</label>
-                        <input type="text" class="hUAscM" id="formGroupExampleInput" placeholder="">
+                        <input type="password" class="hUAscM" id="formGroupExampleInput" placeholder="">
                     </div>
                     <div class="form-group mb-3">
                         <label class="biNheR" for="formGroupExampleInput">Lặp lại mật khẩu mới</label>
-                        <input type="text" class="hUAscM" id="formGroupExampleInput" placeholder="">
+                        <input type="password" class="hUAscM" id="formGroupExampleInput" placeholder="">
                     </div>
-
-                    <button class="btn btn-success mt-3" type="submit">Cài đặt mật khẩu mới</button>
+                    <div class="d-grid  gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-success mt-3 " type="submit">Cài đặt mật khẩu mới</button>
+                    </div>
                 </form>
             </div>
 
