@@ -1,5 +1,8 @@
-*{
-    box-sizing: border-box;
+
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: inherit; */
 }
 body{
     /* background-color: rgb(22, 22, 22); */
@@ -87,7 +90,6 @@ body{
     font-weight: 700;
 }
 .dropdown{
-    height: 40px;
     border-radius: 20px;
     font-size: 15px;
     color: white;
@@ -334,7 +336,7 @@ body{
   * {
     padding: 0;
     margin: 0;
-    box-sizing: inherit;
+    /* box-sizing: inherit; */
   }
   .player {
     position: relative;
@@ -1259,10 +1261,37 @@ form div i {
     background-color: rgb(65, 65, 65);
 }
 .kcvien{
-    padding-bottom: 30px;
+    padding: 0px 150px 30px 150px;
 }
 .text-gr{
     color: gray;
-    font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    /* font-family: Nunito,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
 }
+.form-control-user{
+    border-radius:10rem;
+    padding:0.7rem 0.7rem;
+    display: block;
+    padding-right:0px;
+}
+.bg-login-image {
+    background: url(https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=800&ixid=MnwxfDB8MXxyYW5kb218MHx8fHx8fHx8MTY0MDM4NTY1Mw&ixlib=rb-1.2.1&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=600);
+    background-position: center;
+    background-size: cover;
+}
+ .img-profile {
+    height: 2rem;
+    width: 2rem;
+}
+.rounded-circle {
+    border-radius: 50%!important;
+}
+div.dataTables_wrapper div.dataTables_length select {
+    width: auto;
+    display: inline-block;
+}
+
+/* @media (min-width: 992px){
+.d-lg-block {
+    display: block!important;
+}} */
 /*=======end  admin======== */

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin- Spotify</title>
-    <link rel="icon" href="../../public/img/Logo/imageslogo.png" type="image/png">
+    <link rel="icon" href="../../../public/img/Logo/imageslogo.png" type="image/png">
 
     
     <!-- css bootstrap -->
@@ -15,31 +15,31 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../../public/css/styleN.css">
+    <link rel="stylesheet" href="../../../public/css/styleN.css">
 </head>
 <body>
     <div class="roww">
         <div class="col-md-2">
             <div class="banner-left main-add ">
                 <div class="logo-banner">
-                    <a class="nav-item-logo" href="#"><img src="../../public/img/Logo/LogoSpotify.PNG" alt="Logo Spotify" width="170px"></a>
+                    <a class="nav-item-logo" href="#"><img src="../../../public/img/Logo/LogoSpotify.PNG" alt="Logo Spotify" width="170px"></a>
                 </div>
                 <div class="contain-ban">
                     <ul class="nav flex-column">
-                        <li class="nav-item roww link-mananger">
-                            <i class="material-icon bi bi-person pt-1"></i> 
-                            <a class="nav-linkk pt-3"href="index.php">Người dùng</a>
+                        <li class="nav-item roww link-mananger bnn-1">
+                            <i class="material-icon bi bi-person pt-1 "></i> 
+                            <a class="nav-linkk pt-3"href="">Người dùng</a>
                         </li>
-                        <li class="nav-item roww link-mananger">
-                            <i class="material-icon bi bi-file-earmark-music pt-1"></i>
-                            <a class="nav-linkk pt-3" href="search.php">Bài hát</a>
+                        <li class="nav-item roww link-mananger bnn-2">
+                            <i class="material-icon bi bi-file-earmark-music pt-1 "></i>
+                            <a class="nav-linkk pt-3" href="">Bài hát</a>
                         </li>
-                        <li class="nav-item roww link-mananger">
-                            <i class="material-icon bi bi-headset pt-1"></i>
+                        <li class="nav-item roww link-mananger bnn-3">
+                            <i class="material-icon bi bi-headset pt-1 "></i>
                             <a class="nav-linkk" href="#">Nghệ sĩ</a>
                         </li>
-                        <li class="nav-item roww link-mananger">
-                            <i class="material-icon bi bi-music-note-list pt-1"></i>
+                        <li class="nav-item roww link-mananger bnn-4">
+                            <i class="material-icon bi bi-music-note-list pt-1 "></i>
                             <a class="nav-linkk pt-3"href="#">Thể loại</a>
                         </li>
                         <li class="nav-item roww link-mananger">
@@ -58,16 +58,16 @@
             </div>
         </div>
         <div class="col-md-10 content-right-ad ">
-            <div class=" shadow p-4 mb-5 bg-body rounded">
+            <div class=" shadow p-4 mb-2 bg-body rounded">
                 <div class="space">
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                     <div class="nav-item dropdown bg-light">
-                        <a class="nav-linkk dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Phạm Thị Phương Nga</span>
-                        <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                        <a class="nav-link text-dark dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class=" d-none d-lg-inline text-dark-500 small">Phạm Thị Phương Nga</span>
+                        <img class="img-profile rounded-circle" src="../../../public/img/anh-mang-dep-nhat-24.jpg">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown"style="">
                             <li><a class="dropdown-itemm" href="#"> <i class=" material-icon fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -83,6 +83,5 @@
                     </div>
                 </div>
             </div>
-            <div class="containerrr shadow rounded">
-                <div class="containerrr">
+           
                     

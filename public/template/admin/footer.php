@@ -1,6 +1,3 @@
-            </div>
-               
-        </div>   
         <footer class="sticky-footer bg-white ">
             <div class=" shadow p-4  bg-body rounded">
                 <div class="copyright text-center">
