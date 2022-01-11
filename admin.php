@@ -70,19 +70,21 @@
             <div class="containerrr">
                 <!-- <h1 class="position-absolute top-50 start-50 translate-middle">Đăng nhập ngay<a href="./admin/view/login-admin.php">Click Here</a>để đến trang Admin của Spotify</h1> -->
                 <div id="wrapper">
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
-                <div class="container-fluid">
-                    <div class="text-center">
-                        <div class="errorr mx-auto" data-text="404" style=" color: rgb(90 92 105);
-    font-size: 7rem;
-    position: relative;
-    line-height: 1;
-    width: 12.5rem;
-    margin-top:50px;">404</div>
-                        <p class="lead text-secondary-800 mb-5">Page Not Found</p>
-                        <p class=" text-danger mb-0">ĐĂNG NHẬP ngay để đến trang Admin của spotify</p>
-                        <a href="./admin/view/login-admin.php">&larr; To Page Login</a>
+                    <div id="content-wrapper" class="d-flex flex-column">
+                        <div id="content">
+                            <div class="container-fluid">
+                                <div class="text-center">
+                                    <div class="errorr mx-auto" data-text="404" style=" color: rgb(90 92 105);
+                font-size: 7rem;
+                position: relative;
+                line-height: 1;
+                width: 12.5rem;
+                margin-top:50px;">404</div>
+                                    <p class="lead text-secondary-800 mb-5">Page Not Found</p>
+                                    <p class=" text-danger mb-0">ĐĂNG NHẬP ngay để đến trang Admin của spotify</p>
+                                    <a href="./admin/view/login-admin.php">&larr; To Page Login</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

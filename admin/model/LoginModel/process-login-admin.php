@@ -8,9 +8,9 @@
         $tenKH = $_POST['name'];
         $passKH = $_POST['password'];
         
-        include("../../connect_db.php");
+        include("../../../connect_db.php");
         // Bước 02: Thực hiện truy vấn
-        $sql = "SELECT * FROM `admin` WHERE name ='$tenKH' and password ='$passKH';";
+        $sql = "SELECT * FROM `user_admin` WHERE name_ad ='$tenKH' and matkhau_ad ='$passKH'";
         // Ở đây còn có các vấn đề về tính hợp lệ dữ liệu nhập vào FORM
         // Nghiêm trọng: lỗi SQL Injection
 
@@ -19,14 +19,14 @@
         
         if(mysqli_num_rows($result) > 0){
             // CẤP THẺ LÀM VIỆC
-            $idkh = $data['name'];
+            $idkh = $data['name_ad'];
             $_SESSION['isLoginOK'] = $idkh;
-            header("location:../../admin/view/Users/table-User.php");
+            header("location:../../../admin/view/Users/table-User.php");
             //  $_SESSION['isLoginOK'] = $tenKH;
             // header("location: ../view/index.php"); //Chuyển hướng về Trang quản trị
         }else{
             $error = "Bạn nhập thông tin đăng nhập chưa chính xác";
-            header("location: ../../admin/view/login-admin.php?error=$error"); //Chuyển hướng, hiển thị thông báo lỗi
+            header("location: ../../../admin/view/login/login-admin.php?error=$error"); //Chuyển hướng, hiển thị thông báo lỗi
         }
 
         // Bước 03: Đóng kết nối

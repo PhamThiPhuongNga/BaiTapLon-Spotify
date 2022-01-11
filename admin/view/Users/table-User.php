@@ -2,7 +2,7 @@
 //Kiểm tra thẻ làm việc
     session_start();
     if(!isset($_SESSION['isLoginOK'])){
-        header("location: ../login-admin.php");
+        header("location: ../../../admin/controller/controll-login-admin.php");
     }
 ?>
 <?php include('../../../public/template/admin/header.php');?>
@@ -10,6 +10,7 @@
     .bnn-1{
         background-color: rgb(65, 65, 65);
     }
+    
 </style>
 <div id="page-top">
     <!-- Page Wrapper -->
@@ -17,9 +18,25 @@
         <div id="content-wrapper" class="d-flex flex-column text-muted">
             <div id="content">
                 <div class="containerrr">
+                    <?php 
+                        if(isset($_GET['suscces'])){
+                        echo
+                        "<div class='bXxIjv '>
+                            <div class='hUAscM color-suscess tbao' style='background-color: var(--green-color);border:0;'>
+                                <label for='password' class='hyIrKV'><i class='material-icon text-dark bi bi-check2-circle'></i> &nbsp;&nbsp; {$_GET['suscces']}</label>
+                            </div>
+                        </div>";}
+                        if(isset($_GET['error'])){
+                            echo
+                            "<div class='bXxIjv '>
+                                <div class='hUAscM  tbao' style='background-color: red;color:white;border:0;'>
+                                    <label  class='hyIrKV'><i class='material-icon text-dark bi bi-x'></i> &nbsp;&nbsp; {$_GET['error']}</label>
+                                </div>
+                            </div>";}
+                    ?>
                     <div class="d-grid gap-2 justify-content-md-end">
                         <a href="addUser.php">
-                            <button class="btn btn-primary fs-4" type="button">+</button>
+                            <button class="btn btn-primary fs-6" type="button">Thêm mới +</button>
                         </a>
                     </div>
                     <h1 class="h3 mb-2 text-gray-800">Tables</h1>
@@ -68,6 +85,8 @@
                                                         <th scope="col">Gender</th>
                                                         <th scope="col">Country</th>
                                                         <th scope="col">Status</th>
+                                                        <th scope="col">Detail</th>
+                                                        <th scope="col">Delete</th>
                                                     </tr>
                                                 </thead>
                                                 <tfoot>
@@ -79,23 +98,32 @@
                                                         <th rowspan="1" colspan="1">Password</th>
                                                         <th rowspan="1" colspan="1">Date of birth</th>
                                                         <th rowspan="1" colspan="1">Gender</th>
-                                                        <th rowspan="1" colspan="1">Country</th>
-                                                        <th rowspan="1" colspan="1">Status</th>
+                                                        <th rowspan="1" colspan="1">Detail</th>
+                                                        <th rowspan="1" colspan="1">Delete</th>
                                                     </tr>
                                                 </tfoot>
                                                 <tbody>
                                                    <!-- Vùng này là Dữ liệu cần lặp lại hiển thị từ CSDL -->
                                                     <?php
                                                        include('../../../connect_db.php');
+                                                       $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:10;
+                                                       $current_page = !empty($_GET['page'])?$_GET['page']:1; //Trang hiện tại
+                                                       $offset = ($current_page - 1) * $item_per_page;
                                                         // Bước 02: Thực hiện truy vấn
                                                         $sql = "SELECT * FROM nguoidung";
-                                                        $result = mysqli_query($conn,$sql);
+                                                        $products = mysqli_query($conn, "SELECT * FROM `nguoidung` ORDER BY `ma_nguoidung` ASC  LIMIT " . $item_per_page . " OFFSET " . $offset);
+                                                        $totalRecords = mysqli_query($conn, "SELECT * FROM `nguoidung`");
+                                                        $totalRecords = $totalRecords->num_rows;
+                                                        $totalPages = ceil($totalRecords / $item_per_page);
+                                                        // $result = mysqli_query($conn,$sql);
                                                         // Bước 03: Xử lý kết quả truy vấn
-                                                        if(mysqli_num_rows($result) > 0){
-                                                            while($row = mysqli_fetch_assoc($result)){
+                                                        if(mysqli_num_rows($products) > 0){
+                                                            $count=1;
+                                                            while($row = mysqli_fetch_array($products)){
+                                                               
                                                     ?>
                                                                 <tr>
-                                                                    <th scope="row">1</th>
+                                                                    <th scope="row"><?php echo $count++; ?></th>
                                                                     <td><?php echo $row['ma_nguoidung']; ?></td>
                                                                     <td><?php echo $row['ten_nguoidung']; ?></td>
                                                                     <td><?php echo $row['email']; ?></td>
@@ -104,6 +132,8 @@
                                                                     <td><?php echo $row['gioitinh']; ?></td>
                                                                     <td><?php echo $row['quoctich']; ?></td>
                                                                     <td><?php echo $row['status']; ?></td>
+                                                                    <td><a href="detailUser.php?id=<?php echo $row['ma_nguoidung']; ?>"><i class="bi bi-display"></i></a></td>
+                                                                    <td><a href="../../../admin/model/UsersModel/deleteUser-model.php?id=<?php echo $row['ma_nguoidung']; ?>"><i class="bi bi-trash"></i></a></td>
                                                                 </tr>
                                                     <?php
                                                             }
@@ -120,32 +150,10 @@
                                         </div>
                                         <div class="col-sm-12 col-md-7">
                                             <div class="dataTables_paginate paging_simple_numbers float-end" id="dataTable_paginate">
-                                                <ul class="pagination">
-                                                    <li class="paginate_button page-item previous disabled" id="dataTable_previous">
-                                                        <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
-                                                    </li>
-                                                    <li class="paginate_button page-item active">
-                                                        <a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
-                                                    </li>
-                                                    <li class="paginate_button page-item ">
-                                                        <a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">2</a>
-                                                    </li>
-                                                    <li class="paginate_button page-item ">
-                                                        <a href="#" aria-controls="dataTable" data-dt-idx="3" tabindex="0" class="page-link">3</a>
-                                                    </li>
-                                                    <li class="paginate_button page-item ">
-                                                        <a href="#" aria-controls="dataTable" data-dt-idx="4" tabindex="0" class="page-link">4</a>
-                                                    </li>
-                                                    <li class="paginate_button page-item ">
-                                                        <a href="#" aria-controls="dataTable" data-dt-idx="5" tabindex="0" class="page-link">5</a>
-                                                    </li>
-                                                    <li class="paginate_button page-item ">
-                                                        <a href="#" aria-controls="dataTable" data-dt-idx="6" tabindex="0" class="page-link">6</a>
-                                                    </li>
-                                                    <li class="paginate_button page-item next" id="dataTable_next">
-                                                        <a href="#" aria-controls="dataTable" data-dt-idx="7" tabindex="0" class="page-link">Next</a>
-                                                    </li>
-                                                </ul>
+                                                <?php
+                                                include '../../../admin/model/pagination.php';
+                                                ?>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -159,30 +167,3 @@
 
 <?php include('../../../public/template/admin/footer.php');?>
 
-<!-- <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-</a>
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-     -->
-
-</body>
-
-</html>

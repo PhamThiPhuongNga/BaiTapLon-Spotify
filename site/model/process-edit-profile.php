@@ -1,6 +1,9 @@
 <?php
- if(isset($_SESSION['isLoginOK']) && isset($_POST['btnEditProfile'])){
+//  if(isset($_SESSION['isLoginOK']) && isset($_POST['btnEditProfile'])){
     // Xử lý giá trị GỬI TỚI
+    // if(isset($_SESSION['isLoginOK'])){
+    $id = $_POST['txtID'];
+    $na=$_SESSION['isLoginOK'];
     $Hoten = $_POST['txtHoten'];
     $Email = $_POST['txtEmail'];
     $Ngay = $_POST['txtNgay'];
@@ -14,7 +17,7 @@
     // Bước 02: Thực hiện truy vấn
     $sql = "UPDATE `nguoidung` SET `ten_nguoidung`='$Hoten',`ngay`='$Ngay',`thang`='$Thang',
     `nam`='$Nam',`email`='$Email',`gioitinh`='$Gioitinh',`quoctich`='$Quoctich'
-    where ten_nguoidung = '".$_SESSION['isLoginOK']."'";
+    where ma_nguoidung = '$id' and ten_nguoidung ='$Hoten'";
     // echo $sql;
 
     $ketqua = mysqli_query($conn,$sql);
@@ -24,9 +27,9 @@
         header("location:../../site/view/404.php?error=$err"); //Chuyển hướng lỗi
     }else{
         $suscces ="Đã lưu hồ sơ";
-        header("location:../../site/view/account/profile.php?suscces = $suscces"); //Chuyển hướng lại Trang Quản trị
+        header("location:../../site/view/account/profile.php?suscces=$suscces"); //Chuyển hướng lại Trang Quản trị
     }
     // Bước 03: Đóng kết nối
     mysqli_close($conn);
-}
+// }
 ?>

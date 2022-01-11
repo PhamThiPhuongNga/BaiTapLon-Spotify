@@ -1295,7 +1295,20 @@ div.dataTables_wrapper div.dataTables_length select {
     width: auto;
     display: inline-block;
 }
+.tbao{
+    /* width:100px;
+    height:100px; */
+    position:relative;
+    animation-name:dich_chuyen;
+    /* animation-iteration-count:infinite; */
+    animation-delay: 2s;
+    animation-duration: 30s;
+}
 
+@keyframes dich_chuyen {
+    0%   {top:0px;}
+    100%  {bottom:300px;}
+}
 /* @media (min-width: 992px){
 .d-lg-block {
     display: block!important;

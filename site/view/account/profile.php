@@ -15,6 +15,7 @@
         // Bước 03: Xử lý kết quả truy vấn
         if(mysqli_num_rows($resultt) > 0){
             while($row = mysqli_fetch_assoc($resultt)){
+               
 ?>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
             <div class="main-acc-right p-5"style="width:75%;background-color: white;">
@@ -28,8 +29,20 @@
                         </div>
                     </div>";
                 }
+                if(isset($_GET['error'])){
+                    echo
+                    "<div class='bXxIjv'>
+                        <div class='hUAscM color-error' style='background-color: red;border:0;'>
+                            <label  class='hyIrKV'><i class='material-icon text-dark bi bi-check2-circle'></i> &nbsp;&nbsp; {$_GET['error']}</label>
+                        </div>
+                    </div>";
+                }
                 ?>
                 <form action="../../../site/controller/controll-edit-profile.php" method="post">
+                    <div class="form-group mb-3 d-none">
+                        <label class="biNheR" for="txtID">ID</label>
+                        <input type="text" readonly value="<?php echo $row['ma_nguoidung'];?>" class="hUAscM" id="txtID" name="txtID" placeholder="">
+                    </div>
                     <div class="form-group mb-3">
                         <label class="biNheR" for="txtHoTen">Họ và tên</label>
                         <input type="text" value="<?php echo $row['ten_nguoidung'];?>" class="hUAscM" id="txtHoTen" name="txtHoTen" placeholder="Nhập họ tên">
@@ -39,7 +52,6 @@
                         <label  class="biNheR" for="txtEmail">Email</label>
                         <input type="text" value="<?php echo $row['email'];?>" class="hUAscM" id="txtEmail" name="txtEmail" placeholder="abc@gmail.com">
                     </div>
-
                     <!-- <div class="form-group mb-3">
                         <label  class="biNheR" for="txtMatkhau">Mật khẩu</label>
                         <input type="tel" class="hUAscM" id="txtMatkhau" name="txtMatkhau" placeholder="Nhập mật khẩu">
@@ -47,7 +59,7 @@
                     <div class="form-group mb-3 row">
                         <div class="col-md-4">
                             <label  class="biNheR" for="txtNgay">Ngày</label>
-                            <input type="number" value="<?php echo $row['ngay'];?>" class="hUAscM" min='1' max='30' id="txtNgay" name="txtNgay" placeholder="">
+                            <input type="number" value="<?php echo $row['ngay'];?>" class="hUAscM" min='1' max='31' id="txtNgay" name="txtNgay" placeholder="">
                         </div>
                         <div class="col-md-4">
                             <label  class="biNheR" for="txtThang">Tháng</label>
@@ -100,5 +112,3 @@
     </main>
 
 <?php include('../../../public/template/site/footer.php');?>
-</body>
-</html>

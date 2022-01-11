@@ -14,7 +14,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link href="../../public/css/styleN.css" rel="stylesheet">
+    <link href="../../../public/css/styleN.css" rel="stylesheet">
 
 </head>
 
@@ -39,7 +39,7 @@
                                     <div class="text-center">
                                         <h1 class="h4  mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user" method="post">
+                                    <form class="user" action="../../../admin/controller/controllerLogin/controll-login-admin.php"method="post">
                                         <div class="form-group mb-3">
                                             <input type="text" name= "name"class="form-control form-control-user "
                                                 id="exampleInputEmail" aria-describedby="namelHelp"
@@ -61,8 +61,9 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="../../admin/controller/controll-login-admin.php" class="btn btn-primary form-control-user mb-3 ">
-                                            Login
+
+                                        <a href="" ><button class="btn btn-primary form-control-user mb-3 " type="submit" name="loginadmin">
+                                        Login</button>
                                         </a>
                                         <hr>
                                         <a href="index.html" class="btn btn-google form-control-user bg-danger mb-3 ">

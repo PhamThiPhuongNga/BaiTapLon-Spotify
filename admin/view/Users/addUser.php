@@ -9,7 +9,15 @@
                         <div class="round shadow">
                             <div class="containerrr">
                                 <h5 class="text-center h3 pt-3 ">Thêm mới Tài khoản người dùng</h5>
-                                <form action="process-add-employee.php" method="post">
+                                <?php 
+                                    if(isset($_GET['error'])){
+                                        echo
+                                        "<div class='bXxIjv '>
+                                            <div class='hUAscM  tbao' style='background-color: red;color:white;border:0;'>
+                                                <label  class='hyIrKV'><i class='material-icon text-dark bi bi-x'></i> &nbsp;&nbsp; {$_GET['error']}</label>
+                                            </div>
+                                        </div>";}?>
+                                <form action="../../../admin/controller/controllerUsers/addUser-controller.php" method="post">
                                     <div class="form-group mb-3">
                                         <label class="" for="txtHoTen">Họ và tên</label>
                                         <input type="text" class="hUAscM" id="txtHoTen" name="txtHoTen" placeholder="Nhập họ tên">
@@ -34,7 +42,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <label for="txtThang">Tháng</label>
-                                            <select class="hUAscM" aria-label="Default select example">
+                                            <select class="hUAscM" name="txtThang"aria-label="Default select example">
                                                 <option selected>Tháng</option>
                                                 <option value="01">Tháng 1</option>
                                                 <option value="02">Tháng 2</option>
@@ -58,7 +66,7 @@
                                     <div class="form-group row">
                                         <div class="col-md-6">
                                             <label for="txtGioitinh">Giới tính</label>
-                                            <select class="hUAscM" name="gender"aria-label="Default select example">
+                                            <select class="hUAscM" name="txtGioitinh"aria-label="Default select example">
                                                 <option value="N/N" selected>N/N</option>
                                                 <option value="Nam">Nam</option>
                                                 <option value="Nữ">Nữ</option>
@@ -71,8 +79,7 @@
                                         
                                     </div>
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end p-3">
-                                        <a href="editUser.php" class="h"><button class="btn btn-primary me-md-2" type="button">Sửa</button></a>
-                                        <a href="deleteUser.php" class="h"><button class="btn btn-primary" type="button">Xóa</button></a>
+                                        <a href="../../../admin/controller/controllerUsers/addUser-controller.php" class="h"><button class="btn btn-primary me-md-2" type="submit" name="btnl">Lưu</button></a>
                                     </div>
                                 </form> 
                             </div> 
