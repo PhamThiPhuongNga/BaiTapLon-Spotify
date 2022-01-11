@@ -1,9 +1,9 @@
 <?php 
-//Kiểm tra thẻ làm việc
+// Kiểm tra thẻ làm việc
     session_start();
-    if(!isset($_SESSION['isLoginOK'])){
-        header("location: ../login-admin.php");
-    }
+    // if(!isset($_SESSION['isLoginOK'])){
+    //     header("location: ../login-admin.php");
+    // }
 ?>
 <?php include('../../../public/template/admin/header.php');?>
 <style>
@@ -155,7 +155,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
 
 <?php include('../../../public/template/admin/footer.php');?>
 

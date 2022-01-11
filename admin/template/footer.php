@@ -1,7 +1,6 @@
         <!-- <footer class="sticky-footer bg-white ">
             <div class=" shadow p-4  bg-body rounded">
-                <div class="copyright text-center">
-                    <span>Copyright © Your Website 2020</span>
+                <div class="copyright text-center"> 
                 </div>
             </div>
         </footer>  -->
