@@ -24,7 +24,7 @@
                                     <a href="https://www.spotify.com/purchase/offer/reusable-unique-hero-trial-3m?marketing-campaign-id=holiday-2021"
                                         tabindex="0" class="sty-btn">
                                         <div class=" fIsuJS inhoa irosrd">
-                                            <span>Nhận 3 tháng miễn phí</span>
+                                         <span>Nhận 3 tháng miễn phí</span>
                                         </div>
                                         <!-- <div class=" cIUEfL"></div> -->
                                     </a>

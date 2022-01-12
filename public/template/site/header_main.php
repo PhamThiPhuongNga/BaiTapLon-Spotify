@@ -26,26 +26,26 @@
                 </div>
                 <div class="contain-ban">
                     <ul class="nav flex-column">
-                        <li class="nav-item roww">
-                            <i class="material-icon bi bi-house-door"></i> 
+                        <li class="nav-item roww ql1">
+                            <i class="material-icon bi bi-house-door "></i> 
                             <a class="nav-linkk "href="index.php">Trang chủ</a>
                         </li>
-                        <li class="nav-item roww">
+                        <li class="nav-item roww ql2">
                             <i class="material-icon bi bi-search"></i>
                             <a class="nav-linkk" href="search.php">Tìm kiếm</a>
                         </li>
-                        <li class="nav-item roww">
+                        <li class="nav-item roww ql3">
                             <i class="material-icon bi bi-book"></i>
                             <a class="nav-linkk" href="#">Thư viện</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-linkk"></a>
                         </li>
-                        <li class="nav-item roww">
+                        <li class="nav-item roww ql4">
                             <i class="material-icon bi bi-plus-square"></i>
                             <a class="nav-linkk"href="#">Tạo playlist</a>
                         </li>
-                        <li class="nav-item roww">
+                        <li class="nav-item roww ql5">
                             <i class="material-icon bi bi-suit-heart"></i>
                             <a class="nav-linkk"href="#">Bài hát đã thích</a>
                         </li>

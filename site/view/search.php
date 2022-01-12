@@ -25,18 +25,6 @@
         </div>
     </div>
     <?php include("view-signin.php");?>
-    <!-- <div class="header-material space">
-        <div class=" dropdown space">
-            <i class="material-icon bi bi-person-circle"></i>
-            <a class="nav-linkk dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Phạm Thị Phương Nga</a>
-            <ul class="dropdown-menu mauchu"style="">
-                <li><a class="dropdown-item" href="#">Tài khoản</a></li>
-                <li><a class="dropdown-item" href="#">Hồ sơ</a></li>
-                <li><a class="dropdown-item" href="#">Nâng cấp lên Premium</a></li>
-                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
-            </ul>
-        </div>
-    </div> -->
 </div>        
 <div class="main">
     <div class="main-inner-vien">
@@ -47,11 +35,7 @@
             <div class="clear"></div>
             <div class="row">
             <?php 
-                $conn= mysqli_connect('localhost','root','','spotify');
-                if(!$conn)
-                {
-                    die('Kết nối thất bại');
-                }
+                include('../../connect_db.php');
                 $sql = "SELECT * FROM `categories`";
                 $result = mysqli_query($conn,$sql);
                 if(mysqli_num_rows($result) > 0){
@@ -59,7 +43,7 @@
             ?> 
                 
                     <div class="col-md-2 vien-item">
-                        <a href="<?php echo $row['link']?>">
+                        <a href="">
                             <div  class="image-content"style="background-color: <?php echo $row['maunen'] ?>;">
                                 <img src="<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
                                 <div class="caption mauchu">

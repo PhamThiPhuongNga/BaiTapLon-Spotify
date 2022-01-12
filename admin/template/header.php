@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,7 +65,12 @@
                 <a class="navbar-brand" href="#">Administration</a>
                     <div class="nav-item dropdown bg-light">
                         <a class="nav-link text-dark dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class=" d-none d-lg-inline text-dark-500 small">Phạm Thị Phương Nga</span>
+                        
+                            <?php
+                            if(isset($_SESSION['isLoginOK']))
+                            {
+                                echo " <span class=' d-none d-lg-inline text-dark-500 small'>".$_SESSION['isLoginOK']."</span>";          
+                            }?>
                         <img class="img-profile rounded-circle" src="../../public/img/anh-mang-dep-nhat-24.jpg">
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown"style="">
@@ -75,7 +81,7 @@
                             <li><a class="dropdown-itemm" href="#"> <i class=" material-icon fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Activity Log</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-itemm" href="#"> <i class=" material-icon fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                            <li><a class="dropdown-itemm" href="../../admin/controller/controllerLogin/controll-logout-admin.php"> <i class=" material-icon fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Logout</a></li>
                         </ul>
                     </div>
