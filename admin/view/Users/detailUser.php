@@ -1,4 +1,12 @@
+<?php 
+// Kiểm tra thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isLoginOK'])){
+        header("location: ../login/login-admin.php");
+    }
+?>
 <?php require_once('../../../public/template/admin/header.php');?>  
+
 <?php
     
     $ma = $_GET['id'];

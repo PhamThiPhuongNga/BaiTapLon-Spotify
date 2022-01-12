@@ -1,8 +1,13 @@
+<?php 
+// Kiểm tra thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isLoginOK'])){
+        header("location: ../login/login-admin.php");
+    }
+?>
 <?php
 
-    if(isset($_POST['ma_bh'])){
-        $ma_bh = $_POST['ma_bh'];
-    }
+
 
     if(isset($_POST['ten_bh'])){
         $ten_bh = $_POST['ten_bh'];
@@ -17,18 +22,16 @@
     $id_nghesi = $_POST['id_nghesi'];
 
     // b1: connect db
-    require_once "../../connect_db.php";
+    require_once "../../../connect_db.php";
     // b2: truy van
-    $sql = "UPDATE baihat SET  ten_bh= '$ten_bh', anh_bh = '$anh_bh', ngaythem = '$ngaythem' ,
-            quocgia= '$quocgia', link_bh = '$link_bh', id_theloai = '$id_theloai',
-            id_abum = '$id_abum', id_nghesi = '$id_nghesi'      
-            WHERE ma_bh =  '$ma_bh'   ";
+    $sql = "INSERT INTO baihat (ten_bh, anh_bh, ngaythem, quocgia, link_bh, id_theloai,id_abum, id_nghesi)
+     VALUES ('$ten_bh', '$anh_bh', '$ngaythem', '$quocgia', '$link_bh', '$id_theloai', '$id_abum', '$id_nghesi')";
     // echo $sql;
     $ketqua = mysqli_query($conn, $sql);
 
     // echo $ketqua;
     if(!$ketqua){
-        echo "chua update dc";
+        echo "lỗi, ko add đc gofy!";
     }else{
         header("location: index.php");
     }

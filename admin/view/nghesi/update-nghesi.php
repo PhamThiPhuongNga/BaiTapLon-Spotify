@@ -1,10 +1,17 @@
+<?php 
+// Kiểm tra thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isLoginOK'])){
+        header("location: ../login/login-admin.php");
+    }
+?>
 <?php
 
     $id = $_GET['id'];
     // echo $id;
 
     // b1: connect db
-    require_once "../../connect_db.php";
+    require_once "../../../connect_db.php";
 
     // b2: truy van
     $sql = "SELECT * FROM nghesi WHERE id_nghesi  = '$id'";
@@ -34,7 +41,7 @@
     <div class="wrapper"> -->
 
 <?php
-include "../template/header.php"
+include "../../../public/template/admin/header.php";
 ?>
         <div class="container">
             <div class="row">

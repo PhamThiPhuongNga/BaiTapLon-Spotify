@@ -2,7 +2,7 @@
 // Kiểm tra thẻ làm việc
     session_start();
     if(!isset($_SESSION['isLoginOK'])){
-        header("location: ../../../admin/controller/controll-login-admin.php");
+        header("location: ../login/login-admin.php");
     }
 ?>
 <?php include('../../../public/template/admin/header.php');?>
