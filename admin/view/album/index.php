@@ -1,3 +1,10 @@
+<?php 
+// Kiểm tra thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isLoginOK'])){
+        header("location: ../login/login-admin.php");
+    }
+?>
 <!-- <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +24,7 @@
 <div class="wrapper" >
          -->
 <?php
-include "../template/header.php";
+include "../../../public/template/admin/header.php";
 ?>
     <div class="container">
             <div class="row">
@@ -44,13 +51,29 @@ include "../template/header.php";
                                     <?php
                                     
                                     // b1: include db
-                                    require_once "../../connect_db.php";
+                                    require_once "../../../connect_db.php";
                                     // b2: Truy van
-                                    $sql = "SELECT ab.ma_ab, ab.ten_ab, ab.anh_ab, ns.ten_nghesi 
-                                            FROM album ab, nghesi ns  
-                                            WHERE ab.id_nghesi  = ns.id_nghesi 
-                                            ORDER BY ma_ab DESC ";
-                                    if($result = mysqli_query($conn, $sql)){
+
+                                    $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:5;
+                                    $current_page = !empty($_GET['page'])?$_GET['page']:1; //Trang hiện tại
+                                    $offset = ($current_page - 1) * $item_per_page;
+                                    // Bước 02: Thực hiện truy vấn
+                                    // $sql = "SELECT * FROM nguoidung";
+                                    $result = mysqli_query($conn, "SELECT ab.ma_ab, ab.ten_ab, ab.anh_ab, ns.ten_nghesi 
+                                                FROM album ab, nghesi ns  
+                                                WHERE ab.id_nghesi  = ns.id_nghesi 
+                                                ORDER BY ma_ab DESC
+                                                LIMIT " . $item_per_page . " OFFSET " . $offset);
+                                    $totalRecords = mysqli_query($conn, "SELECT * FROM album ab, nghesi ns
+                                                                        WHERE ab.id_nghesi  = ns.id_nghesi");
+                                    $totalRecords = $totalRecords->num_rows;
+                                    $totalPages = ceil($totalRecords / $item_per_page);
+                                    // echo $products;
+                                    // $sql = "SELECT ab.ma_ab, ab.ten_ab, ab.anh_ab, ns.ten_nghesi 
+                                    //         FROM album ab, nghesi ns  
+                                    //         WHERE ab.id_nghesi  = ns.id_nghesi 
+                                    //         ORDER BY ma_ab DESC ";
+                                    // if($result = mysqli_query($conn, $sql)){
                                     // b3: Xu ly ket qua truy van
                                         if(mysqli_num_rows($result)>0){
                                             $count=1;
@@ -73,9 +96,9 @@ include "../template/header.php";
                                         } else{
                                             echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
                                         } 
-                                    }else{
-                                        echo "Da xay ra su co";
-                                    }
+                                    // }else{
+                                    //     echo "Da xay ra su co";
+                                    // }
                                     
                                     mysqli_close($conn);
                                     ?>
@@ -84,6 +107,12 @@ include "../template/header.php";
                             </tbody>
                         </table>
                     </table>
+
+
+                    <?php
+                    include "../../model/pagination.php";
+                    ?>
+
                 </div>
             </div>
         </div>

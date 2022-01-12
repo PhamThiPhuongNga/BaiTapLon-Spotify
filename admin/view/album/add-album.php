@@ -1,6 +1,13 @@
+<?php 
+// Kiểm tra thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isLoginOK'])){
+        header("location: ../login/login-admin.php");
+    }
+?>
 <?php
 
-require_once "../../connect_db.php";
+require_once "../../../connect_db.php";
 
 
 ?>
@@ -19,7 +26,7 @@ require_once "../../connect_db.php";
          -->
 
 <?php
-include "../template/header.php"
+include "../../../public/template/admin/header.php";
 ?>
     <div class="container">
             <div class="row">

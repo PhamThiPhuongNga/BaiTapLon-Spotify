@@ -1,3 +1,10 @@
+<?php 
+// Kiểm tra thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isLoginOK'])){
+        header("location: ../login/login-admin.php");
+    }
+?>
 <?php
 
     if(isset($_POST['id_category'])){
@@ -12,7 +19,7 @@
     $maunen = $_POST['maunen'];
 
     // b1: connect db
-    require_once "../../connect_db.php";
+    require_once "../../../connect_db.php";
     // b2: truy van
     $sql = "UPDATE categories SET  ten= '$ten', anh = '$anh', maunen= '$maunen'  WHERE id_category =  '$id_category'   ";
     // echo $sql;
