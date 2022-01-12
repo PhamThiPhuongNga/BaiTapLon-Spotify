@@ -30,7 +30,7 @@
                     <i class="fas fa-chevron-circle-right fs-3 pl-5 myIconArrow"></i> -->
 
                     <li class="nav-item menu-list">
-                        <a class="nav-link  active text-light" aria-current="page" href="playlist.php">Playlist</a>
+                        <a class="nav-link   text-light" aria-current="page" href="playlist.php">Playlist</a>
                     </li>
                     <!-- <li class="nav-item ">
                         <a class="nav-link active text-light" href="podcasts.html">Postcast</a>
@@ -50,7 +50,7 @@
 <div class="main">
            
     <div class="main-inner-vien">
-        <div class="main-bottom-t">
+        <div class="main-bottom-t" style="background-color: #262134;">
                 <div class="container  ">
                     <div class="row ">
                         <div class="col-3 "><button class="btn-playlist align-items-center bg-dark">
@@ -60,7 +60,7 @@
                         <div class="col-9 p-5">
                             <p class="text-light">PLAYLIST</p>
                             <a href="" class="text-decoration-none link-light ">
-                                <h1 style="font-size: 6.0rem;">Playlist của tôi </h1>
+                                <h1 style="font-size: 6.0rem;">Bài hát đã thích</h1>
                             </a>
                             <p><a href="" class="text-decoration-none link-light a-cogach"> <?php echo $_SESSION['isLoginOK']; ?></a></p>
                         </div>

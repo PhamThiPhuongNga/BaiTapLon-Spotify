@@ -120,4 +120,4 @@
         
     </div>
 </div> 
-<?php include('template/footer_main.php');?>
+<?php include('../../public/template/site/footer_main.php');?>

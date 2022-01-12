@@ -6,13 +6,12 @@
                     <div class="container  ">
                         <div class="row ">
                             <div class="col-3 "><button class="btn-playlist align-items-center bg-dark">
-                                    <i class="material-icons my-icon-thuvien text-secondary">add_a_photo</i>
                                     <i class="bi bi-music-note-beamed my-icon-thuvien text-secondary"></i>
                                 </button></div>
                             <div class="col-9 p-5">
                                 <p>PLAYLIST</p>
                                 <a href="" class="text-decoration-none link-light ">
-                                    <h1 style="font-size: 6.0rem;">Playlist của tôi #1</h1>
+                                    <h1 style="font-size: 6.0rem;">Playlist của tôi</h1>
                                 </a>
                                 <p><a href="" class="text-decoration-none link-light a-cogach"> Duy Nguyễn</a></p>
                             </div>
