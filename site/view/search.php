@@ -28,33 +28,36 @@
 </div>        
 <div class="main">
     <div class="main-inner-vien">
-        <div class="form-item text">
-            <div class="title-h space">
-                <h4 class=""style="font-weight:700; letter-spacing:-1.5px;">Duyệt tìm tất cả</h4>
-            </div>
-            <div class="clear"></div>
-            <div class="row">
-            <?php 
-                include('../../connect_db.php');
-                $sql = "SELECT * FROM `categories`";
-                $result = mysqli_query($conn,$sql);
-                if(mysqli_num_rows($result) > 0){
-                    while($row = mysqli_fetch_assoc($result)){
-            ?> 
-                
-                    <div class="col-md-2 vien-item">
-                        <a href="">
-                            <div  class="image-content"style="background-color: <?php echo $row['maunen'] ?>;">
-                                <img src="<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
-                                <div class="caption mauchu">
-                                    <h4 style="font-weight:700;"><?php echo $row['ten'] ?></h4>
+        <div class="bg-nen">
+            <div class="form-item text">
+                <div class="title-h space">
+                    <h4 class=""style="font-weight:700; letter-spacing:-1.5px;">Duyệt tìm tất cả</h4>
+                </div>
+                <div class="clear"></div>
+                <div class="row">
+                <?php 
+                    include('../../connect_db.php');
+                    $sql = "SELECT * FROM `categories`";
+                    $result = mysqli_query($conn,$sql);
+                    if(mysqli_num_rows($result) > 0){
+                        while($row = mysqli_fetch_assoc($result)){
+                ?> 
+                    
+                        <div class="col-md-2 vien-item">
+                            <a href="">
+                                <div  class="image-content"style="background-color: <?php echo $row['maunen'] ?>;">
+                                    <img src="<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
+                                    <div class="caption mauchu">
+                                        <h4 style="font-weight:700;"><?php echo $row['ten'] ?></h4>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-            <?php }}?>
+                            </a>
+                        </div>
+                <?php }}?>
+                </div>
             </div>
         </div>
+        
     </div>
 </div>
 <?php include('../../public/template/site/footer_main.php');?>
