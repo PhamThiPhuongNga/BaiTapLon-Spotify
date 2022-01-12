@@ -28,6 +28,7 @@
 </div>        
 <div class="main">
     <div class="main-inner-vien">
+    <div class="bg-nen">
         <div class="form-item text">
             <div class="title-h space">
                 <h4 class=""style="font-weight:700; letter-spacing:-1.5px;">Duyệt tìm tất cả</h4>
@@ -55,6 +56,7 @@
             <?php }}?>
             </div>
         </div>
+    </div>
     </div>
 </div>
 <?php include('../../public/template/site/footer_main.php');?>
