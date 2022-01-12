@@ -17,7 +17,7 @@
 <div class="wrapper" >
          -->
 <?php
-include "../template/header.php"
+include "../template/header.php";
 ?>
     <div class="container">
             <div class="row">
