@@ -36,26 +36,22 @@
                         </li>
                         <li class="nav-item roww ql3">
                             <i class="material-icon bi bi-book"></i>
-                            <a class="nav-linkk" href="#">Thư viện</a>
+                            <a class="nav-linkk" href="playlist.php">Thư viện</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-linkk"></a>
                         </li>
-                        <li class="nav-item roww ql4">
-                            <i class="material-icon bi bi-plus-square"></i>
-                            <a class="nav-linkk"href="#">Tạo playlist</a>
-                        </li>
                         <li class="nav-item roww ql5">
                             <i class="material-icon bi bi-suit-heart"></i>
-                            <a class="nav-linkk"href="#">Bài hát đã thích</a>
+                            <a class="nav-linkk"href="yeuthich.php">Bài hát đã thích</a>
                         </li>
                     </ul>
-                    <div class="list-playlist">
+                    <!-- <div class="list-playlist">
                         <ul>
                             <li><a class="nav-linkk"href="">Playlist của tôi #1</a></li>
                             <li><a class="nav-linkk"href="">Playlist của tôi #1</a></li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
                 
             </div>
