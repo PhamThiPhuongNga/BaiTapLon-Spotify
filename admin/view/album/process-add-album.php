@@ -1,3 +1,10 @@
+<?php 
+// Kiểm tra thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isLoginOK'])){
+        header("location: ../login/login-admin.php");
+    }
+?>
 <?php
 
 
@@ -10,7 +17,7 @@
     $id_nghesi = $_POST['id_nghesi'];
 
     // b1: connect db
-    require_once "../../connect_db.php";
+    require_once "../../../connect_db.php";
     // b2: truy van
     $sql = "INSERT INTO album (ten_ab, anh_ab, id_nghesi) VALUES ('$ten_ab', '$anh_ab', '$id_nghesi')";
     // echo $sql;

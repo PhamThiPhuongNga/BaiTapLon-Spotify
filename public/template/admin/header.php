@@ -34,19 +34,19 @@
                         </li>
                         <li class="nav-item roww link-mananger ">
                             <i class="material-icon bi bi-file-earmark-music pt-1 "></i>
-                            <a class="nav-linkk pt-3" href="http://localhost/BaiTapLon-Spotify\admin\baihat\">Bài hát</a>
+                            <a class="nav-linkk pt-3" href="http://localhost/BaiTapLon-Spotify/admin/view/baihat/">Bài hát</a>
                         </li>
                         <li class="nav-item roww link-mananger ">
                             <i class="material-icon bi bi-headset pt-1 "></i>
-                            <a class="nav-linkk" href="http://localhost/BaiTapLon-Spotify\admin\nghesi\">Nghệ sĩ</a>
+                            <a class="nav-linkk" href="http://localhost/BaiTapLon-Spotify/admin/view/nghesi/">Nghệ sĩ</a>
                         </li>
                         <li class="nav-item roww link-mananger ">
                             <i class="material-icon bi bi-music-note-list pt-1 "></i>
-                            <a class="nav-linkk pt-3"href="http://localhost/BaiTapLon-Spotify\admin\category\">Thể loại</a>
+                            <a class="nav-linkk pt-3"href="http://localhost/BaiTapLon-Spotify/admin/view/category/">Thể loại</a>
                         </li>
                         <li class="nav-item roww link-mananger">
                             <i class="material-icon bi bi-journal-album pt-1 "></i>
-                            <a class="nav-linkk pt-3" href="http://localhost/BaiTapLon-Spotify\admin\album\">Album</a>
+                            <a class="nav-linkk pt-3" href="http://localhost/BaiTapLon-Spotify/admin/view/album/">Album</a>
                         </li>
                     </ul>
                     <div class="list-playlist">

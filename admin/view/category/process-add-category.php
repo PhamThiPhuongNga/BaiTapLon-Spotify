@@ -1,3 +1,10 @@
+<?php 
+// Kiểm tra thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isLoginOK'])){
+        header("location: ../login/login-admin.php");
+    }
+?>
 <?php
 
 
@@ -10,7 +17,7 @@
     $maunen = $_POST['maunen'];
 
     // b1: connect db
-    require_once "../../connect_db.php";
+    require_once "../../../connect_db.php";
     // b2: truy van
     $sql = "INSERT INTO categories (ten, anh, maunen) VALUES ('$ten', '$anh', '$maunen')";
     // echo $sql;

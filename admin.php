@@ -82,7 +82,7 @@
                 margin-top:50px;">404</div>
                                     <p class="lead text-secondary-800 mb-5">Page Not Found</p>
                                     <p class=" text-danger mb-0">ĐĂNG NHẬP ngay để đến trang Admin của spotify</p>
-                                    <a href="./admin/view/login-admin.php">&larr; To Page Login</a>
+                                    <a href="./admin/view/login/login-admin.php">&larr; To Page Login</a>
                             </div>
                         </div>
                     </div>
