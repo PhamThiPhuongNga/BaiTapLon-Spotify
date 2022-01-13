@@ -15,7 +15,7 @@
 
       echo '<script>';
       echo 'var track = ' . json_encode($row) . ';';
-      // echo 'console.log(track);';
+    //   echo 'console.log(track);';
       echo 'track_list.push(track) ;';
       echo '</script>';
       }

@@ -1,0 +1,9 @@
+html,body,.container{
+    background-color: white;
+}
+.container{
+    width: 96%;
+}
+.bg-body{
+    margin-bottom: 0px !important;
+}

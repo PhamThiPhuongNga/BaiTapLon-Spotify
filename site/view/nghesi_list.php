@@ -1,0 +1,168 @@
+
+<?php 
+//Kiểm tra thẻ làm việc
+    session_start();
+    if(!isset($_SESSION['isLoginOK'])){
+        header("location: login.php");
+    }
+   
+?>
+<?php
+
+$id = $_GET['id'];
+// echo $id;
+
+// b1: connect db
+$conn = mysqli_connect('localhost','root','','spotify');
+if(!$conn)
+{
+    die('Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ');
+}
+
+// b2: truy van
+$sql = "SELECT *
+        FROM baihat bh, nghesi ns
+        WHERE bh.id_nghesi = ns.id_nghesi AND
+        ns.id_nghesi = '$id'";
+
+$result = mysqli_query($conn, $sql);
+// b3: xu ly ket qua 
+if(mysqli_num_rows($result) > 0){
+    $row = mysqli_fetch_assoc($result);
+    // print_r($row);
+}
+
+// b4: dong ket noi
+mysqli_close($conn);
+
+?>
+<style>
+    .ql3{
+        background-color: #2a2f30;
+    }
+</style>
+<?php include('../../public/template/site/header_main.php');?>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<div class="contain-right">
+    <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
+        <i class="material-icon fas fa-chevron-circle-left fs-3 ml-5 myIconArrow ">
+            <a href="#" target="_blank"
+                rel="noopener noreferrer">
+            </a>
+        </i>
+        <i class="material-icon fas fa-chevron-circle-right fs-3 pl-5 myIconArrow "></i>
+
+    </div>
+    
+    <?php include("view-signin.php");?>
+</div>
+</div>
+    </div>  
+<div class="main">
+           
+    <div class="main-inner-vien">
+        <div class="main-bottom-t">
+                <div class="container  ">
+                    <div class="row ">
+                        <div class="col-3 "><button class="btn-playlist align-items-center bg-dark">
+                                <!-- <i class="material-icons my-icon-thuvien text-secondary"></i> -->
+                                
+                                <!-- <i class="bi bi-music-note-beamed my-icon-thuvien text-secondary"></i> -->
+                                <img src="<?php echo $row['anh_nghesi']; ?>" class="my-img-list" alt="">
+                            </button></div>
+                        <div class="col-9 p-5">
+                            <p class="text-light">Nghệ sĩ được xác minh</p>
+                            <a href="" class="text-decoration-none link-light ">
+                                <h2 ><?php echo $row['ten_nghesi']; ?></h2>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <table class="table text-light  my-table w-75  mt-5">
+            <thead>
+                <tr>
+                <th scope="col"># TIÊU ĐỀ</th>
+                <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+<?php
+
+// b1: include db
+// require_once "../../connect_db.php";
+$conn = mysqli_connect('localhost','root','','spotify');
+if(!$conn)
+{
+    die('Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ');
+}
+// b2: Truy van
+$item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:5;
+$current_page = !empty($_GET['page'])?$_GET['page']:1; //Trang hiện tại
+$offset = ($current_page - 1) * $item_per_page;
+// Bước 02: Thực hiện truy vấn
+// $sql = "SELECT * FROM nguoidung";
+$result = mysqli_query($conn, "SELECT *
+                    FROM baihat bh, nghesi ns
+                    WHERE bh.id_nghesi = ns.id_nghesi AND
+                    ns.id_nghesi = '$id'
+                    LIMIT " . $item_per_page . " OFFSET " . $offset);
+$totalRecords = mysqli_query($conn, "SELECT *
+                            FROM baihat bh, nghesi ns
+                            WHERE bh.id_nghesi = ns.id_nghesi AND
+                            ns.id_nghesi = '$id'");
+$totalRecords = $totalRecords->num_rows;
+$totalPages = ceil($totalRecords / $item_per_page);
+
+// $sql = "SELECT * FROM nghesi ORDER BY id_nghesi DESC ";
+// if($result = mysqli_query($conn, $sql)){
+// b3: Xu ly ket qua truy van
+    if(mysqli_num_rows($result)>0){
+        $count=1;
+        while($row = mysqli_fetch_array($result)){
+?>
+
+            <tr>
+                <th scope="row">
+                    <div class="d-flex align-items-center"> 
+                        <p><?php echo $count++; ?></p> 
+                        &ensp;
+                        <img src="<?php echo $row['anh_bh']; ?>" class="my-img-table" alt="">
+                        &ensp;
+                        <div class="pt-2">
+                            <h6><?php echo $row['ten_bh']; ?></h6>
+                            <p class="text-secondary"><?php echo $row['ten_nghesi']; ?></p>
+                        </div>
+                    </div>
+                </th>
+               
+                <td class="pt-4">
+                        <i class="bi bi-suit-heart-fill"></i>
+                   
+                    
+                </td>
+            </tr>
+                    
+<?php
+    }
+} else{
+    echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+} 
+// }else{
+//     echo "Da xay ra su co";
+// }
+
+mysqli_close($conn);
+?>              
+                
+            </tbody>
+           
+        </table>
+
+        
+    </div>
+
+</div> 
+
+<?php include('../../public/template/site/footer_main.php');?>

@@ -146,7 +146,7 @@ body{
     margin-left: 275px; 
     float: left;
     background-color: rgb(22, 22, 22);
-    width: 80%;
+    width: 92%;
 }
 .bg-nen{
     padding: 30px 30px 150px 30px;
@@ -1323,5 +1323,8 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 .my-table{
     margin-bottom: 147px !important;
+}
+.my-img-list{
+    width: 80%;
 }
 /* end playlist  */
