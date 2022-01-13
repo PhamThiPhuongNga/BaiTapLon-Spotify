@@ -8,7 +8,7 @@
    
 ?>
 <style>
-    .ql1{
+    .ql4{
         background-color: #2a2f30;
     }
 </style>
@@ -78,23 +78,57 @@
             </thead>
             <tbody>
                 <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">
+                <div class="d-flex align-items-center">  
+                    <p>1</p> 
+                        &ensp;
+                        <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                        &ensp;
+                        <div class="pt-2">
+                            <h6>Hãy trao cho anh</h6>
+                            <p>Sơn Tùng MTP</p>
+                        </div>
+                    </th>
+                </div>  
+                <td class="pt-4">Hãy trao cho anh</td>
+                <td class="pt-4">9 giờ trước</td>
+                <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
                 </tr>
                 <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
+                <th scope="row">
+                <div class="d-flex align-items-center">  
+                    <p>1</p> 
+                        &ensp;
+                        <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                        &ensp;
+                        <div class="pt-2">
+                            <h6>Hãy trao cho anh</h6>
+                            <p>Sơn Tùng MTP</p>
+                        </div>
+                    </th>
+                </div>  
+                <td class="pt-4">Hãy trao cho anh</td>
+                <td class="pt-4">9 giờ trước</td>
+                <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
                 </tr>
                 <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
+                <th scope="row">
+                <div class="d-flex align-items-center">  
+                    <p>1</p> 
+                        &ensp;
+                        <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                        &ensp;
+                        <div class="pt-2">
+                            <h6>Hãy trao cho anh</h6>
+                            <p>Sơn Tùng MTP</p>
+                        </div>
+                    </th>
+                </div>  
+                <td class="pt-4">Hãy trao cho anh</td>
+                <td class="pt-4">9 giờ trước</td>
+                <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
                 </tr>
+                
             </tbody>
         </table>
         

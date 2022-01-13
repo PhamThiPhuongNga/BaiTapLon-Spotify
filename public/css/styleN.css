@@ -143,10 +143,10 @@ body{
 }
 .main-inner-vien{
     margin-top: 60px;
-    margin-left: 250px; 
+    margin-left: 275px; 
     float: left;
     background-color: rgb(22, 22, 22);
-    width: 84%;
+    width: 80%;
 }
 .bg-nen{
     padding: 30px 30px 150px 30px;
@@ -382,6 +382,7 @@ body{
   }
   /* CONTROL */
   .control {
+    margin-top: 3px;
     display: flex;
     align-items: center;
     margin-left: 160px;
@@ -408,7 +409,10 @@ body{
     justify-content: center;
     background-color: white;
   }
-  
+span.my-span-progress {
+    padding-top: 10px;
+}
+
   .progresss {
     width: 500px;
     -webkit-appearance: none;
@@ -1310,5 +1314,9 @@ div.dataTables_wrapper div.dataTables_length select {
 } */
 .my-icon-thuvien{
     font-size: 70px;;
+}
+.my-img-table{
+    width: 45px;
+    height: 45px;
 }
 /* end playlist  */

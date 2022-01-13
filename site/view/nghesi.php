@@ -8,7 +8,7 @@
    
 ?>
 <style>
-    .ql1{
+    .ql3{
         background-color: #2a2f30;
     }
 </style>
