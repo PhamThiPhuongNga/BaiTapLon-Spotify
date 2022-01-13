@@ -67,7 +67,7 @@
                     </div>
                 </div>
         </div>
-        <table class="table text-light m-5 mh-100 mx-auto">
+        <table class="table text-light m-5 mh-100 mx-auto my-table">
             <thead>
                 <tr>
                 <th scope="col"># TIÊU ĐỀ</th>
@@ -77,57 +77,91 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+            <tr>
                 <th scope="row">
-                <div class="d-flex align-items-center">  
-                    <p>1</p> 
+                    <div class="d-flex align-items-center"> 
+                        <p>1</p> 
                         &ensp;
                         <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
                         &ensp;
                         <div class="pt-2">
                             <h6>Hãy trao cho anh</h6>
-                            <p>Sơn Tùng MTP</p>
+                            <p class="text-secondary">Sơn Tùng MTP</p>
                         </div>
-                    </th>
-                </div>  
+                    </div>
+                </th>
                 <td class="pt-4">Hãy trao cho anh</td>
                 <td class="pt-4">9 giờ trước</td>
                 <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
                 <th scope="row">
-                <div class="d-flex align-items-center">  
-                    <p>1</p> 
+                    <div class="d-flex align-items-center"> 
+                        <p>1</p> 
                         &ensp;
                         <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
                         &ensp;
                         <div class="pt-2">
                             <h6>Hãy trao cho anh</h6>
-                            <p>Sơn Tùng MTP</p>
+                            <p class="text-secondary">Sơn Tùng MTP</p>
                         </div>
-                    </th>
-                </div>  
+                    </div>
+                </th>
                 <td class="pt-4">Hãy trao cho anh</td>
                 <td class="pt-4">9 giờ trước</td>
                 <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
-                <tr>
+            </tr>
+            <tr>
                 <th scope="row">
-                <div class="d-flex align-items-center">  
-                    <p>1</p> 
+                    <div class="d-flex align-items-center"> 
+                        <p>1</p> 
                         &ensp;
                         <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
                         &ensp;
                         <div class="pt-2">
                             <h6>Hãy trao cho anh</h6>
-                            <p>Sơn Tùng MTP</p>
+                            <p class="text-secondary">Sơn Tùng MTP</p>
                         </div>
-                    </th>
-                </div>  
+                    </div>
+                </th>
                 <td class="pt-4">Hãy trao cho anh</td>
                 <td class="pt-4">9 giờ trước</td>
                 <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <div class="d-flex align-items-center"> 
+                        <p>1</p> 
+                        &ensp;
+                        <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                        &ensp;
+                        <div class="pt-2">
+                            <h6>Hãy trao cho anh</h6>
+                            <p class="text-secondary">Sơn Tùng MTP</p>
+                        </div>
+                    </div>
+                </th>
+                <td class="pt-4">Hãy trao cho anh</td>
+                <td class="pt-4">9 giờ trước</td>
+                <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <div class="d-flex align-items-center"> 
+                        <p>1</p> 
+                        &ensp;
+                        <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                        &ensp;
+                        <div class="pt-2">
+                            <h6>Hãy trao cho anh</h6>
+                            <p class="text-secondary">Sơn Tùng MTP</p>
+                        </div>
+                    </div>
+                </th>
+                <td class="pt-4">Hãy trao cho anh</td>
+                <td class="pt-4">9 giờ trước</td>
+                <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
+            </tr>
                 
             </tbody>
         </table>
