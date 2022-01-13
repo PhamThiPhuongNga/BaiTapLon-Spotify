@@ -23,7 +23,6 @@
         $data=mysqli_fetch_assoc($result);
       
         $passcheck = password_verify($passKH,$data['matkhau']);
-        
         if(mysqli_num_rows($result) > 0){
             // CẤP THẺ LÀM VIỆC
             $idkh = $data['ten_nguoidung'];

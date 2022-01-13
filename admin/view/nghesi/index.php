@@ -1,28 +1,20 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nghệ sĩ</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .bnn-3{
+        background-color: rgb(65, 65, 65);
+    }
     
-</head>
-<body>
-
-<div class="wrapper" > -->
+</style>
 <?php 
 // Kiểm tra thẻ làm việc
     session_start();
-    if(!isset($_SESSION['isLoginOK'])){
+    if(!isset($_SESSION['isLoginadmin'])){
         header("location: ../login/login-admin.php");
     }
 ?>
 <?php
 include "../../../public/template/admin/header.php";
 ?>
-        <div class="container">
+        <div class="containerrr">
             <div class="row">
                 <div class="mt-5 col-md-12">
                     <div class="clearfix">
@@ -64,11 +56,12 @@ include "../../../public/template/admin/header.php";
                                         if(mysqli_num_rows($result)>0){
                                             $count=1;
                                             while($row = mysqli_fetch_array($result)){
+                                                $imageURL = '../../../public/img/nghesi/'.$row["anh_nghesi"];
                                     ?>
                                         <th scope="row"><?php echo $count++; ?></th>
                                         <th scope="row"><?php echo $row['id_nghesi']; ?></th>
                                         <td><?php echo $row['ten_nghesi']; ?></td>
-                                        <td><img src="<?php echo $row['anh_nghesi']; ?>"   style="max-width:50px;"></td>
+                                        <td><img src="<?php echo $imageURL; ?>"   style="max-width:50px;"></td>
                                         <td>
                                             <a href="update-nghesi.php?id=<?php echo $row['id_nghesi']?>" title="Update Record" ><i class="fas fa-pencil-alt"></i></a>
                                             <a href="delete-nghesi.php?id=<?php echo $row['id_nghesi']?>" title="Delete Record" ><i class="far fa-trash-alt"></i></a>
@@ -80,11 +73,7 @@ include "../../../public/template/admin/header.php";
                                             }
                                         } else{
                                             echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
-                                        } 
-                                    // }else{
-                                    //     echo "Da xay ra su co";
-                                    // }
-                                    
+                                        }   
                                     mysqli_close($conn);
                                     ?>
                                     

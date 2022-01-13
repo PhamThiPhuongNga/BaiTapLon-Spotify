@@ -43,19 +43,16 @@
                         <label class="biNheR" for="txtID">ID</label>
                         <input type="text" readonly value="<?php echo $row['ma_nguoidung'];?>" class="hUAscM" id="txtID" name="txtID" placeholder="">
                     </div>
-                    <div class="form-group mb-3">
+                    <div class="form-group mb-3  d-none">
                         <label class="biNheR" for="txtHoTen">Họ và tên</label>
-                        <input type="text" value="<?php echo $row['ten_nguoidung'];?>" class="hUAscM" id="txtHoTen" name="txtHoTen" placeholder="Nhập họ tên">
+                        <input type="text"readonly value="<?php echo $row['ten_nguoidung'];?>" class="hUAscM" id="txtHoTen" name="txtHoTen" placeholder="Nhập họ tên">
                     </div>
                     
                     <div class="form-group mb-3">
                         <label  class="biNheR" for="txtEmail">Email</label>
                         <input type="text" value="<?php echo $row['email'];?>" class="hUAscM" id="txtEmail" name="txtEmail" placeholder="abc@gmail.com">
                     </div>
-                    <!-- <div class="form-group mb-3">
-                        <label  class="biNheR" for="txtMatkhau">Mật khẩu</label>
-                        <input type="tel" class="hUAscM" id="txtMatkhau" name="txtMatkhau" placeholder="Nhập mật khẩu">
-                    </div> -->
+                    
                     <div class="form-group mb-3 row">
                         <div class="col-md-4">
                             <label  class="biNheR" for="txtNgay">Ngày</label>
@@ -103,7 +100,8 @@
                         
                     </div>
                     <div class="d-grid  gap-2 d-md-flex justify-content-md-end p-3">
-                        <button class="btn btn-success me-md-2" name="btnEditProfile" type="submit">Lưu hồ sơ</button>
+                        <a href="overview.php"><button class="btn  mt-3 " name="" type="button">Hủy</button></a>
+                        <button class="btn btn-success mt-3" name="btnEditProfile" type="submit">Lưu hồ sơ</button>
                     </div>
                 </form>
                 <?php } } } ?> 

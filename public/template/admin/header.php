@@ -28,23 +28,23 @@
                 </div>
                 <div class="contain-ban">
                     <ul class="nav flex-column">
-                        <li class="nav-item roww link-mananger ">
+                        <li class="nav-item roww link-mananger bnn-1 ">
                             <i class="material-icon bi bi-person pt-1 "></i> 
                             <a class="nav-linkk pt-3"href="http://localhost/BaiTapLon-Spotify/admin/view/Users/table-User.php">Người dùng</a>
                         </li>
-                        <li class="nav-item roww link-mananger ">
+                        <li class="nav-item roww link-mananger bnn-2 ">
                             <i class="material-icon bi bi-file-earmark-music pt-1 "></i>
                             <a class="nav-linkk pt-3" href="http://localhost/BaiTapLon-Spotify/admin/view/baihat/">Bài hát</a>
                         </li>
-                        <li class="nav-item roww link-mananger ">
+                        <li class="nav-item roww link-mananger bnn-3">
                             <i class="material-icon bi bi-headset pt-1 "></i>
-                            <a class="nav-linkk" href="http://localhost/BaiTapLon-Spotify/admin/view/nghesi/">Nghệ sĩ</a>
+                            <a class="nav-linkk pt-3" href="http://localhost/BaiTapLon-Spotify/admin/view/nghesi/">Nghệ sĩ</a>
                         </li>
-                        <li class="nav-item roww link-mananger ">
+                        <li class="nav-item roww link-mananger bnn-4">
                             <i class="material-icon bi bi-music-note-list pt-1 "></i>
                             <a class="nav-linkk pt-3"href="http://localhost/BaiTapLon-Spotify/admin/view/category/">Thể loại</a>
                         </li>
-                        <li class="nav-item roww link-mananger">
+                        <li class="nav-item roww link-mananger bnn-5">
                             <i class="material-icon bi bi-journal-album pt-1 "></i>
                             <a class="nav-linkk pt-3" href="http://localhost/BaiTapLon-Spotify/admin/view/album/">Album</a>
                         </li>
@@ -59,7 +59,7 @@
                 
             </div>
         </div>
-        <div class="col-md-10 content-right-ad ">
+        <div class="col-md-10 content-right-ad main-add "style="background-color: white;">
             <div class=" shadow p-4 mb-2 bg-body rounded">
                 <div class="space">
                 <a class="navbar-brand" href="#">Administration</a>
@@ -67,9 +67,9 @@
                         <a class="nav-link text-dark dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         
                             <?php
-                            if(isset($_SESSION['isLoginOK']))
+                            if(isset($_SESSION['isLoginadmin']))
                             {
-                                echo " <span class=' d-none d-lg-inline text-dark-500 small'>".$_SESSION['isLoginOK']."</span>";          
+                                echo " <span class=' d-none d-lg-inline text-dark-500 small'>".$_SESSION['isLoginadmin']."</span>";          
                             }?>
                         <img class="img-profile rounded-circle" src="../../../public/img/anh-mang-dep-nhat-24.jpg">
                         </a>

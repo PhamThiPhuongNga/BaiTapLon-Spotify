@@ -1,10 +1,10 @@
 <?php
 //  if(isset($_SESSION['isLoginOK']) && isset($_POST['btnEditProfile'])){
     // Xử lý giá trị GỬI TỚI
-    // if(isset($_SESSION['isLoginOK'])){
+if(isset($_POST['btnEditProfile']) && isset($_POST['btnEditProfile'])){
     $id = $_POST['txtID'];
-    $na=$_SESSION['isLoginOK'];
-    $Hoten = $_POST['txtHoten'];
+    // $na=$_SESSION['isLoginOK'];
+    // $Hoten = $_POST['txtHoten'];
     $Email = $_POST['txtEmail'];
     $Ngay = $_POST['txtNgay'];
     $Thang = $_POST['month'];
@@ -15,13 +15,12 @@
     // Bước 01: Kết nối Database Server
     include('../../connect_db.php');
     // Bước 02: Thực hiện truy vấn
-    $sql = "UPDATE `nguoidung` SET `ten_nguoidung`='$Hoten',`ngay`='$Ngay',`thang`='$Thang',
+    $sql = "UPDATE `nguoidung` SET `ngay`='$Ngay',`thang`='$Thang',
     `nam`='$Nam',`email`='$Email',`gioitinh`='$Gioitinh',`quoctich`='$Quoctich'
-    where ma_nguoidung = '$id' and ten_nguoidung ='$Hoten'";
+    where ma_nguoidung = '$id'";
     // echo $sql;
 
     $ketqua = mysqli_query($conn,$sql);
-    
     if(!$ketqua){
         $err="Lỗi Update dữ liệu. Vui lòng kiểm tra lại thông tin update";
         header("location:../../site/view/404.php?error=$err"); //Chuyển hướng lỗi
@@ -31,5 +30,5 @@
     }
     // Bước 03: Đóng kết nối
     mysqli_close($conn);
-// }
+ }
 ?>

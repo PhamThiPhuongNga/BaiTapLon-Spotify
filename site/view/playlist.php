@@ -29,17 +29,17 @@
                             rel="noopener noreferrer"></a></i>
                     <i class="fas fa-chevron-circle-right fs-3 pl-5 myIconArrow"></i> -->
 
-                    <li class="nav-item menu-list">
-                        <a class="nav-link  active text-light" aria-current="page" href="playlist.php">Playlist</a>
+                    <li class="nav-item menu-list ql3">
+                        <a class="nav-linkk  active text-light" aria-current="page" href="playlist.php">Playlist</a>
                     </li>
                     <!-- <li class="nav-item ">
                         <a class="nav-link active text-light" href="podcasts.html">Postcast</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="nghesi.php">Nghệ sĩ</a>
+                        <a class="nav-linkk text-light" href="nghesi.php">Nghệ sĩ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="album.php">Album</a>
+                        <a class="nav-linkk text-light" href="album.php">Album</a>
                     </li>
 
                 </ul>
@@ -47,17 +47,19 @@
 </div>
 </div>
     </div>  
-<div class="main">
-           
-    <div class="main-inner-vien">
-        <div class="main-bottom-t">
-                <div class="container  ">
-                    <div class="row ">
-                        <div class="col-3 "><button class="btn-playlist align-items-center bg-dark">
+<div class="main">   
+    <div class="main-inner-vien" style="width:83%;">
+        <div class="bg-nen">
+            <div class="main-bottom-t">  
+                <div class="row ">
+                    <div class="d-flex align-items-center">
+                        <div class="flex-shrink-0 ms-3">
+                            <button class="btn-playlist align-items-center bg-dark ml-3">
                                 <i class="material-icons my-icon-thuvien text-secondary"></i>
                                 <i class="bi bi-music-note-beamed my-icon-thuvien text-secondary"></i>
-                            </button></div>
-                        <div class="col-9 p-5">
+                            </button>
+                        </div>
+                        <div class="flex-grow-1 ms-3">
                             <p class="text-light">PLAYLIST</p>
                             <a href="" class="text-decoration-none link-light ">
                                 <h1 style="font-size: 6.0rem;">Playlist của tôi </h1>
@@ -66,106 +68,106 @@
                         </div>
                     </div>
                 </div>
-        </div>
-        <table class="table text-light m-5 mh-100 mx-auto my-table">
-            <thead>
+            </div>
+            <table class="table text-light m-5 mh-100 mx-auto my-table">
+                <thead>
+                    <tr>
+                    <th scope="col"># TIÊU ĐỀ</th>
+                    <th scope="col">ALBUM</th>
+                    <th scope="col">NGÀY THÊM</th>
+                    <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr>
-                <th scope="col"># TIÊU ĐỀ</th>
-                <th scope="col">ALBUM</th>
-                <th scope="col">NGÀY THÊM</th>
-                <th scope="col">Action</th>
+                    <th scope="row">
+                        <div class="d-flex align-items-center"> 
+                            <p>1</p> 
+                            &ensp;
+                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                            &ensp;
+                            <div class="pt-2">
+                                <h6>Hãy trao cho anh</h6>
+                                <p class="text-secondary">Sơn Tùng MTP</p>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="pt-4">Hãy trao cho anh</td>
+                    <td class="pt-4">9 giờ trước</td>
+                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
                 </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">
-                    <div class="d-flex align-items-center"> 
-                        <p>1</p> 
-                        &ensp;
-                        <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                        &ensp;
-                        <div class="pt-2">
-                            <h6>Hãy trao cho anh</h6>
-                            <p class="text-secondary">Sơn Tùng MTP</p>
+                <tr>
+                    <th scope="row">
+                        <div class="d-flex align-items-center"> 
+                            <p>1</p> 
+                            &ensp;
+                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                            &ensp;
+                            <div class="pt-2">
+                                <h6>Hãy trao cho anh</h6>
+                                <p class="text-secondary">Sơn Tùng MTP</p>
+                            </div>
                         </div>
-                    </div>
-                </th>
-                <td class="pt-4">Hãy trao cho anh</td>
-                <td class="pt-4">9 giờ trước</td>
-                <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <div class="d-flex align-items-center"> 
-                        <p>1</p> 
-                        &ensp;
-                        <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                        &ensp;
-                        <div class="pt-2">
-                            <h6>Hãy trao cho anh</h6>
-                            <p class="text-secondary">Sơn Tùng MTP</p>
+                    </th>
+                    <td class="pt-4">Hãy trao cho anh</td>
+                    <td class="pt-4">9 giờ trước</td>
+                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <div class="d-flex align-items-center"> 
+                            <p>1</p> 
+                            &ensp;
+                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                            &ensp;
+                            <div class="pt-2">
+                                <h6>Hãy trao cho anh</h6>
+                                <p class="text-secondary">Sơn Tùng MTP</p>
+                            </div>
                         </div>
-                    </div>
-                </th>
-                <td class="pt-4">Hãy trao cho anh</td>
-                <td class="pt-4">9 giờ trước</td>
-                <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <div class="d-flex align-items-center"> 
-                        <p>1</p> 
-                        &ensp;
-                        <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                        &ensp;
-                        <div class="pt-2">
-                            <h6>Hãy trao cho anh</h6>
-                            <p class="text-secondary">Sơn Tùng MTP</p>
+                    </th>
+                    <td class="pt-4">Hãy trao cho anh</td>
+                    <td class="pt-4">9 giờ trước</td>
+                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <div class="d-flex align-items-center"> 
+                            <p>1</p> 
+                            &ensp;
+                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                            &ensp;
+                            <div class="pt-2">
+                                <h6>Hãy trao cho anh</h6>
+                                <p class="text-secondary">Sơn Tùng MTP</p>
+                            </div>
                         </div>
-                    </div>
-                </th>
-                <td class="pt-4">Hãy trao cho anh</td>
-                <td class="pt-4">9 giờ trước</td>
-                <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <div class="d-flex align-items-center"> 
-                        <p>1</p> 
-                        &ensp;
-                        <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                        &ensp;
-                        <div class="pt-2">
-                            <h6>Hãy trao cho anh</h6>
-                            <p class="text-secondary">Sơn Tùng MTP</p>
+                    </th>
+                    <td class="pt-4">Hãy trao cho anh</td>
+                    <td class="pt-4">9 giờ trước</td>
+                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <div class="d-flex align-items-center"> 
+                            <p>1</p> 
+                            &ensp;
+                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                            &ensp;
+                            <div class="pt-2">
+                                <h6>Hãy trao cho anh</h6>
+                                <p class="text-secondary">Sơn Tùng MTP</p>
+                            </div>
                         </div>
-                    </div>
-                </th>
-                <td class="pt-4">Hãy trao cho anh</td>
-                <td class="pt-4">9 giờ trước</td>
-                <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-            </tr>
-            <tr>
-                <th scope="row">
-                    <div class="d-flex align-items-center"> 
-                        <p>1</p> 
-                        &ensp;
-                        <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                        &ensp;
-                        <div class="pt-2">
-                            <h6>Hãy trao cho anh</h6>
-                            <p class="text-secondary">Sơn Tùng MTP</p>
-                        </div>
-                    </div>
-                </th>
-                <td class="pt-4">Hãy trao cho anh</td>
-                <td class="pt-4">9 giờ trước</td>
-                <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-            </tr>
-                
-            </tbody>
-        </table>
-        
+                    </th>
+                    <td class="pt-4">Hãy trao cho anh</td>
+                    <td class="pt-4">9 giờ trước</td>
+                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
+                </tr>
+                    
+                </tbody>
+            </table>
+        </div>
     </div>
 </div> 
 <?php include('../../public/template/site/footer_main.php');?>

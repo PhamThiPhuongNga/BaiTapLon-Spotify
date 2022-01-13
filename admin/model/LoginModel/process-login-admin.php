@@ -20,7 +20,7 @@
         if(mysqli_num_rows($result) > 0){
             // CẤP THẺ LÀM VIỆC
             $idkh = $data['name_ad'];
-            $_SESSION['isLoginOK'] = $idkh;
+            $_SESSION['isLoginadmin'] = $idkh;
             header("location:../../../admin/view/Users/table-User.php");
             //  $_SESSION['isLoginOK'] = $tenKH;
             // header("location: ../view/index.php"); //Chuyển hướng về Trang quản trị

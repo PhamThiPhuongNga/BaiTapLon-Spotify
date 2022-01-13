@@ -8,7 +8,7 @@
    
 ?>
 <style>
-    .ql3{
+    .ql5{
         background-color: #2a2f30;
     }
 </style>
@@ -30,16 +30,16 @@
                     <i class="fas fa-chevron-circle-right fs-3 pl-5 myIconArrow"></i> -->
 
                     <li class="nav-item menu-list">
-                        <a class="nav-link   text-light" aria-current="page" href="playlist.php">Playlist</a>
+                        <a class="nav-linkk   text-light" aria-current="page" href="playlist.php">Playlist</a>
                     </li>
                     <!-- <li class="nav-item ">
                         <a class="nav-link active text-light" href="podcasts.html">Postcast</a>
                     </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link active text-light" href="nghesi.php">Nghệ sĩ</a>
+                    <li class="nav-item ql5">
+                        <a class="nav-linkk  text-light" href="nghesi.php">Nghệ sĩ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-light" href="album.php">Album</a>
+                        <a class="nav-linkk text-light" href="album.php">Album</a>
                     </li>
 
                 </ul>

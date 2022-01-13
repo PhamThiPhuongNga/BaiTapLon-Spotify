@@ -14,7 +14,7 @@ span.my-span-progress-search {
         background-color: #2a2f30;
 }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <div class="contain-right">
     <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
         <i class="material-icon fas fa-chevron-circle-left fs-3 ml-5 myIconArrow ">
@@ -50,9 +50,8 @@ span.my-span-progress-search {
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){
                 ?> 
-                    
                         <div class="col-md-2 vien-item">
-                            <a href="">
+                            <a href="../../site/view/generer.php?idtl=<?php echo $row['id_category']?>">
                                 <div  class="image-content"style="background-color: <?php echo $row['maunen'] ?>;">
                                     <img src="<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
                                     <div class="caption mauchu">

@@ -1,25 +1,16 @@
 <?php 
 // Kiểm tra thẻ làm việc
     session_start();
-    if(!isset($_SESSION['isLoginOK'])){
+    if(!isset($_SESSION['isLoginadmin'])){
         header("location: ../login/login-admin.php");
     }
 ?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Category</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    .bnn-4{
+        background-color: rgb(65, 65, 65);
+    }
     
-</head>
-<body>
-
-<div class="wrapper" > -->
-
+</style>
 <?php
 include "../../../public/template/admin/header.php";
 ?>
