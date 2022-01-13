@@ -41,7 +41,7 @@
                         <li class="nav-item">
                           <a class="nav-linkk"></a>
                         </li>
-                        <li class="nav-item roww ql5">
+                        <li class="nav-item roww ql4">
                             <i class="material-icon bi bi-suit-heart"></i>
                             <a class="nav-linkk"href="yeuthich.php">Bài hát đã thích</a>
                         </li>
