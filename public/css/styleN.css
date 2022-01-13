@@ -791,11 +791,13 @@ strong{
     font-weight: 700;
 }
 .control-label {
+    float: left;
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
     font-weight: 700;
-    float:left;
+    /* float:left; */
+    
 }
 .password-reset{
     padding-top: 10px;
@@ -1318,5 +1320,8 @@ div.dataTables_wrapper div.dataTables_length select {
 .my-img-table{
     width: 45px;
     height: 45px;
+}
+.my-table{
+    margin-bottom: 147px !important;
 }
 /* end playlist  */
