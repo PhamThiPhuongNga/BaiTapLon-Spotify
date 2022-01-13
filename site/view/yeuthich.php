@@ -67,7 +67,7 @@
                     </div>
                 </div>
         </div>
-        <table class="table text-light m-5 mh-100 mx-auto my-table">
+        <table class="table text-light  my-table w-75  mt-5">
             <thead>
                 <tr>
                 <th scope="col"># TIÊU ĐỀ</th>
