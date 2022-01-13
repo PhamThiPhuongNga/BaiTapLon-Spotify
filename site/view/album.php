@@ -55,135 +55,50 @@
             <div class="form-item text">
                     <div class="title-h space clear">
                         <h4 class=""style="font-weight:700; letter-spacing:-1.5px;">Abum</h4>
-                        <a  class="see-more card-text-infor mauchu" href="">XEM TẤT CẢ</a>
                     </div>
                     <div class="clear"></div>
                     <div class="row ">
+
+<?php
+
+// b1: include db
+require_once "../../connect_db.php";
+// b2: Truy van
+
+$item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:5;
+$current_page = !empty($_GET['page'])?$_GET['page']:1; //Trang hiện tại
+$offset = ($current_page - 1) * $item_per_page;
+// Bước 02: Thực hiện truy vấn
+// $sql = "SELECT * FROM nguoidung";
+$result = mysqli_query($conn, "SELECT ab.ma_ab, ab.ten_ab, ab.anh_ab, ns.ten_nghesi 
+                                FROM album ab, nghesi ns  
+                                WHERE ab.id_nghesi  = ns.id_nghesi 
+                                ORDER BY ma_ab DESC
+                                LIMIT " . $item_per_page . " OFFSET " . $offset);
+$totalRecords = mysqli_query($conn, "SELECT * FROM album ab, nghesi ns
+                                WHERE ab.id_nghesi  = ns.id_nghesi");
+$totalRecords = $totalRecords->num_rows;
+$totalPages = ceil($totalRecords / $item_per_page);
+// echo $products;
+// $sql = "SELECT ab.ma_ab, ab.ten_ab, ab.anh_ab, ns.ten_nghesi 
+//         FROM album ab, nghesi ns  
+//         WHERE ab.id_nghesi  = ns.id_nghesi 
+//         ORDER BY ma_ab DESC ";
+// if($result = mysqli_query($conn, $sql)){
+// b3: Xu ly ket qua truy van
+if(mysqli_num_rows($result)>0){
+    $count=1;
+    while($row = mysqli_fetch_array($result)){
+?>
+
                         <div class=" col-md-2 pb-5">
                             <div  class="box">
                                 <div class="cardd">
-                                    <a href="">
-                                        <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
+                                    <a href="album_list?id=<?php echo $row['ma_ab']?>">
+                                        <img src="<?php echo $row['anh_ab']; ?>" class="img-topp" alt="..."width="auto" height="155px">
                                         <div class="card-bodyy mauchu">
-                                            <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                            <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-md-2 pb-5">
-                            <div  class="box">
-                                <div class="cardd">
-                                    <a href="">
-                                        <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
-                                        <div class="card-bodyy mauchu">
-                                            <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                            <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-md-2 pb-5">
-                            <div  class="box">
-                                <div class="cardd">
-                                    <a href="">
-                                        <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
-                                        <div class="card-bodyy mauchu">
-                                            <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                            <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-md-2 pb-5">
-                            <div  class="box">
-                                <div class="cardd">
-                                    <a href="">
-                                        <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
-                                        <div class="card-bodyy mauchu">
-                                            <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                            <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-md-2 pb-5">
-                            <div  class="box">
-                                <div class="cardd">
-                                    <a href="">
-                                        <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
-                                        <div class="card-bodyy mauchu">
-                                            <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                            <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-md-2 pb-5">
-                            <div  class="box">
-                                <div class="cardd">
-                                    <a href="">
-                                        <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
-                                        <div class="card-bodyy mauchu">
-                                            <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                            <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-md-2 pb-5">
-                            <div  class="box">
-                                <div class="cardd">
-                                    <a href="">
-                                        <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
-                                        <div class="card-bodyy mauchu">
-                                            <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                            <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-md-2 pb-5">
-                            <div  class="box">
-                                <div class="cardd">
-                                    <a href="">
-                                        <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
-                                        <div class="card-bodyy mauchu">
-                                            <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                            <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-md-2 pb-5">
-                            <div  class="box">
-                                <div class="cardd">
-                                    <a href="">
-                                        <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
-                                        <div class="card-bodyy mauchu">
-                                            <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                            <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" col-md-2 pb-5">
-                            <div  class="box">
-                                <div class="cardd">
-                                    <a href="">
-                                        <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
-                                        <div class="card-bodyy mauchu">
-                                            <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                            <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
+                                            <p class="title-item text"><?php echo $row['ten_ab']; ?></p>
+                                            <p class="card-text-infor title-item"><?php echo $row['ten_nghesi']; ?></p>
                                         </div>
                                     </a>
                                 </div>
@@ -191,8 +106,24 @@
                         </div>
                         
                         
+<?php
+    }
+} else{
+    echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+} 
+// }else{
+//     echo "Da xay ra su co";
+// }
+
+mysqli_close($conn);
+?>                       
                     
-                    </div>                
+                    </div>   
+                
+<?php
+include "../../admin/model/pagination.php";
+?>                    
+
             </div>
                 
                 

@@ -150,8 +150,11 @@ body{
 }
 .tenthloai{
     position: relative;
-    z-index: 10;
-}
+    z-index: 10;}
+/* =======
+    width: 92%;
+>>>>>>> cdd00a9363acc22d0801e0969eb05c00b07a58e8
+} */
 .bg-nen{
     padding: 30px 30px 150px 30px;
 }
@@ -1327,5 +1330,8 @@ div.dataTables_wrapper div.dataTables_length select {
 }
 .my-table{
     margin-bottom: 147px !important;
+}
+.my-img-list{
+    width: 80%;
 }
 /* end playlist  */

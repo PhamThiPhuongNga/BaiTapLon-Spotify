@@ -1,19 +1,18 @@
+
 <?php 
 //Kiểm tra thẻ làm việc
     session_start();
     if(!isset($_SESSION['isLoginOK'])){
         header("location: login.php");
     }
+   
 ?>
-<?php include('../../public/template/site/header_main.php');?>
 <style>
-span.my-span-progress-search {
-    padding-top: 0px !important;
-}
-.ql2{
+    .ql2{
         background-color: #2a2f30;
-}
+    }
 </style>
+<?php include('../../public/template/site/header_main.php');?>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <div class="contain-right">
     <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
@@ -33,12 +32,14 @@ span.my-span-progress-search {
         </div>
     </div>
     <?php include("view-signin.php");?>
-</div>        
+</div>
+</div>
+    </div>  
 <div class="main">
     <div class="main-inner-vien">
         <div class="bg-nen">
             <div class="form-item text">
-                <div class="title-h space">
+                <div class=" space ">
                     <h4 class=""style="font-weight:700; letter-spacing:-1.5px;">Duyệt tìm tất cả</h4>
                 </div>
                 <div class="clear"></div>
@@ -61,10 +62,14 @@ span.my-span-progress-search {
                             </a>
                         </div>
                 <?php }}?>
-                </div>
+    
+
+                </div>                
             </div>
+            
+            
         </div>
         
     </div>
-</div>
+</div> 
 <?php include('../../public/template/site/footer_main.php');?>
