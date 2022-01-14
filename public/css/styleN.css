@@ -27,7 +27,6 @@ body{
     display:flex;
     /* justify-content: space-between; */
 }
-
 .material-icon{
     color: rgb(214, 214, 214);
     /* font-weight: 500; */
@@ -304,6 +303,7 @@ body{
     position: relative;
     height:223px ;
     width:386px;
+    /* width: 100%; */
 }
 .cardd>a{
     text-decoration: none;

@@ -61,7 +61,7 @@ include "../../../public/template/admin/header.php";
                                         <th scope="row"><?php echo $count++; ?></th>
                                         <th scope="row"><?php echo $row['id_nghesi']; ?></th>
                                         <td><?php echo $row['ten_nghesi']; ?></td>
-                                        <td><img src="<?php echo $imageURL; ?>"   style="max-width:50px;"></td>
+                                        <td><img src="<?php echo $imageURL; ?>"   style="width:50px;height:60px;"></td>
                                         <td>
                                             <a href="update-nghesi.php?id=<?php echo $row['id_nghesi']?>" title="Update Record" ><i class="fas fa-pencil-alt"></i></a>
                                             <a href="delete-nghesi.php?id=<?php echo $row['id_nghesi']?>" title="Delete Record" ><i class="far fa-trash-alt"></i></a>

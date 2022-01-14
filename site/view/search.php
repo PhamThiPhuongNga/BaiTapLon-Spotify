@@ -54,7 +54,7 @@
                         <div class="col-md-2 vien-item">
                             <a href="../../site/view/generer.php?idtl=<?php echo $row['id_category']?>">
                                 <div  class="image-content"style="background-color: <?php echo $row['maunen'] ?>;">
-                                    <img src="<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
+                                    <img src="../../public/img/theloai/<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
                                     <div class="caption mauchu">
                                         <h4 style="font-weight:700;"><?php echo $row['ten'] ?></h4>
                                     </div>
@@ -62,8 +62,6 @@
                             </a>
                         </div>
                 <?php }}?>
-    
-
                 </div>                
             </div>
             

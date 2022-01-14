@@ -5,51 +5,45 @@
         header("location: ../login/login-admin.php");
     }
 ?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add category</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- 
-</head>
-<body>
-    <div class="wrapper"> -->
-
 <?php
 include "../../../public/template/admin/header.php";
 ?>
-        <div class="container">
-            <div class="row">
-                <div class=" mt-5 col-md-12">
-                <div class="clearfix">
-                        <h2 class="pull-left">Thêm Bài hát</h2> <br> <br>
-                        <p>Điền đầy đủ thông tin và submit để thêm bản ghi vào database</p>
-                </div>
-                <form action="process-add-baihat.php" method="post">
-                <div class="form-group">
+<div class=""style="background-color:white;">
+    <div class="containerrr">
+    <div class="kcvien" >
+        <div class="round shadow">
+            <div class="containerrr">
+                <h5 class="text-center h3 pt-3 ">Thêm mới bài hát</h5>
+                <?php 
+                    if(isset($_GET['error'])){
+                        echo
+                        "<div class='bXxIjv '>
+                            <div class='hUAscM  tbao' style='background-color: red;color:white;border:0;'>
+                                <label  class='hyIrKV'><i class='material-icon text-dark bi bi-x'></i> &nbsp;&nbsp; {$_GET['error']}</label>
+                            </div>
+                        </div>";}?>
+                <form action="process-add-baihat.php" method="post" enctype="multipart/form-data">
+                    <div class="form-group mb-3">
                         <label for="">Tên bài hát</label>
                         <input type="text" class="form-control" name="ten_bh"  placeholder="Điền đầy đủ Tên bài hát.">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="">Ảnh</label>
                         <input type="text" class="form-control" name="anh_bh"   placeholder="Điền đầy đủ Link ảnh.">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="">Ngày thêm</label>
                         <input type="date" class="form-control" name="ngaythem"   >
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="">Quốc gia</label>
                         <input type="text" class="form-control" name="quocgia"   placeholder="Điền đầy đủ Quốc gia.">
                     </div>
-                    <div class="form-group">    
+                    <div class="form-group mb-3">    
                         <label for="">Link bài hát</label>
-                        <input type="text" class="form-control" name="link_bh"   placeholder="Điền đầy đủ Link bài hát.">
+                        <input type="file" class="form-control" name="myfile" >
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="">Tên Thể loại</label>
                         <select class="form-control"  name="id_theloai">
                             <!-- Truy vấn dữ liệu để Hiển thị lựa chọn Đơn vị -->
@@ -68,7 +62,7 @@ include "../../../public/template/admin/header.php";
                                 if(mysqli_num_rows($result)){
                                     while($row = mysqli_fetch_assoc($result)){
                             ?>
-                                       <option value="<?php echo $row['id_category']; ?>"><?php echo $row['ten']; ?></option>
+                                       <option value="<?php echo $row['id_category']; ?>"><?php echo $row['id_category']; ?> - <?php echo $row['ten']; ?></option>
                             <?php
                                     }
                                 }
@@ -79,7 +73,7 @@ include "../../../public/template/admin/header.php";
                
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="">Tên Album</label>
                         <select class="form-control"  name="id_abum">
                             <!-- Truy vấn dữ liệu để Hiển thị lựa chọn Đơn vị -->
@@ -98,7 +92,7 @@ include "../../../public/template/admin/header.php";
                                 if(mysqli_num_rows($result)){
                                     while($row = mysqli_fetch_assoc($result)){
                             ?>
-                                       <option value="<?php echo $row['ma_ab']; ?>"><?php echo $row['ten_ab']; ?></option>
+                                       <option value="<?php echo $row['ma_ab']; ?>"><?php echo $row['ma_ab']; ?> - <?php echo $row['ten_ab']; ?></option>
                             <?php
                                     }
                                 }
@@ -128,7 +122,7 @@ include "../../../public/template/admin/header.php";
                                 if(mysqli_num_rows($result)){
                                     while($row = mysqli_fetch_assoc($result)){
                             ?>
-                                       <option value="<?php echo $row['id_nghesi']; ?>"><?php echo $row['ten_nghesi']; ?></option>
+                                       <option value="<?php echo $row['id_nghesi']; ?>"><?php echo $row['id_nghesi']; ?> - <?php echo $row['ten_nghesi']; ?></option>
                             <?php
                                     }
                                 }
@@ -139,9 +133,10 @@ include "../../../public/template/admin/header.php";
                
                         </select>
                     </div> <br> 
-                    
-                    <input type="submit" class="btn btn-primary" value="Thêm">
-                    <a href="index.php" class="btn btn-secondary">Thoát</a> 
+                    <div class="pb-3">
+                        <input type="submit" name="sbmAdd" class="btn btn-primary" value="Thêm">
+                        <a href="index.php" class="btn btn-secondary">Thoát</a> 
+                    </div>
                 </form>
                 </div>
             </div>

@@ -5,34 +5,21 @@
     if(!isset($_SESSION['isLoginOK'])){
         header("location: login.php");
     }
-   
+
 ?>
 <?php
 
 $id = $_GET['id'];
-// echo $id;
-
-// b1: connect db
-$conn = mysqli_connect('localhost','root','','spotify');
-if(!$conn)
-{
-    die('Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ');
-}
-
-// b2: truy van
-$sql = "SELECT *
-        FROM baihat bh, nghesi ns
-        WHERE bh.id_nghesi = ns.id_nghesi AND
-        ns.id_nghesi = '$id'";
+include('../../connect_db.php');
+$sql = "SELECT * FROM baihat bh, album ab 
+        WHERE bh.ma_ab = ab.ma_ab AND 
+        bh.ma_ab = '$id'";
 
 $result = mysqli_query($conn, $sql);
-// b3: xu ly ket qua 
 if(mysqli_num_rows($result) > 0){
     $row = mysqli_fetch_assoc($result);
-    // print_r($row);
 }
 
-// b4: dong ket noi
 mysqli_close($conn);
 
 ?>
@@ -67,13 +54,13 @@ mysqli_close($conn);
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0 ms-3">
                                     <button class="btn-playlist align-items-center bg-dark ml-3">
-                                        <img src="<?php echo $row['anh_nghesi']; ?>" class="my-img-list" alt="">
+                                        <img src="<?php echo $row['anh_ab']; ?>" class="my-img-list" alt="">
                                     </button>
                                 </div>
                                 <div class="flex-grow-1 ms-3">
-                                    <p class="text-light">Nghệ sĩ được xác minh</p>
+                                    <p class="text-light">ALBUM</p>
                                     <a href="" class="text-decoration-none link-light ">
-                                        <h1 style="font-size: 6.0rem;"><?php echo $row['ten_nghesi']; ?></h1>
+                                        <h1 style="font-size: 6.0rem;"><?php echo $row['ten_ab']; ?></h1>
                                     </a>
                                     <p><a href="" class="text-decoration-none link-light a-cogach"> <?php echo $_SESSION['isLoginOK']; ?></a></p>
                                 </div>
@@ -81,7 +68,7 @@ mysqli_close($conn);
                         </div>
                     </div>
             </div>
-            <table class="table text-light  my-table  mt-5 ">
+            <table class="table text-light  my-table   mt-5 ">
                 <thead>
                     <tr>
                     <th scope="col"># TIÊU ĐỀ</th>
@@ -91,24 +78,15 @@ mysqli_close($conn);
                 <tbody>
 
                 <?php
-                $conn = mysqli_connect('localhost','root','','spotify');
-                if(!$conn)
-                {
-                    die('Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ');
-                }
-
+                include('../../connect_db.php');
                 $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:5;
                 $current_page = !empty($_GET['page'])?$_GET['page']:1; //Trang hiện tại
                 $offset = ($current_page - 1) * $item_per_page;
-                $result = mysqli_query($conn, "SELECT *
-                                    FROM baihat bh, nghesi ns
-                                    WHERE bh.id_nghesi = ns.id_nghesi AND
-                                    ns.id_nghesi = '$id'
-                                    LIMIT " . $item_per_page . " OFFSET " . $offset);
-                $totalRecords = mysqli_query($conn, "SELECT *
-                                            FROM baihat bh, nghesi ns
-                                            WHERE bh.id_nghesi = ns.id_nghesi AND
-                                            ns.id_nghesi = '$id'");
+                $result = mysqli_query($conn, "SELECT * FROM baihat bh, album ab ,nghesi ns 
+                                                WHERE bh.ma_ab = ab.ma_ab and bh.id_nghesi=ns.id_nghesi AND bh.ma_ab = '$id'
+                                                LIMIT " . $item_per_page . " OFFSET " . $offset);
+                $totalRecords = mysqli_query($conn, "SELECT * FROM baihat bh, album ab ,nghesi ns 
+                                                    WHERE bh.ma_ab = ab.ma_ab and bh.id_nghesi=ns.id_nghesi AND bh.ma_ab = '$id'");
                 $totalRecords = $totalRecords->num_rows;
                 $totalPages = ceil($totalRecords / $item_per_page);
                     if(mysqli_num_rows($result)>0){
@@ -129,7 +107,8 @@ mysqli_close($conn);
                         </div>
                     </div>
                 </th>
-                <td class="pt-4"><a href="../../site/model/process-yeuthich.php?id=<?php echo $row ['ma_bh'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
+               
+                <td class="pt-4"><a href="../../site/model/process-yeuthich.php?id=<?php echo $row1['ma_bh'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
             </tr>
                     
             <?php

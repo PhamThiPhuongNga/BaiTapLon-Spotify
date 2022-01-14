@@ -25,24 +25,24 @@
 
     </div>
     <ul class="nav nav-pills d-flex align-items-center my-nav" >
-                    <!-- <i class="fas fa-chevron-circle-left fs-3 ml-5 myIconArrow"><a href="#" target="_blank"
-                            rel="noopener noreferrer"></a></i>
-                    <i class="fas fa-chevron-circle-right fs-3 pl-5 myIconArrow"></i> -->
+        <!-- <i class="fas fa-chevron-circle-left fs-3 ml-5 myIconArrow"><a href="#" target="_blank"
+                rel="noopener noreferrer"></a></i>
+        <i class="fas fa-chevron-circle-right fs-3 pl-5 myIconArrow"></i> -->
 
-                    <li class="nav-item menu-list ql3">
-                        <a class="nav-linkk  active text-light" aria-current="page" href="playlist.php">Playlist</a>
-                    </li>
-                    <!-- <li class="nav-item ">
-                        <a class="nav-link active text-light" href="podcasts.html">Postcast</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-linkk text-light" href="nghesi.php">Nghệ sĩ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-linkk text-light" href="album.php">Album</a>
-                    </li>
+        <li class="nav-item menu-list ql3">
+            <a class="nav-linkk  active text-light" aria-current="page" href="playlist.php">Playlist</a>
+        </li>
+        <!-- <li class="nav-item ">
+            <a class="nav-link active text-light" href="podcasts.html">Postcast</a>
+        </li> -->
+        <li class="nav-item">
+            <a class="nav-linkk text-light" href="nghesi.php">Nghệ sĩ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-linkk text-light" href="album.php">Album</a>
+        </li>
 
-                </ul>
+    </ul>
     <?php include("view-signin.php");?>
 </div>
 </div>

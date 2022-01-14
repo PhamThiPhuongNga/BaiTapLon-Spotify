@@ -70,7 +70,7 @@
                         <div class="col-md-4 vien-item">
                             <a href="">
                                 <div  class="bg-content"style="background-color: <?php echo $row['maunen'] ?>;">
-                                    <img src="<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
+                                    <img src="../../public/img/theloai/<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
                                     <div class="caption mauchu">
                                         <h4 style="font-weight:700;"><?php echo $row['ten'] ?></h4>
                                     </div>
