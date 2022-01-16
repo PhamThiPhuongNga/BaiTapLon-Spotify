@@ -79,7 +79,7 @@
                         <div  class="box">
                             <div class="cardd">
                                 <a href="album_list.php?id=<?php echo $row['ma_ab']?>">
-                                    <img src="<?php echo $row['anh_ab']; ?>" class="img-topp" alt="..."width="auto" height="155px">
+                                    <img src="../../public/img/album/<?php echo $row['anh_ab']; ?>" class="img-topp" alt="..."width="auto" height="155px">
                                     <div class="card-bodyy mauchu">
                                         <p class="title-item text"><?php echo $row['ten_ab']; ?></p>
                                         <p class="card-text-infor title-item"><?php echo $row['ten_nghesi']; ?></p>

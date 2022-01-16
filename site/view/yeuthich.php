@@ -86,7 +86,7 @@
                     <?php foreach($yeuthich as $key => $value):?>
                     <tr>
                         <th scope="row">
-                            <div class="d-flex align-items-center"> 
+                            <div class="d-flex align-items-center" id="<?php echo $count ; ?>"> 
                                 <p><?php echo $count ++; ?></p> 
                                 &ensp;
                                 <img src="<?php echo $value['anhbh'] ?>" class="my-img-table" alt="">
@@ -108,4 +108,33 @@
         </div> 
     </div>
 </div> 
+<?php
+      // Bước 01: Kết nối Database Server
+    //   echo $id;
+    //   $conn = mysqli_connect('localhost','root','','spotify');
+    //   if(!$conn){
+    //       die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+    //   }
+    //   Bước 02: Thực hiện truy vấn
+    //   $sql = "SELECT *
+    //   FROM baihat bh, nghesi ns
+    //   WHERE bh.id_nghesi = ns.id_nghesi AND
+    //   ns.id_nghesi = '$id'";
+    //   $result = mysqli_query($conn,$sql);
+    //   echo $result;
+      $yeuthich;
+       echo "<pre>";
+        print_r($yeuthich);
+      echo '<script>';
+      echo 'var track_list =[] ;';
+      echo '</script>';
+      while($row = mysqli_fetch_assoc($result)){
+
+      echo '<script>';
+      echo 'var track = ' . json_encode($row) . ';';
+    //   echo 'console.log(track);';
+      echo 'track_list.push(track) ;';
+      echo '</script>';
+      }
+  ?>
 <?php include('../../public/template/site/footer_main.php');?>

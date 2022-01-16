@@ -84,7 +84,7 @@
                     <div  class="box">
                         <div class="cardd">
                             <a href="nghesi_list.php?id=<?php echo $row['id_nghesi']?>">
-                                <img src="<?php echo $row['anh_nghesi']; ?>" class="img-topp" alt="..."width="auto" height="155px">
+                                <img src="../../public/img/nghesi/<?php echo $row['anh_nghesi']; ?>" class="img-topp" alt="..."width="auto" height="155px">
                                 <div class="card-bodyy mauchu">
                                     <p class="title-item text"><?php echo $row['ten_nghesi']; ?></p>
                                     <p class="card-text-infor title-item">Nghệ sĩ</p>

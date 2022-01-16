@@ -55,7 +55,7 @@
             <div class="form-item text">
                 <div class="title-h space clear">
                     <h4 class=""style="font-weight:700; letter-spacing:-1.5px;">Thể loại</h4>
-                    <a  class="see-more card-text-infor mauchu" href="">XEM TẤT CẢ</a>
+                    <a  class="see-more card-text-infor mauchu" href="search.php">XEM TẤT CẢ</a>
                 </div>
                 <div class="clear"></div>
                 <div class="row ">
@@ -68,7 +68,7 @@
                 ?> 
                     
                         <div class="col-md-4 vien-item">
-                            <a href="">
+                            <a href="../../site/view/generer.php?idtl=<?php echo $row['id_category']?>">
                                 <div  class="bg-content"style="background-color: <?php echo $row['maunen'] ?>;">
                                     <img src="../../public/img/theloai/<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
                                     <div class="caption mauchu">
