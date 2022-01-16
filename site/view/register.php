@@ -24,8 +24,6 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
     if(empty($pass) || $pass < 6 ){
         $err['password'] = 'x Vui lòng kiểm tra lại mật khẩu';
     } 
-    // $regexname = "/^{5,20}$/i";
-    // || !preg_match($regexname, $name) 
     if(empty($name)){
         $err['displayname'] = ' x Vui lòng kiểm tra lại tên';
     }
@@ -129,8 +127,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
             <div class="divider">
                 <strong class="divider-title ">hoặc</strong>
             </div>
-            <form method="POST" id="form" name="accounts"  >
-            <!-- action="../model/process-register.php" -->
+            <form method="POST" id="form" name="accounts" action="../model/process-register.php" >
                 <div class="bXxIjv">
                     <div class="error"> 
                         <?php  if(isset($_GET['err'])){echo "<h6 style='color:red;'>{$_GET['err']}</h6>";}?>
@@ -140,7 +137,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                     <div class="biNheR">
                         <label for="email" class="hyIrKV">Email của bạn là gì?</label>
                     </div>
-                    <input type="email" id="email" name="email" placeholder="email@address.com" value="<?php if(isset($email)){echo $email;}?>" class="hUAscM">
+                    <input type="email" id="email" name="email" placeholder="email@address.com" value="" class="hUAscM">
                      <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i> 
                     <div class="error"> 
@@ -153,7 +150,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                     <div class=" biNheR">
                         <label for="confirm"class="hyIrKV">Xác nhận email của bạn</label>
                     </div>
-                    <input type="email"  id="confirmemail" name="confirm-email"  placeholder="Nhập lại email của bạn." value="<?php if(isset($email)){echo $email;}?>" class="hUAscM">
+                    <input type="email"  id="confirmemail" name="confirm-email"  placeholder="Nhập lại email của bạn." value="" class="hUAscM">
                     <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i>
                     <div class="error">
@@ -177,7 +174,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                     <div class="biNheR">
                         <label  class=" hyIrKV">Bạn tên là gì?</label>
                     </div>
-                    <input type="text" id="displayname" name="displayname" placeholder="Nhập tên hồ sơ." value="<?php if(isset($name)){echo $name;}?>" class="hUAscM" title="Tên không được chứa kí tự đặc biệt">
+                    <input type="text" id="displayname" name="displayname" placeholder="Nhập tên hồ sơ." value="" class="hUAscM" title="Tên không được chứa kí tự đặc biệt">
                     <i class="fas fa-exclamation-circle failure-icon"></i>
                     <i class="far fa-check-circle success-icon"></i>
                     <div id="errorUser" class="error">
@@ -196,7 +193,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                                 <div class=" biNheR">
                                     <label class=" hyIrKV">Ngày</label>
                                 </div>
-                                <input type="text"  id="day"  maxlength="2" name="day"  placeholder="DD" value="<?php if(isset($ngay)){echo $ngay;}?>" class="hUAscM">
+                                <input type="text"  id="day"  maxlength="2" name="day"  placeholder="DD" value="" class="hUAscM">
                                 <i class="fas fa-exclamation-circle failure-icon"></i>
                                 <i class="far fa-check-circle success-icon"></i>
                                 <div class="error"></div>
@@ -209,7 +206,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                                 </div>
                                 <div class="btkRyt">
                                     <select id="month" name ="month" class = "bxcbdF ">
-                                        <option selected="" value="<?php if(isset($thang)){echo $thang;}?>"></option
+                                        <option selected="" value=""></option
                                         ><option value="01">Tháng 1</option>
                                         <option value="02">Tháng 2</option>
                                         <option value="03">Tháng 3</option>
@@ -318,7 +315,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                         <span class=" fPyYIP">Để tìm hiểu thêm về cách thức Spotify thu thập, sử dụng, chia sẻ và bảo vệ dữ liệu cá nhân của bạn, vui lòng xem <a href="/vn-vi/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">Chính sách quyền riêng tư của Spotify</a>.</span>
                     </p>
                     <div class="gvwzIR">
-                        <button type="submit" id="submit" name="btnRegister" class="dmJlSg">
+                        <button type="submit"  name="btnRegister" class="dmJlSg">
                             <div class=" flmFpd gzFCtx">Đăng ký</div>
                         </button>
                     </div>

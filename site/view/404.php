@@ -79,7 +79,7 @@
                         <p class="text-gray-500 mb-0"><?php if(isset($_GET['err'])){
           echo "<h6 style='color:red;'>{$_GET['err']}</h6>";
         } ?></p>
-                        <a href="">&larr; Back to Dashboard</a>
+                        <!-- <a href="">&larr; Back to Dashboard</a> -->
                     </div>
                 </div>
 

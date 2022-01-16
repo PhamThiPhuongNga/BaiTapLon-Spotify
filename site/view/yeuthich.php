@@ -89,7 +89,7 @@
                             <div class="d-flex align-items-center"> 
                                 <p><?php echo $count ++; ?></p> 
                                 &ensp;
-                                <img src="<?php echo $value['anhbh'] ?>" class="my-img-table" alt="">
+                                <img src="../../public/img/baihat/<?php echo $value['anhbh'] ?>" class="my-img-table" alt="">
                                 &ensp;
                                 <div class="pt-2">
                                     <h6><?php echo $value['tenbh'] ?></h6>

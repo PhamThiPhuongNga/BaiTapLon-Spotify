@@ -59,18 +59,11 @@
 
                     <?php
                     require_once "../../connect_db.php";
-                    $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:5;
-                    $current_page = !empty($_GET['page'])?$_GET['page']:1; //Trang hiện tại
-                    $offset = ($current_page - 1) * $item_per_page;
                     $result = mysqli_query($conn, "SELECT ab.ma_ab, ab.ten_ab, ab.anh_ab, ns.ten_nghesi 
                                                     FROM album ab, nghesi ns  
                                                     WHERE ab.id_nghesi  = ns.id_nghesi 
-                                                    ORDER BY ma_ab DESC
-                                                    LIMIT " . $item_per_page . " OFFSET " . $offset);
-                    $totalRecords = mysqli_query($conn, "SELECT * FROM album ab, nghesi ns
-                                                    WHERE ab.id_nghesi  = ns.id_nghesi");
-                    $totalRecords = $totalRecords->num_rows;
-                    $totalPages = ceil($totalRecords / $item_per_page);
+                                                    ORDER BY ma_ab DESC");
+                                        
                     if(mysqli_num_rows($result)>0){
                         $count=1;
                         while($row = mysqli_fetch_array($result)){
@@ -79,7 +72,7 @@
                         <div  class="box">
                             <div class="cardd">
                                 <a href="album_list.php?id=<?php echo $row['ma_ab']?>">
-                                    <img src="<?php echo $row['anh_ab']; ?>" class="img-topp" alt="..."width="auto" height="155px">
+                                    <img src="../../public/img/album/<?php echo $row['anh_ab']; ?>" class="img-topp" alt="..."width="155px" height="155px">
                                     <div class="card-bodyy mauchu">
                                         <p class="title-item text"><?php echo $row['ten_ab']; ?></p>
                                         <p class="card-text-infor title-item"><?php echo $row['ten_nghesi']; ?></p>
@@ -96,10 +89,7 @@
                     } 
                     mysqli_close($conn);
                     ?>                                          
-                </div>   
-                <?php
-                include "../../admin/model/pagination.php";
-                ?>                    
+                </div>                
             </div>     
         </div>
         

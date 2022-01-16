@@ -73,7 +73,7 @@
                         <div class="d-flex align-items-center"> 
                             <p><?php echo $count++;?></p> 
                             &ensp;
-                            <img src="<?php echo $row1['anh_bh'];?>" class="my-img-table" alt="">
+                            <img src="../../public/img/baihat/<?php echo $row1['anh_bh'];?>" class="my-img-table" alt="">
                             &ensp;
                             <div class="pt-2">
                                 <h6><?php echo $row1['ten_bh'];?></h6>

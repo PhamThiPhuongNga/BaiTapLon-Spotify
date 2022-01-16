@@ -33,29 +33,36 @@
             <div class="form-item text">
                 <div class=" space ">
                     <h4 class=""style="font-weight:700; letter-spacing:-1.5px;">Nghệ sĩ</h4>
-                    <a  class="see-more card-text-infor mauchu" href="">XEM TẤT CẢ</a>
+                    <a  class="see-more card-text-infor mauchu" href="nghesi.php">XEM TẤT CẢ</a>
                 </div>
                 <div class="clear"></div>
                 <div class="row ">
+                <?php 
+                include('../../connect_db.php');
+                $result = mysqli_query($conn, "SELECT * FROM nghesi ORDER BY id_nghesi DESC limit 6");
+                    if(mysqli_num_rows($result)>0){
+                        while($row = mysqli_fetch_array($result)){
+                ?>
                     <div class=" col-md-2 ">
                         <div  class="box">
                             <div class="cardd">
-                                <a href="">
-                                    <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="card-imggg" alt="..."width="auto" height="155px">
-                                    <div class="card-bodyy mauchu">
-                                        <span class="title-item text">Tri Kỷ Cảm Xúc</span>
-                                        <span class="card-text ">Web5Ngay</span>
+                                <a href="nghesi_list.php?id=<?php echo $row['id_nghesi']?>">
+                                    <img src="../../public/img/nghesi/<?php echo $row['anh_nghesi']; ?>" class="card-imggg" alt="..." width="155px" height="155px"style="border-radius: 50%;">
+                                    <div class="card-bodyy mauchu ">
+                                        <p class="title-item text"><?php echo $row['ten_nghesi']; ?></p>
+                                        <p class="card-text-infor title-item">Nghệ sĩ</p>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
+                    <?php }}?>
                 </div>                
             </div>
             <div class="form-item text">
                 <div class="title-h space clear">
                     <h4 class=""style="font-weight:700; letter-spacing:-1.5px;">Thể loại</h4>
-                    <a  class="see-more card-text-infor mauchu" href="">XEM TẤT CẢ</a>
+                    <a  class="see-more card-text-infor mauchu" href="search.php">XEM TẤT CẢ</a>
                 </div>
                 <div class="clear"></div>
                 <div class="row ">
@@ -68,7 +75,7 @@
                 ?> 
                     
                         <div class="col-md-4 vien-item">
-                            <a href="">
+                            <a href="../../site/view/generer.php?idtl=<?php echo $row['id_category']?>">
                                 <div  class="bg-content"style="background-color: <?php echo $row['maunen'] ?>;">
                                     <img src="../../public/img/theloai/<?php echo $row['anh'] ?>" class="card-img-topp image-item" alt="..."width="auto">
                                     <div class="caption mauchu">
@@ -83,37 +90,32 @@
             <div class="form-item text">
                 <div class="title-h space clear">
                     <h4 class=""style="font-weight:700; letter-spacing:-1.5px;">Abum</h4>
-                    <a  class="see-more card-text-infor mauchu" href="">XEM TẤT CẢ</a>
+                    <a  class="see-more card-text-infor mauchu" href="album.php">XEM TẤT CẢ</a>
                 </div>
                 <div class="clear"></div>
                 <div class="row ">
+                <?php 
+                include('../../connect_db.php');
+                $result = mysqli_query($conn, "SELECT ab.ma_ab, ab.ten_ab, ab.anh_ab, ns.ten_nghesi 
+                FROM album ab, nghesi ns  
+                WHERE ab.id_nghesi  = ns.id_nghesi ORDER BY ma_ab DESC limit 6");
+                    if(mysqli_num_rows($result)>0){
+                        while($row = mysqli_fetch_array($result)){
+                ?>
                     <div class=" col-md-2 ">
                         <div  class="box">
                             <div class="cardd">
-                                <a href="">
-                                    <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
+                                <a href="album.php">
+                                    <img src="../../public/img/album/<?php echo $row['anh_ab']; ?>" class="img-topp" alt="..."width="155px" height="155px">
                                     <div class="card-bodyy mauchu">
-                                        <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                        <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
+                                        <p class="title-item text"><?php echo $row['ten_ab']; ?></p>
+                                        <p class="card-text-infor title-item"><?php echo $row['ten_nghesi']; ?></p>
                                     </div>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class=" col-md-2 ">
-                        <div  class="box">
-                            <div class="cardd">
-                                <a href="">
-                                    <img src="../../public\img\anh-mang-dep-nhat-24.jpg" class="img-topp" alt="..."width="auto" height="155px">
-                                    <div class="card-bodyy mauchu">
-                                        <p class="title-item text">Bài hát hàng đầu tại Toàn Cầu</p>
-                                        <p class="card-text-infor title-item">Thông tin cập nhật hàng tuần cập nhật tại</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                
+                <?php }}?>
                 </div>                
             </div>
         </div>

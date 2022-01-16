@@ -54,7 +54,7 @@ mysqli_close($conn);
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0 ms-3">
                                     <button class="btn-playlist align-items-center bg-dark ml-3">
-                                        <img src="<?php echo $row['anh_ab']; ?>" class="my-img-list" alt="">
+                                        <img src="../../public/img/album/<?php echo $row['anh_ab']; ?>" class="my-img-list" alt="">
                                     </button>
                                 </div>
                                 <div class="flex-grow-1 ms-3">
@@ -99,7 +99,7 @@ mysqli_close($conn);
                     <div class="d-flex align-items-center"> 
                         <p><?php echo $count++; ?></p> 
                         &ensp;
-                        <img src="<?php echo $row['anh_bh']; ?>" class="my-img-table" alt="">
+                        <img src="../../public/img/baihat<?php echo $row['anh_bh']; ?>" class="my-img-table" alt="">
                         &ensp;
                         <div class="pt-2">
                             <h6><?php echo $row['ten_bh']; ?></h6>
