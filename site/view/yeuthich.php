@@ -103,7 +103,7 @@
                 ?> 
                 <tr>
                     <th scope="row">
-                        <div class="d-flex align-items-center"> 
+                        <div class="d-flex align-items-center" id="<?php echo $count; ?> " onClick="play_click(this.id)"> 
                             <p><?php echo $count++;?></p> 
                             &ensp;
                             <img src="../../public/img/baihat/<?php echo $row1['anh_bh'];?>" class="my-img-table" alt="">
@@ -115,7 +115,7 @@
                         </div>
                     </th>
                     <td class="pt-4"><?php echo $row1['ngaythem'];?></td>
-                    <td class="pt-4"><a href="process-del-yeuthich.php?id=<?php echo $row1['id'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
+                    <td class="pt-4"><a href="process-del-yeuthich.php?id=<?php echo $row1['id'];?>"class=""><i class="bi bi-x-circle"></i></a></td>
                 </tr>
                 <?php }} ?>
                 </tbody>

@@ -20,7 +20,7 @@
     $ketqua = mysqli_query($conn,$sql);
     if(mysqli_num_rows($ketqua) > 0){
         // $check = 1;
-        echo "bai nay da them vao danh sach yeu thich";
+        header("location: yeuthich.php");
     }else{
 
     $sqladd = "INSERT INTO yeuthich (id_user, id_baihat)

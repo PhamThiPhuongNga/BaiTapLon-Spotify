@@ -67,7 +67,8 @@
                             FROM baihat bh, album ab, nghesi ns
                             WHERE bh.ma_ab = ab.ma_ab
                             AND bh.id_nghesi = ns.id_nghesi
-                            AND ab.ma_ab  = '$id'";
+                            AND ab.ma_ab  = '$id'
+                            ORDER BY ma_bh DESC ";
                     $resultt = mysqli_query($conn,$sqll);
                     if(mysqli_num_rows($resultt) > 0){
                         $count=1;
@@ -75,7 +76,7 @@
                 ?> 
                 <tr>
                     <th scope="row">
-                        <div class="d-flex align-items-center"> 
+                        <div class="d-flex align-items-center" id="<?php echo $count; ?> " onClick="play_click(this.id)"> 
                             <p><?php echo $count++;?></p> 
                             &ensp;
                             <img src="../../public/img/baihat/<?php echo $row1['anh_bh'];?>" class="my-img-table" alt="">
@@ -95,4 +96,37 @@
         </div>
     </div>
 </div> 
+
+<?php
+      // Bước 01: Kết nối Database Server
+    //   echo $id;
+      $conn = mysqli_connect('localhost','root','','spotify');
+      if(!$conn){
+          die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+      }
+    //   Bước 02: Thực hiện truy vấn
+      $sql = "SELECT * 
+      FROM baihat bh, album ab, nghesi ns
+      WHERE bh.ma_ab = ab.ma_ab
+      AND bh.id_nghesi = ns.id_nghesi
+      AND ab.ma_ab  = '$id'
+      ORDER BY ma_bh DESC ";
+      $resultbh = mysqli_query($conn,$sql);
+    //   echo $result;
+    //   $yeuthich;
+    //    echo "<pre>";
+    //     print_r($yeuthich);
+      echo '<script>';
+      echo 'var track_list =[] ;';
+      echo '</script>';
+      while($row = mysqli_fetch_assoc($resultbh)){
+
+      echo '<script>';
+      echo 'var track = ' . json_encode($row) . ';';
+    //   echo 'console.log(track);';
+      echo 'track_list.push(track) ;';
+      echo '</script>';
+      }
+?>
+
 <?php include('../../public/template/site/footer_main.php');?>

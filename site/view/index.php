@@ -105,7 +105,7 @@
                     <div class=" col-md-2 ">
                         <div  class="box">
                             <div class="cardd">
-                                <a href="album.php">
+                                <a href="album_list.php?id=<?php echo $row['ma_ab']?>">
                                     <img src="../../public/img/album/<?php echo $row['anh_ab']; ?>" class="img-topp" alt="..."width="155px" height="155px">
                                     <div class="card-bodyy mauchu">
                                         <p class="title-item text"><?php echo $row['ten_ab']; ?></p>

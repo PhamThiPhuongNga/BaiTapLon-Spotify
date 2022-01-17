@@ -1,3 +1,14 @@
+// console.log(clicked_id);
+function play_click(clicked_id)
+{
+    
+    // if (track_index < track_list.length - 1)
+    //   track_index += 1;
+    // else track_index = 0;
+    // alert(Number(clicked_id))
+    loadTrack(Number(clicked_id)-1);
+    playTrack();
+}
 // console.log('chay dc roi');
 let track_art = document.querySelector(".track-art");
 let track_name = document.querySelector(".track-name");
