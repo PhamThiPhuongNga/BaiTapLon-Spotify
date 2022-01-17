@@ -29,9 +29,9 @@
                 rel="noopener noreferrer"></a></i>
         <i class="fas fa-chevron-circle-right fs-3 pl-5 myIconArrow"></i> -->
 
-        <li class="nav-item menu-list">
+        <!-- <li class="nav-item menu-list">
             <a class="nav-linkk   text-light" aria-current="page" href="playlist.php">Playlist</a>
-        </li>
+        </li> -->
         <!-- <li class="nav-item ">
             <a class="nav-link active text-light" href="podcasts.html">Postcast</a>
         </li> -->

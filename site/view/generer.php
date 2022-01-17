@@ -62,7 +62,11 @@
                     include('../../connect_db.php');
                     $sqll = "SELECT bh.ma_bh,bh.ten_bh,bh.anh_bh,bh.ngaythem,bh.quocgia,bh.link_bh,ct.ten,ct.anh,ct.anh,ns.ten_nghesi,ns.anh_nghesi,ab.ten_ab 
                     FROM baihat as bh, categories as ct ,nghesi as ns,album as ab 
-                    where bh.id_category=ct.id_category and bh.id_nghesi=ns.id_nghesi and bh.ma_ab=ab.ma_ab and  bh.id_category = '$idtl'";
+                    where bh.id_category=ct.id_category 
+                    and bh.id_nghesi=ns.id_nghesi 
+                    and bh.ma_ab=ab.ma_ab 
+                    and  bh.id_category = '$idtl'
+                    ORDER BY ma_bh DESC ";
                     $resultt = mysqli_query($conn,$sqll);
                     if(mysqli_num_rows($resultt) > 0){
                         $count=1;
@@ -70,7 +74,7 @@
                 ?> 
                 <tr>
                     <th scope="row">
-                        <div class="d-flex align-items-center"> 
+                        <div class="d-flex align-items-center" id="<?php echo $count; ?> " onClick="play_click(this.id)"> 
                             <p><?php echo $count++;?></p> 
                             &ensp;
                             <img src="../../public/img/baihat/<?php echo $row1['anh_bh'];?>" class="my-img-table" alt="">
@@ -83,7 +87,7 @@
                     </th>
                     <td class="pt-4"><?php echo $row1['ten_ab'];?></td>
                     <td class="pt-4"><?php echo $row1['ngaythem'];?></td>
-                    <td class="pt-4"><a href="../../site/model/process-yeuthich.php?id=<?php echo $row1['ma_bh'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
+                    <td class="pt-4"><a href="process-yeuthich.php?id=<?php echo $row1['ma_bh'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
                 </tr>
                 <?php }} ?>
                 </tbody>
@@ -91,4 +95,38 @@
         </div>
     </div>
 </div> 
+
+<?php
+      // Bước 01: Kết nối Database Server
+    //   echo $id;
+      $conn = mysqli_connect('localhost','root','','spotify');
+      if(!$conn){
+          die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+      }
+    //   Bước 02: Thực hiện truy vấn
+      $sql = "SELECT bh.ma_bh,bh.ten_bh,bh.anh_bh,bh.ngaythem,bh.quocgia,bh.link_bh,ct.ten,ct.anh,ct.anh,ns.ten_nghesi,ns.anh_nghesi,ab.ten_ab 
+      FROM baihat as bh, categories as ct ,nghesi as ns,album as ab 
+      where bh.id_category=ct.id_category 
+      and bh.id_nghesi=ns.id_nghesi 
+      and bh.ma_ab=ab.ma_ab 
+      and  bh.id_category = '$idtl'
+      ORDER BY ma_bh DESC ";
+      $resultbh = mysqli_query($conn,$sql);
+    //   echo $result;
+    //   $yeuthich;
+    //    echo "<pre>";
+    //     print_r($yeuthich);
+      echo '<script>';
+      echo 'var track_list =[] ;';
+      echo '</script>';
+      while($row = mysqli_fetch_assoc($resultbh)){
+
+      echo '<script>';
+      echo 'var track = ' . json_encode($row) . ';';
+    //   echo 'console.log(track);';
+      echo 'track_list.push(track) ;';
+      echo '</script>';
+      }
+?>
+
 <?php include('../../public/template/site/footer_main.php');?>

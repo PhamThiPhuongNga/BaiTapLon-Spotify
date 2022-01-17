@@ -29,9 +29,9 @@
                 rel="noopener noreferrer"></a></i>
         <i class="fas fa-chevron-circle-right fs-3 pl-5 myIconArrow"></i> -->
 
-        <li class="nav-item menu-list">
+        <!-- <li class="nav-item menu-list">
             <a class="nav-linkk   text-light" aria-current="page" href="playlist.php">Playlist</a>
-        </li>
+        </li> -->
         <!-- <li class="nav-item ">
             <a class="nav-link active text-light" href="podcasts.html">Postcast</a>
         </li> -->
@@ -72,7 +72,7 @@
                         <div  class="box">
                             <div class="cardd">
                                 <a href="album_list.php?id=<?php echo $row['ma_ab']?>">
-                                    <img src="../../public/img/album/<?php echo $row['anh_ab']; ?>" class="img-topp" alt="..."width="155px" height="155px">
+                                    <img src="../../public/img/album/<?php echo $row['anh_ab']; ?>" class="img-topp" alt="..."width="auto" height="155px">
                                     <div class="card-bodyy mauchu">
                                         <p class="title-item text"><?php echo $row['ten_ab']; ?></p>
                                         <p class="card-text-infor title-item"><?php echo $row['ten_nghesi']; ?></p>

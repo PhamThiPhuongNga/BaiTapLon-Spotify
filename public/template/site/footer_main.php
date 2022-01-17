@@ -1,25 +1,4 @@
 
-    <?php
-      // Bước 01: Kết nối Database Server
-      $conn = mysqli_connect('localhost','root','','spotify');
-      if(!$conn){
-          die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
-      }
-      // Bước 02: Thực hiện truy vấn
-      $sql = "SELECT * FROM baihat";
-      $result = mysqli_query($conn,$sql);
-      echo '<script>';
-      echo 'var track_list =[] ;';
-      echo '</script>';
-      while($row = mysqli_fetch_assoc($result)){
-
-      echo '<script>';
-      echo 'var track = ' . json_encode($row) . ';';
-    //   echo 'console.log(track);';
-      echo 'track_list.push(track) ;';
-      echo '</script>';
-      }
-  ?>
   <script>
       console.log(track_list);
   </script>
