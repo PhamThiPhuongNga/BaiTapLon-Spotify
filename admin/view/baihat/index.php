@@ -64,11 +64,7 @@ include "../../../public/template/admin/header.php";
                                         <td><img src="../../../public/img/baihat/<?php echo $row['anh_bh']; ?>"   style="max-width:50px;"></td>
                                         <td><?php echo $row['ngaythem']; ?></td>
                                         <?php 
-                                        // $sq1=mysqli_query($conn,"select ten from categories as ct ,baihat as bh where ct.id_category=bh.id_category");
-                                        // if(mysqli_num_rows($result)>0){
-                                        //     $count=1;
-                                        //     $row = mysqli_fetch_array($result)){
-                                        // ?>
+                                         ?>
                                         <td><?php echo $row['id_category']; ?></td>
                                         <td><?php echo $row['ma_ab']; ?></td>
                                         <td><?php echo $row['id_nghesi']; ?></td>

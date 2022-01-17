@@ -30,7 +30,7 @@ function loadTrack(track_index) {
     curr_track.load();
   
     // Update details of the track
-    track_art.src = track_list[track_index].anh_bh ;
+    track_art.src = '../../public/img/baihat/'+track_list[track_index].anh_bh ;
     track_name.textContent = track_list[track_index].ten_bh;
     track_artist.textContent = track_list[track_index].ten_nghesi;
     

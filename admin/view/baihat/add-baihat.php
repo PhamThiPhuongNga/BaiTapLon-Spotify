@@ -29,7 +29,7 @@ include "../../../public/template/admin/header.php";
                     </div>
                     <div class="form-group mb-3">
                         <label for="">Ảnh</label>
-                        <input type="text" class="form-control" name="anh_bh"   placeholder="Điền đầy đủ Link ảnh.">
+                        <input type="file" class="form-control" name="myfile" >
                     </div>
                     <div class="form-group mb-3">
                         <label for="">Ngày thêm</label>
@@ -41,7 +41,7 @@ include "../../../public/template/admin/header.php";
                     </div>
                     <div class="form-group mb-3">    
                         <label for="">Link bài hát</label>
-                        <input type="file" class="form-control" name="myfile" >
+                        <input type="text" class="form-control" name="link_bh" >
                     </div>
                     <div class="form-group mb-3">
                         <label for="">Tên Thể loại</label>

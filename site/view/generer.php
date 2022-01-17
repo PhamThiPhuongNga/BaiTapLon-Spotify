@@ -73,7 +73,7 @@
                         <div class="d-flex align-items-center"> 
                             <p><?php echo $count++;?></p> 
                             &ensp;
-                            <img src="<?php echo $row1['anh_bh'];?>" class="my-img-table" alt="">
+                            <img src="../../public/img/baihat/<?php echo $row1['anh_bh'];?>" class="my-img-table" alt="">
                             &ensp;
                             <div class="pt-2">
                                 <h6><?php echo $row1['ten_bh'];?></h6>
@@ -83,7 +83,7 @@
                     </th>
                     <td class="pt-4"><?php echo $row1['ten_ab'];?></td>
                     <td class="pt-4"><?php echo $row1['ngaythem'];?></td>
-                    <td class="pt-4"><a href="../../site/model/process-yeuthich.php?id=<?php echo $row1['ma_bh'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
+                    <td class="pt-4"><a href="process-yeuthich.php?id=<?php echo $row1['ma_bh'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
                 </tr>
                 <?php }} ?>
                 </tbody>

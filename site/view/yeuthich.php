@@ -5,7 +5,11 @@
     if(!isset($_SESSION['isLoginOK'])){
         header("location: login.php");
     }
-    $yeuthich = (isset($_SESSION['yeuthich']))?$_SESSION['yeuthich']:[];
+    if(!isset($_SESSION['idnguoidung'])){
+        header("location: login.php");
+    }
+    $id_user = $_SESSION['idnguoidung'];
+    // $yeuthich = (isset($_SESSION['yeuthich']))?$_SESSION['yeuthich']:[];
     // echo "<pre>";
     // print_r($yeuthich);
     $count=1;
@@ -32,9 +36,9 @@
                 rel="noopener noreferrer"></a></i>
         <i class="fas fa-chevron-circle-right fs-3 pl-5 myIconArrow"></i> -->
 
-        <li class="nav-item menu-list">
+        <!-- <li class="nav-item menu-list">
             <a class="nav-link   text-light" aria-current="page" href="playlist.php">Playlist</a>
-        </li>
+        </li> -->
         <!-- <li class="nav-item ">
             <a class="nav-link active text-light" href="podcasts.html">Postcast</a>
         </li> -->
@@ -77,32 +81,43 @@
                 <thead>
                     <tr>
                     <th scope="col"># TIÊU ĐỀ</th>
-                    <th scope="col">ALBUM</th>
-                    <!-- <th scope="col">NGÀY THÊM</th> -->
+                    <th scope="col">NGÀY THÊM</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($yeuthich as $key => $value):?>
-                    <tr>
-                        <th scope="row">
-                            <div class="d-flex align-items-center" id="<?php echo $count ; ?>"> 
-                                <p><?php echo $count ++; ?></p> 
-                                &ensp;
-                                <img src="<?php echo $value['anhbh'] ?>" class="my-img-table" alt="">
-                                &ensp;
-                                <div class="pt-2">
-                                    <h6><?php echo $value['tenbh'] ?></h6>
-                                    <p class="text-secondary"><?php echo $value['tenns'] ?></p>
-                                </div>
+                <?php 
+                    
+                    include('../../connect_db.php');
+                    $sqll = "SELECT * 
+                    FROM yeuthich yt, baihat bh, nghesi ns, nguoidung nd
+                    WHERE yt.id_user = nd.ma_nguoidung
+                    AND yt.id_baihat = bh.ma_bh
+                    AND bh.id_nghesi = ns.id_nghesi
+                    AND yt.id_user = '$id_user' 
+                    ORDER BY yt.id DESC ";
+                    $resultt = mysqli_query($conn,$sqll);
+                    if(mysqli_num_rows($resultt) > 0){
+                        $count=1;
+                       while($row1 = mysqli_fetch_assoc($resultt)){
+                ?> 
+                <tr>
+                    <th scope="row">
+                        <div class="d-flex align-items-center"> 
+                            <p><?php echo $count++;?></p> 
+                            &ensp;
+                            <img src="../../public/img/baihat/<?php echo $row1['anh_bh'];?>" class="my-img-table" alt="">
+                            &ensp;
+                            <div class="pt-2">
+                                <h6><?php echo $row1['ten_bh'];?></h6>
+                                <span class=""><?php echo $row1['ten_nghesi'];?></span>
                             </div>
-                        </th>
-                        <td class="pt-4"><?php echo $value['tenab'] ?></td>
-                        <!-- <td class="pt-4">9 giờ trước</td> -->
-                        <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                        <td class="pt-4"><a href="../../site/model/process-yeuthich.php?id=<?php echo $value['id'];?>&action=delete"><i class="bi bi-x-lg"></i></a></td>
-                    </tr>
-                    <?php endforeach?>
+                        </div>
+                    </th>
+                    <td class="pt-4"><?php echo $row1['ngaythem'];?></td>
+                    <td class="pt-4"><a href="process-del-yeuthich.php?id=<?php echo $row1['id'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
+                </tr>
+                <?php }} ?>
                 </tbody>
             </table>
         </div> 
@@ -111,24 +126,27 @@
 <?php
       // Bước 01: Kết nối Database Server
     //   echo $id;
-    //   $conn = mysqli_connect('localhost','root','','spotify');
-    //   if(!$conn){
-    //       die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
-    //   }
+      $conn = mysqli_connect('localhost','root','','spotify');
+      if(!$conn){
+          die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+      }
     //   Bước 02: Thực hiện truy vấn
-    //   $sql = "SELECT *
-    //   FROM baihat bh, nghesi ns
-    //   WHERE bh.id_nghesi = ns.id_nghesi AND
-    //   ns.id_nghesi = '$id'";
-    //   $result = mysqli_query($conn,$sql);
+      $sql = "SELECT * 
+      FROM yeuthich yt, baihat bh, nghesi ns, nguoidung nd
+      WHERE yt.id_user = nd.ma_nguoidung
+      AND yt.id_baihat = bh.ma_bh
+      AND bh.id_nghesi = ns.id_nghesi
+      AND yt.id_user = '$id_user' 
+      ORDER BY yt.id DESC ";
+      $resultbh = mysqli_query($conn,$sql);
     //   echo $result;
-      $yeuthich;
-       echo "<pre>";
-        print_r($yeuthich);
+    //   $yeuthich;
+    //    echo "<pre>";
+    //     print_r($yeuthich);
       echo '<script>';
       echo 'var track_list =[] ;';
       echo '</script>';
-      while($row = mysqli_fetch_assoc($result)){
+      while($row = mysqli_fetch_assoc($resultbh)){
 
       echo '<script>';
       echo 'var track = ' . json_encode($row) . ';';

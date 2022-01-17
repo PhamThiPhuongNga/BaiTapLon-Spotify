@@ -7,6 +7,20 @@
     }
    
 ?>
+<?php
+$s = '';
+if(isset($_GET['search'])){
+    $s = $_GET['search'];
+}
+
+$search = '';
+if(!empty($s)){
+    $search = 'where ten like "%'.$s.'%" ';
+}
+// echo "<pre>";
+// print_r($search);
+
+?>
 <style>
     .ql2{
         background-color: #2a2f30;
@@ -46,7 +60,7 @@
                 <div class="row">
                 <?php 
                     include('../../connect_db.php');
-                    $sql = "SELECT * FROM `categories`";
+                    $sql = "SELECT * FROM `categories` $search ";
                     $result = mysqli_query($conn,$sql);
                     if(mysqli_num_rows($result) > 0){
                         while($row = mysqli_fetch_assoc($result)){

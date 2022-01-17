@@ -34,7 +34,7 @@
                         </li>
                         <li class="nav-item roww ql3">
                             <i class="material-icon bi bi-book"></i>
-                            <a class="nav-linkk" href="playlist.php">Thư viện</a>
+                            <a class="nav-linkk" href="nghesi.php">Thư viện</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-linkk"></a>
