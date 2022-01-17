@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nghe đa chiều, sống đa sắc - Spotify</title>
     <link rel="icon" href="../../public/img/Logo/imageslogo.png" type="image/png">
-
-    
     <!-- css bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- icons -->
@@ -36,7 +34,7 @@
                         </li>
                         <li class="nav-item roww ql3">
                             <i class="material-icon bi bi-book"></i>
-                            <a class="nav-linkk" href="playlist.php">Thư viện</a>
+                            <a class="nav-linkk" href="nghesi.php">Thư viện</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-linkk"></a>
