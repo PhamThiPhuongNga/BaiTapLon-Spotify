@@ -49,7 +49,9 @@ include "../../../public/template/admin/header.php";
                                     $offset = ($current_page - 1) * $item_per_page;
                                     // Bước 02: Thực hiện truy vấn
                                     // $sql = "SELECT * FROM nguoidung";
-                                    $result = mysqli_query($conn, "SELECT * FROM `baihat`
+                                    $result = mysqli_query($conn, "SELECT bh.ma_bh,bh.ten_bh,bh.anh_bh,bh.link_bh,bh.ngaythem,bh.quocgia,ct.ten,ab.ten_ab,ns.ten_nghesi 
+                                    FROM baihat as bh,categories as ct, album as ab, nghesi as ns 
+                                    WHERE ns.id_nghesi= bh.id_nghesi and ab.ma_ab=bh.ma_ab and ct.id_category=bh.id_category
                                         LIMIT " . $item_per_page . " OFFSET " . $offset);
                                     $totalRecords = mysqli_query($conn, "SELECT * FROM `baihat`");
                                     $totalRecords = $totalRecords->num_rows;
@@ -65,9 +67,9 @@ include "../../../public/template/admin/header.php";
                                         <td><?php echo $row['ngaythem']; ?></td>
                                         <?php 
                                          ?>
-                                        <td><?php echo $row['id_category']; ?></td>
-                                        <td><?php echo $row['ma_ab']; ?></td>
-                                        <td><?php echo $row['id_nghesi']; ?></td>
+                                        <td><?php echo $row['ten']; ?></td>
+                                        <td><?php echo $row['ten_ab']; ?></td>
+                                        <td><?php echo $row['ten_nghesi']; ?></td>
                                         <td>
                                             <a href="update-baihat.php?id=<?php echo $row['ma_bh']?>" title="Update Record" ><i class="fas fa-pencil-alt"></i></a>
                                             <a href="delete-baihat.php?id=<?php echo $row['ma_bh']?>" title="Delete Record" ><i class="far fa-trash-alt"></i></a>

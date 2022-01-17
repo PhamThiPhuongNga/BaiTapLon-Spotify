@@ -25,8 +25,8 @@
     </div>
     <div class="box-search">
         <div class="form-search">
-            <form class="">
-                <input class="search-input" type="text" name="search" id="search" placeholder="Nghệ sĩ, bài hát, hoặc postcard"> 
+            <form class="" method="post" action="playlist.php">
+                <input class="search-input" type="text" name="search" id="search" placeholder="Nghệ sĩ hoặc bài hát"> 
                 <i class=" icon-search bi bi-search"></i>
             </form>
         </div>

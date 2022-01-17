@@ -7,22 +7,6 @@
     }
 
 ?>
-<?php
-
-$id = $_GET['id'];
-include('../../connect_db.php');
-$sql = "SELECT * FROM baihat bh, album ab 
-        WHERE bh.ma_ab = ab.ma_ab AND 
-        bh.ma_ab = '$id'";
-
-$result = mysqli_query($conn, $sql);
-if(mysqli_num_rows($result) > 0){
-    $row = mysqli_fetch_assoc($result);
-}
-
-mysqli_close($conn);
-
-?>
 <style>
     .ql3{
         background-color: #2a2f30;
@@ -51,6 +35,19 @@ mysqli_close($conn);
             <div class="main-bottom-t">
                     <div class="container  ">
                         <div class="row ">
+                        <?php
+
+                            $id = $_GET['id'];
+                            include('../../connect_db.php');
+                            $sql = "SELECT * FROM baihat bh, album ab 
+                                    WHERE bh.ma_ab = ab.ma_ab AND 
+                                    bh.ma_ab = '$id'";
+
+                            $result = mysqli_query($conn, $sql);
+                            if(mysqli_num_rows($result) > 0){
+                                $row = mysqli_fetch_assoc($result);
+
+                            ?>
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0 ms-3">
                                     <button class="btn-playlist align-items-center bg-dark ml-3">
@@ -65,6 +62,7 @@ mysqli_close($conn);
                                     <p><a href="" class="text-decoration-none link-light a-cogach"> <?php echo $_SESSION['isLoginOK']; ?></a></p>
                                 </div>
                             </div>
+                            <?php }?>
                         </div>
                     </div>
             </div>
@@ -99,7 +97,7 @@ mysqli_close($conn);
                     <div class="d-flex align-items-center"> 
                         <p><?php echo $count++; ?></p> 
                         &ensp;
-                        <img src="../../public/img/baihat<?php echo $row['anh_bh']; ?>" class="my-img-table" alt="">
+                        <img src="../../public/img/baihat/<?php echo $row['anh_bh']; ?>" class="my-img-table" alt="">
                         &ensp;
                         <div class="pt-2">
                             <h6><?php echo $row['ten_bh']; ?></h6>
@@ -112,10 +110,10 @@ mysqli_close($conn);
             </tr>
                     
             <?php
-                }
-            } else{
-                echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
-            } 
+                }}
+            // } else{
+            //     echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+            // } 
             mysqli_close($conn);
             ?>              
                 

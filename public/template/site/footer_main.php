@@ -27,7 +27,7 @@
         <div class="form-footer space">
             <div class="infor-song">
                 <div class="space " style="margin-right: 10px;padding:20px;">
-                    <img src="../../public/img/play.jpg" alt="" width="60" height="60" class="track-art">
+                    <img src="../../../public/img/baihat/" alt="" width="60" height="60" class="track-art">
                     <div class="inforn-name khoangc">
                         <h6 class="track-name">Easy On My</h6>
                         <p class="track-artist">Adele</p>

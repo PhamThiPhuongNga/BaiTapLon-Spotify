@@ -15,26 +15,24 @@
         else
         {
             include("../../connect_db.php");
-            // Bước 02: Thực hiện truy vấn
-            $sql = "SELECT * FROM `nguoidung` WHERE ten_nguoidung = '$tenKH' or email = '$tenKH'";
-            // Ở đây còn có các vấn đề về tính hợp lệ dữ liệu nhập vào FORM
-            // Nghiêm trọng: lỗi SQL Injection
-
+            $sql = "SELECT * FROM `nguoidung` WHERE email ='$tenKH' and  ten_nguoidung='$tenKH'";
             $result = mysqli_query($conn,$sql);
-            $data=mysqli_fetch_assoc($result);
-        
-            $passcheck = password_verify($passKH,$data['matkhau']);
+            $data = mysqli_fetch_assoc($result);
             if(mysqli_num_rows($result) > 0){
                 // CẤP THẺ LÀM VIỆC
-                // if($passcheck){
-
+                $passcheck = password_verify($passKH,$data['matkhau']);
+                echo $data['matkhau'];
+                echo $passKH;
+                var_dump($passcheck);
+                exit();
+                if($passcheck){
                     $idkh = $data['ten_nguoidung'];
                     $_SESSION['isLoginOK'] = $idkh;
                     header("location:../view/index.php");
-                // }else{
-                    // $error = "Mật khẩu chưa chính xác";
-                    // header("location: ../view/login.php?error=$error");
-                // }
+                }else{
+                    $error = "Mật khẩu chưa chính xác";
+                    header("location: ../view/login.php?error=$error");
+                }
             }else{
                 $error = "Tài khoản không tồn tại";
                 header("location: ../view/login.php?error=$error"); //Chuyển hướng, hiển thị thông báo lỗi
