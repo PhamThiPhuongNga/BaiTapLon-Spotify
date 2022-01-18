@@ -78,7 +78,7 @@
                         $count=1;
                        while($row1 = mysqli_fetch_assoc($resultt)){
                 ?> 
-                <tr class="change-bg-list">
+                <tr>
                     <th scope="row">
                         <div class="d-flex align-items-center" id="<?php echo $count; ?> " onClick="play_click(this.id)"> 
                             <p><?php echo $count++;?></p> 
