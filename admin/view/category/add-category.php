@@ -11,48 +11,61 @@ require_once "../../../connect_db.php";
 
 
 ?>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add category</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
- 
-</head>
-<body>
-    <div class="wrapper"> -->
 
 <?php
 include "../../../public/template/admin/header.php";
 ?>
-        <div class="container">
-            <div class="row">
-                <div class=" mt-5 col-md-12">
-                <div class="clearfix">
-                        <h2 class="pull-left">Thêm Category</h2> <br> <br>
-                        <p>Điền đầy đủ thông tin và submit để thêm bản ghi vào database</p>
-                </div>
-                <form action="process-add-category.php" method="post">
-                    <div class="form-group">
-                        <label for="">Tên category</label>
-                        <input type="text" class="form-control" name="ten"  placeholder="Điền đầy đủ Tên category.">
+<div class=""style="background-color:white;">
+    <div class="containerrr">
+    <div class="kcvien" >
+        <div class="round shadow">
+            <div class="containerrr">
+                <h5 class="text-center h3 pt-3 ">Thêm mới Thể loại</h5>
+                <?php 
+                    if(isset($_GET['error'])){
+                        echo
+                        "<div class='bXxIjv '>
+                            <div class='hUAscM  tbao' style='background-color: red;color:white;border:0;'>
+                                <label  class='hyIrKV'><i class='material-icon text-dark bi bi-x'></i> &nbsp;&nbsp; {$_GET['error']}</label>
+                            </div>
+                        </div>";}?>
+                <form action="process-add-category.php" method="post" enctype="multipart/form-data">
+                    <div class="form-group mb-3">
+                        <label for="">Tên thể loại</label>
+                        <input type="text" class="form-control" name="tentl"  placeholder="Điền đầy đủ tên thể loại.">
                     </div>
-                    <div class="form-group">
-                        <label for="">Link ảnh</label>
-                        <input type="text" class="form-control" name="anh" placeholder="Điền đầy đủ Link ảnh."/>
+                    <div class="form-group mb-3">
+                        <label for="">Ảnh thể loại</label>
+                        <input type="file" class="form-control" name="myfile"value="Upload"/>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="">Màu nền điền theo form sau vd : rgb(39, 133, 106)</label>
                         <input type="text" class="form-control" name="maunen" placeholder="Điền đầy đủ Màu nền" >
-                    </div> <br> 
-                    <input type="submit" class="btn btn-primary" value="Thêm">
-                    <a href="index.php" class="btn btn-secondary">Thoát</a>
+                    </div>
+                    <!-- <div class="form-group mb-3">
+                        <label for="">Tên nghệ sĩ</label>
+                       
+                        <select class="form-control" id="cbotenns" name="cbotenns">
+                        <?php 
+                        include('../../../connect_db.php');
+                        $ssl="SELECT * FROM `nghesi`";
+                        $pro= mysqli_query($conn,$ssl);
+                        if(mysqli_num_rows($pro)){
+                            while($row = mysqli_fetch_array($pro)){
+                        ?>
+                            <option value="<?php echo $row['id_nghesi'] ?>"><?php echo $row['id_nghesi'] ?> - <?php echo $row['ten_nghesi'] ?></option>
+                        <?php }}?>
+                        </select>
+                    </div>  -->
+                    <br> 
+                    <div class="pb-3">
+                        <input type="submit" name="sbmAdd" class="btn btn-primary" value="Thêm">
+                        <a href="index.php" class="btn btn-secondary">Thoát</a>
+                    </div>
                 </form>
-                </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>

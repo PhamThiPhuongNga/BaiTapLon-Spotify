@@ -7,13 +7,13 @@
     }
    
 ?>
-<style>
-    .ql3{
-        background-color: #2a2f30;
-    }
-</style>
 
 <?php include('../../public/template/site/header_main.php');?>
+<style>
+.prolist {
+    padding-top: 0px !important;
+}
+</style>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <div class="contain-right">
     <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
@@ -27,15 +27,14 @@
     </div>
     <?php include("view-signin.php");?>
 </div>
-</div>
-    </div>  
+ 
 <div class="main">   
     <div class="main-inner-vien" style="width:83%;">
         <div class="bg-nen">
                 <?php 
                     $idtl = $_GET['idtl'];
                     include('../../connect_db.php');
-                    $sql = "SELECT * FROM `categories` where id_category = '$idtl'";
+                    $sql = "SELECT * FROM categories where id_category = '$idtl'";
                     $result = mysqli_query($conn,$sql);
                     if(mysqli_num_rows($result) > 0){
                        $row = mysqli_fetch_assoc($result);
@@ -52,15 +51,7 @@
                         </div>
                     </div>
                 <!-- </div> -->
-            </div>
-                <?php }?>
-                <?php  $idtl = $_GET['idtl'];
-                    include('../../connect_db.php');
-                    $sql = "SELECT `ma_bh`, `ten_bh`, `anh_bh`, `ngaythem`, `thoiluong_bh`, `quocgia`, `link_bh`, `ma_ab`, `id_nghesi` 
-                    FROM `baihat` as bh INNER JOIN categories as ct WHERE bh.id_category=ct.id_category and ct.id_category='$idtl'";
-                    $result = mysqli_query($conn,$sql);
-                    if(mysqli_num_rows($result) > 0){
-                       while($row = mysqli_fetch_assoc($result)){;?>
+            </div><?php } ?>
             <table class="table text-light m-5 mh-100 mx-auto my-table">
                 <thead>
                     <tr>
@@ -71,105 +62,76 @@
                     </tr>
                 </thead>
                 <tbody>
-                <tr>
+                <?php 
+                    $idtl = $_GET['idtl'];
+                    include('../../connect_db.php');
+                    $sqll = "SELECT bh.ma_bh,bh.ten_bh,bh.anh_bh,bh.ngaythem,bh.quocgia,bh.link_bh,ct.ten,ct.anh,ct.anh,ns.ten_nghesi,ns.anh_nghesi,ab.ten_ab 
+                    FROM baihat as bh, categories as ct ,nghesi as ns,album as ab 
+                    where bh.id_category=ct.id_category 
+                    and bh.id_nghesi=ns.id_nghesi 
+                    and bh.ma_ab=ab.ma_ab 
+                    and  bh.id_category = '$idtl'
+                    ORDER BY ma_bh DESC ";
+                    $resultt = mysqli_query($conn,$sqll);
+                    if(mysqli_num_rows($resultt) > 0){
+                        $count=1;
+                       while($row1 = mysqli_fetch_assoc($resultt)){
+                ?> 
+                <tr class="change-bg-list">
                     <th scope="row">
-                        <div class="d-flex align-items-center"> 
-                            <p>1</p> 
+                        <div class="d-flex align-items-center" id="<?php echo $count; ?> " onClick="play_click(this.id)"> 
+                            <p><?php echo $count++;?></p> 
                             &ensp;
-                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                            <img src="../../public/img/baihat/<?php echo $row1['anh_bh'];?>" class="my-img-table" alt="">
                             &ensp;
                             <div class="pt-2">
-                                <h6><?php echo $row['ten_bh'];?></h6>
-                                <?php  
-                                    // $idtl = $_GET['idtl'];
-                                    // include('../../connect_db.php');
-                                    $sql1 = "SELECT bh.ma_bh,bh.ten_bh,bh.anh_bh,bh.ngaythem,bh.thoiluong_bh,bh.quocgia,bh.link_bh,ns.ten_nghesi,ns.anh_nghesi,bh.id_category 
-                                    FROM `baihat` as bh INNER JOIN nghesi as ns WHERE bh.id_nghesi=ns.id_nghesi and id_category='$idtl'";
-                                    $result1 = mysqli_query($conn,$sql1);
-                                    if(mysqli_num_rows($result) > 0){
-                                        $row1 = mysqli_fetch_assoc($result);?>
-                                <p class="text-secondary"><?php echo $row1['ten_nghesi'] ?></p>
-                                <?php }?>
+                                <h6><?php echo $row1['ten_bh'];?></h6>
+                                <span class=""><?php echo $row1['ten_nghesi'];?></span>
                             </div>
                         </div>
                     </th>
-                    <td class="pt-4">Hãy trao cho anh</td>
-                    <td class="pt-4"><?php echo $row['ngaythem'];?></td>
-                    <td class="pt-4"><button type="submit" class="l"><i class="bi bi-suit-heart-fill"></i></button></td>
+                    <td class="pt-4"><?php echo $row1['ten_ab'];?></td>
+                    <td class="pt-4"><?php echo $row1['ngaythem'];?></td>
+                    <td class="pt-4"><a href="process-yeuthich.php?id=<?php echo $row1['ma_bh'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
                 </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="d-flex align-items-center"> 
-                            <p>1</p> 
-                            &ensp;
-                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                            &ensp;
-                            <div class="pt-2">
-                                <h6>Hãy trao cho anh</h6>
-                                <p class="text-secondary">Sơn Tùng MTP</p>
-                            </div>
-                        </div>
-                    </th>
-                    <td class="pt-4">Hãy trao cho anh</td>
-                    <td class="pt-4">9 giờ trước</td>
-                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="d-flex align-items-center"> 
-                            <p>1</p> 
-                            &ensp;
-                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                            &ensp;
-                            <div class="pt-2">
-                                <h6>Hãy trao cho anh</h6>
-                                <p class="text-secondary">Sơn Tùng MTP</p>
-                            </div>
-                        </div>
-                    </th>
-                    <td class="pt-4">Hãy trao cho anh</td>
-                    <td class="pt-4">9 giờ trước</td>
-                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="d-flex align-items-center"> 
-                            <p>1</p> 
-                            &ensp;
-                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                            &ensp;
-                            <div class="pt-2">
-                                <h6>Hãy trao cho anh</h6>
-                                <p class="text-secondary">Sơn Tùng MTP</p>
-                            </div>
-                        </div>
-                    </th>
-                    <td class="pt-4">Hãy trao cho anh</td>
-                    <td class="pt-4">9 giờ trước</td>
-                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="d-flex align-items-center"> 
-                            <p>1</p> 
-                            &ensp;
-                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                            &ensp;
-                            <div class="pt-2">
-                                <h6>Hãy trao cho anh</h6>
-                                <p class="text-secondary">Sơn Tùng MTP</p>
-                            </div>
-                        </div>
-                    </th>
-                    <td class="pt-4">Hãy trao cho anh</td>
-                    <td class="pt-4">9 giờ trước</td>
-                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
-                    
+                <?php }} ?>
                 </tbody>
             </table>
-            <?php } }?>
         </div>
     </div>
 </div> 
+
+<?php
+      // Bước 01: Kết nối Database Server
+    //   echo $id;
+      $conn = mysqli_connect('localhost','root','','spotify');
+      if(!$conn){
+          die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+      }
+    //   Bước 02: Thực hiện truy vấn
+      $sql = "SELECT bh.ma_bh,bh.ten_bh,bh.anh_bh,bh.ngaythem,bh.quocgia,bh.link_bh,ct.ten,ct.anh,ct.anh,ns.ten_nghesi,ns.anh_nghesi,ab.ten_ab 
+      FROM baihat as bh, categories as ct ,nghesi as ns,album as ab 
+      where bh.id_category=ct.id_category 
+      and bh.id_nghesi=ns.id_nghesi 
+      and bh.ma_ab=ab.ma_ab 
+      and  bh.id_category = '$idtl'
+      ORDER BY ma_bh DESC ";
+      $resultbh = mysqli_query($conn,$sql);
+    //   echo $result;
+    //   $yeuthich;
+    //    echo "<pre>";
+    //     print_r($yeuthich);
+      echo '<script>';
+      echo 'var track_list =[] ;';
+      echo '</script>';
+      while($row = mysqli_fetch_assoc($resultbh)){
+
+      echo '<script>';
+      echo 'var track = ' . json_encode($row) . ';';
+    //   echo 'console.log(track);';
+      echo 'track_list.push(track) ;';
+      echo '</script>';
+      }
+?>
+
 <?php include('../../public/template/site/footer_main.php');?>

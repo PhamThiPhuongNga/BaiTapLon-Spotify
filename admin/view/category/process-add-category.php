@@ -7,22 +7,22 @@
 ?>
 <?php
     require_once "../../../connect_db.php";
-    if(isset($_POST['ten_nghesi'])){
-        $ten = $_POST['ten_nghesi'];
+    if(isset($_POST['tentl'])){
+        $ten = $_POST['tentl'];
     }
     // $anh = $_POST['anh'];
     $maunen = $_POST['maunen'];
     $statusMsg = '';
-    $targetDir = "../../../public/img/nghesi/";
+    $targetDir = "../../../public/img/theloai/";
     $fileName = basename($_FILES["myfile"]["name"]);
     $targetFilePath = $targetDir . $fileName;
     $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
-    if(isset($_POST["sbmUpload"]) && !empty($_FILES["myfile"]["name"])){
+    if(isset($_POST["sbmAdd"]) && !empty($_FILES["myfile"]["name"])){
         $allowTypes = array('jpg','png','jpeg','gif','pdf');
         if(in_array($fileType, $allowTypes)){
             if(move_uploaded_file($_FILES["myfile"]["tmp_name"], $targetFilePath)){
                 // b2: truy van
-                $sql = "INSERT INTO categories (ten, anh, maunen) VALUES ('$ten', '".$fileName."', '$maunen')";
+                $sql = "INSERT INTO `categories`(`ten`, `anh`, `maunen`) VALUES ('$ten', '".$fileName."', '$maunen')";
                 // echo $sql;
                 $ketqua = mysqli_query($conn, $sql);
 

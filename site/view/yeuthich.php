@@ -5,7 +5,14 @@
     if(!isset($_SESSION['isLoginOK'])){
         header("location: login.php");
     }
-   
+    if(!isset($_SESSION['idnguoidung'])){
+        header("location: login.php");
+    }
+    $id_user = $_SESSION['idnguoidung'];
+    // $yeuthich = (isset($_SESSION['yeuthich']))?$_SESSION['yeuthich']:[];
+    // echo "<pre>";
+    // print_r($yeuthich);
+    $count=1;
 ?>
 <style>
     .ql4{
@@ -25,24 +32,24 @@
 
     </div>
     <ul class="nav nav-pills d-flex align-items-center my-nav" >
-                    <!-- <i class="fas fa-chevron-circle-left fs-3 ml-5 myIconArrow"><a href="#" target="_blank"
-                            rel="noopener noreferrer"></a></i>
-                    <i class="fas fa-chevron-circle-right fs-3 pl-5 myIconArrow"></i> -->
+        <!-- <i class="fas fa-chevron-circle-left fs-3 ml-5 myIconArrow"><a href="#" target="_blank"
+                rel="noopener noreferrer"></a></i>
+        <i class="fas fa-chevron-circle-right fs-3 pl-5 myIconArrow"></i> -->
 
-                    <li class="nav-item menu-list">
-                        <a class="nav-link   text-light" aria-current="page" href="playlist.php">Playlist</a>
-                    </li>
-                    <!-- <li class="nav-item ">
-                        <a class="nav-link active text-light" href="podcasts.html">Postcast</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="nghesi.php">Nghệ sĩ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="album.php">Album</a>
-                    </li>
+        <!-- <li class="nav-item menu-list">
+            <a class="nav-link   text-light" aria-current="page" href="playlist.php">Playlist</a>
+        </li> -->
+        <!-- <li class="nav-item ">
+            <a class="nav-link active text-light" href="podcasts.html">Postcast</a>
+        </li> -->
+        <li class="nav-item">
+            <a class="nav-link text-light" href="nghesi.php">Nghệ sĩ</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" href="album.php">Album</a>
+        </li>
 
-                </ul>
+    </ul>
     <?php include("view-signin.php");?>
 </div>
 </div>
@@ -74,101 +81,76 @@
                 <thead>
                     <tr>
                     <th scope="col"># TIÊU ĐỀ</th>
-                    <th scope="col">ALBUM</th>
-                    <th scope="col">NGÀY THÊM</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">
-                            <div class="d-flex align-items-center"> 
-                                <p>1</p> 
-                                &ensp;
-                                <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                                &ensp;
-                                <div class="pt-2">
-                                    <h6>Hãy trao cho anh</h6>
-                                    <p class="text-secondary">Sơn Tùng MTP</p>
-                                </div>
-                            </div>
-                        </th>
-                        <td class="pt-4">Hãy trao cho anh</td>
-                        <td class="pt-4">9 giờ trước</td>
-                        <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <div class="d-flex align-items-center"> 
-                                <p>1</p> 
-                                &ensp;
-                                <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                                &ensp;
-                                <div class="pt-2">
-                                    <h6>Hãy trao cho anh</h6>
-                                    <p class="text-secondary">Sơn Tùng MTP</p>
-                                </div>
-                            </div>
-                        </th>
-                        <td class="pt-4">Hãy trao cho anh</td>
-                        <td class="pt-4">9 giờ trước</td>
-                        <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <div class="d-flex align-items-center"> 
-                                <p>1</p> 
-                                &ensp;
-                                <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                                &ensp;
-                                <div class="pt-2">
-                                    <h6>Hãy trao cho anh</h6>
-                                    <p class="text-secondary">Sơn Tùng MTP</p>
-                                </div>
-                            </div>
-                        </th>
-                        <td class="pt-4">Hãy trao cho anh</td>
-                        <td class="pt-4">9 giờ trước</td>
-                        <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <div class="d-flex align-items-center"> 
-                                <p>1</p> 
-                                &ensp;
-                                <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                                &ensp;
-                                <div class="pt-2">
-                                    <h6>Hãy trao cho anh</h6>
-                                    <p class="text-secondary">Sơn Tùng MTP</p>
-                                </div>
-                            </div>
-                        </th>
-                        <td class="pt-4">Hãy trao cho anh</td>
-                        <td class="pt-4">9 giờ trước</td>
-                        <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                    </tr>
-                    <tr>
-                        <th scope="row">
-                            <div class="d-flex align-items-center"> 
-                                <p>1</p> 
-                                &ensp;
-                                <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                                &ensp;
-                                <div class="pt-2">
-                                    <h6>Hãy trao cho anh</h6>
-                                    <p class="text-secondary">Sơn Tùng MTP</p>
-                                </div>
-                            </div>
-                        </th>
-                        <td class="pt-4">Hãy trao cho anh</td>
-                        <td class="pt-4">9 giờ trước</td>
-                        <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                    </tr>
+                <?php 
                     
+                    include('../../connect_db.php');
+                    $sqll = "SELECT * 
+                    FROM yeuthich yt, baihat bh, nghesi ns, nguoidung nd
+                    WHERE yt.id_user = nd.ma_nguoidung
+                    AND yt.id_baihat = bh.ma_bh
+                    AND bh.id_nghesi = ns.id_nghesi
+                    AND yt.id_user = '$id_user' 
+                    ORDER BY yt.id DESC ";
+                    $resultt = mysqli_query($conn,$sqll);
+                    if(mysqli_num_rows($resultt) > 0){
+                        $count=1;
+                       while($row1 = mysqli_fetch_assoc($resultt)){
+                ?> 
+                <tr class="change-bg-list">
+                    <th scope="row">
+                        <div class="d-flex align-items-center" id="<?php echo $count; ?> " onClick="play_click(this.id)"> 
+                            <p><?php echo $count++;?></p> 
+                            &ensp;
+                            <img src="../../public/img/baihat/<?php echo $row1['anh_bh'];?>" class="my-img-table" alt="">
+                            &ensp;
+                            <div class="pt-2">
+                                <h6><?php echo $row1['ten_bh'];?></h6>
+                                <span class=""><?php echo $row1['ten_nghesi'];?></span>
+                            </div>
+                        </div>
+                    </th>
+                    <td class="pt-4"><a href="process-del-yeuthich.php?id=<?php echo $row1['id'];?>"class=""><i class="bi bi-x-circle"></i></a></td>
+                </tr>
+                <?php }} ?>
                 </tbody>
             </table>
         </div> 
     </div>
 </div> 
+<?php
+      // Bước 01: Kết nối Database Server
+    //   echo $id;
+      $conn = mysqli_connect('localhost','root','','spotify');
+      if(!$conn){
+          die("Kết nối thất bại. Vui lòng kiểm tra lại các thông tin máy chủ");
+      }
+    //   Bước 02: Thực hiện truy vấn
+      $sql = "SELECT * 
+      FROM yeuthich yt, baihat bh, nghesi ns, nguoidung nd
+      WHERE yt.id_user = nd.ma_nguoidung
+      AND yt.id_baihat = bh.ma_bh
+      AND bh.id_nghesi = ns.id_nghesi
+      AND yt.id_user = '$id_user' 
+      ORDER BY yt.id DESC ";
+      $resultbh = mysqli_query($conn,$sql);
+    //   echo $result;
+    //   $yeuthich;
+    //    echo "<pre>";
+    //     print_r($yeuthich);
+      echo '<script>';
+      echo 'var track_list =[] ;';
+      echo '</script>';
+      while($row = mysqli_fetch_assoc($resultbh)){
+
+      echo '<script>';
+      echo 'var track = ' . json_encode($row) . ';';
+    //   echo 'console.log(track);';
+      echo 'track_list.push(track) ;';
+      echo '</script>';
+      }
+  ?>
 <?php include('../../public/template/site/footer_main.php');?>

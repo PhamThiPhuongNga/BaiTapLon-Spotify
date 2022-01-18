@@ -14,7 +14,7 @@
 <?php
 include "../../../public/template/admin/header.php";
 ?>
-    <div class="container">
+    <div class="containerrr">
             <div class="row">
                 <div class="mt-5 col-md-12">
                     <div class="clearfix">
@@ -40,13 +40,9 @@ include "../../../public/template/admin/header.php";
                                     
                                     // b1: include db
                                     require_once "../../../connect_db.php";
-                                    // b2: Truy van
-
                                     $item_per_page = !empty($_GET['per_page'])?$_GET['per_page']:5;
                                     $current_page = !empty($_GET['page'])?$_GET['page']:1; //Trang hiện tại
                                     $offset = ($current_page - 1) * $item_per_page;
-                                    // Bước 02: Thực hiện truy vấn
-                                    // $sql = "SELECT * FROM nguoidung";
                                     $result = mysqli_query($conn, "SELECT ab.ma_ab, ab.ten_ab, ab.anh_ab, ns.ten_nghesi 
                                                 FROM album ab, nghesi ns  
                                                 WHERE ab.id_nghesi  = ns.id_nghesi 
@@ -56,13 +52,6 @@ include "../../../public/template/admin/header.php";
                                                                         WHERE ab.id_nghesi  = ns.id_nghesi");
                                     $totalRecords = $totalRecords->num_rows;
                                     $totalPages = ceil($totalRecords / $item_per_page);
-                                    // echo $products;
-                                    // $sql = "SELECT ab.ma_ab, ab.ten_ab, ab.anh_ab, ns.ten_nghesi 
-                                    //         FROM album ab, nghesi ns  
-                                    //         WHERE ab.id_nghesi  = ns.id_nghesi 
-                                    //         ORDER BY ma_ab DESC ";
-                                    // if($result = mysqli_query($conn, $sql)){
-                                    // b3: Xu ly ket qua truy van
                                         if(mysqli_num_rows($result)>0){
                                             $count=1;
                                             while($row = mysqli_fetch_array($result)){
@@ -70,7 +59,7 @@ include "../../../public/template/admin/header.php";
                                         <th scope="row"><?php echo $count++; ?></th>
                                         <td><?php echo $row['ma_ab']; ?></td>
                                         <td><?php echo $row['ten_ab']; ?></td>
-                                        <td><img src="<?php echo $row['anh_ab']; ?>"   style="max-width:50px;"></td>
+                                        <td><img src="../../../public/img/album/<?php echo $row['anh_ab']; ?>"   style="max-width:50px;"></td>
                                         <td><?php echo $row['ten_nghesi']; ?></td>
                                         <td>
                                             <a href="update-album.php?id=<?php echo $row['ma_ab']?>" title="Update Record" ><i class="fas fa-pencil-alt"></i></a>

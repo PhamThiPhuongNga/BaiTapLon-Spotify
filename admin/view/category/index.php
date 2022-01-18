@@ -14,20 +14,19 @@
 <?php
 include "../../../public/template/admin/header.php";
 ?>
-        <div class="container">
+        <div class="containerrr">
             <div class="row">
                 <div class="mt-5 col-md-12">
                     <div class="clearfix">
-                        <h2 class="pull-left">Category</h2>
-                        <a href="add-category.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Add New
-                        Category</a>
+                        <h2 class="pull-left">Thể loại</h2>
+                        <a href="add-category.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i>Thêm mới</a>
                     </div>
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th scope="col">STT</th>
                                     <th scope="col">ID</th>
-                                    <th scope="col">Tên Category</th>
+                                    <th scope="col">Tên thể loại</th>
                                     <th scope="col">Ảnh</th>
                                     <th scope="col">Màu nền</th>
                                     <th scope="col">Action</th>
@@ -50,12 +49,6 @@ include "../../../public/template/admin/header.php";
                                     $totalRecords = mysqli_query($conn, "SELECT * FROM `categories`");
                                     $totalRecords = $totalRecords->num_rows;
                                     $totalPages = ceil($totalRecords / $item_per_page);
-                                    // $result = mysqli_query($conn,$sql);
-                                    // Bước 03: Xử lý kết quả truy vấn
-
-                                    // $sql = "SELECT * FROM categories ORDER BY id_category DESC ";
-                                    // if($result = mysqli_query($conn, $sql)){
-                                    // b3: Xu ly ket qua truy van
                                         if(mysqli_num_rows($result)>0){
                                             $count=1;
                                             while($row = mysqli_fetch_array($result)){
@@ -63,7 +56,7 @@ include "../../../public/template/admin/header.php";
                                         <th scope="row"><?php echo $count++; ?></th>
                                         <td><?php echo $row['id_category']; ?></td>
                                         <td><?php echo $row['ten']; ?></td>
-                                        <td><img src="<?php echo $row['anh']; ?>"   style="max-width:50px;"></td>
+                                        <td><img src="../../../public/img/theloai/<?php echo $row['anh']; ?>"   style="max-width:50px;"></td>
                                         <td><div style="background-color: <?php echo $row['maunen']; ?>; width:50px; height:50px"></div></td>
                                         <td>
                                             <a href="update-category.php?id=<?php echo $row['id_category']?>" title="Update Record" ><i class="fas fa-pencil-alt"></i></a>

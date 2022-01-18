@@ -15,7 +15,7 @@
 <?php
 include "../../../public/template/admin/header.php";
 ?>
-        <div class="container">
+        <div class="containerrr">
             <div class="row">
                 <div class="mt-5 col-md-12">
                     <div class="clearfix">
@@ -49,28 +49,21 @@ include "../../../public/template/admin/header.php";
                                     $offset = ($current_page - 1) * $item_per_page;
                                     // Bước 02: Thực hiện truy vấn
                                     // $sql = "SELECT * FROM nguoidung";
-                                    $result = mysqli_query($conn, "SELECT *
-                                         FROM baihat, album, nghesi, categories
-                                         WHERE baihat.id_abum = album.ma_ab AND 
-                                         baihat.id_nghesi = nghesi.id_nghesi AND 
-                                         baihat.id_theloai = categories.id_category
-                                         ORDER BY ma_bh DESC
+                                    $result = mysqli_query($conn, "SELECT * 
+                                                FROM baihat bh, album ab, nghesi ns, categories ca
+                                                WHERE bh.ma_ab = ab.ma_ab
+                                                AND bh.id_nghesi = ns.id_nghesi
+                                                AND bh.id_category = ca.id_category
+                                                ORDER BY bh.ma_bh DESC
                                         LIMIT " . $item_per_page . " OFFSET " . $offset);
-                                    $totalRecords = mysqli_query($conn, "SELECT *
-                                        FROM baihat, album, nghesi, categories
-                                        WHERE baihat.id_abum = album.ma_ab AND 
-                                        baihat.id_nghesi = nghesi.id_nghesi AND 
-                                        baihat.id_theloai = categories.id_category");
+                                    $totalRecords = mysqli_query($conn, "SELECT * 
+                                                FROM baihat bh, album ab, nghesi ns, categories ca
+                                                WHERE bh.ma_ab = ab.ma_ab
+                                                AND bh.id_nghesi = ns.id_nghesi
+                                                AND bh.id_category = ca.id_category
+                                                ORDER BY bh.ma_bh DESC");
                                     $totalRecords = $totalRecords->num_rows;
                                     $totalPages = ceil($totalRecords / $item_per_page);
-                                    // $sql = "SELECT *
-                                    //     FROM baihat, album, nghesi, categories
-                                    //     WHERE baihat.id_abum = album.ma_ab AND 
-                                    //     baihat.id_nghesi = nghesi.id_nghesi AND 
-                                    //     baihat.id_theloai = categories.id_category
-                                    //     ORDER BY ma_bh DESC ";
-                                    // if($result = mysqli_query($conn, $sql)){
-                                    // b3: Xu ly ket qua truy van
                                         if(mysqli_num_rows($result)>0){
                                             $count=1;
                                             while($row = mysqli_fetch_array($result)){
@@ -78,8 +71,10 @@ include "../../../public/template/admin/header.php";
                                         <th scope="row"><?php echo $count++; ?></th>
                                         <td ><?php echo $row['ma_bh']; ?></td>
                                         <td><?php echo $row['ten_bh']; ?></td>
-                                        <td><img src="<?php echo $row['anh_bh']; ?>"   style="max-width:50px;"></td>
+                                        <td><img src="../../../public/img/baihat/<?php echo $row['anh_bh']; ?>"   style="max-width:50px;"></td>
                                         <td><?php echo $row['ngaythem']; ?></td>
+                                        <?php 
+                                         ?>
                                         <td><?php echo $row['ten']; ?></td>
                                         <td><?php echo $row['ten_ab']; ?></td>
                                         <td><?php echo $row['ten_nghesi']; ?></td>

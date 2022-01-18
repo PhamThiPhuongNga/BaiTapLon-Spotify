@@ -1,0 +1,32 @@
+.bg-nen {
+    padding: 30px 30px 150px 11px;
+}
+.box {
+    margin-left: 20px;
+    text-decoration: none;
+    width: 170px !important;
+    height: 263px;
+    padding: 9px !important;
+    border-radius: 5px;
+    background-color: rgb(26, 26, 26);
+    box-shadow: 2px 2px 30px rgb(0 0 0 / 20%);
+}
+.bg-nen {
+    padding: 30px 30px 150px 10px !important;
+}
+.bg-content {
+    width: 335px !important;
+}
+.vien-item2 {
+    width: 213px !important;
+}
+.change-bg-list:hover{
+    background-color: black !important;
+}
+.dropdown {
+    margin-right: 33px !important;
+
+}
+.spaceduy{
+    border-bottom: solid 1px #dee2e6;
+}

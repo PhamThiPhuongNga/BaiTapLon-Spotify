@@ -23,21 +23,21 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
         if(empty($email) || !preg_match($regex, $email)){
             $err['email'] = 'x Vui lòng kiểm tra lại email';
             $err1 = 'x Vui lòng kiểm tra lại email';
-            // header("location: ../view/register.php?erremail=$err[email]");
+            header("location: ../view/register.php?erremail=$err[email]");
         }
         if($confemail != $email ){
             $err['confirm-email'] = ' x Email nhập lại chưa đúng';
-            // header("location: ../view/register.php?errcfmail=$err");
+            header("location: ../view/register.php?errcfmail=$err");
         }
         if(empty($pass) || $pass < 6 ){
             $err['password'] = 'x Vui lòng kiểm tra lại mật khẩu';
-            // header("location: ../view/register.php?errpass=$err[password]");
+            header("location: ../view/register.php?errpass=$err[password]");
         } 
         // $regexname = "/^{5,20}$/i";
         // || !preg_match($regexname, $name) 
         if(empty($name)){
             $err['displayname'] = ' x Vui lòng kiểm tra lại tên';
-            //  header("location: ../view/register.php?errname=$err[displayname]");
+             header("location: ../view/register.php?errname=$err[displayname]");
         }
         if(empty($ngay) ){
             $err['day'] = ' x Bạn chưa nhập ngày sinh';
@@ -54,17 +54,6 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
     // B3. Xử lý kết quả
     if(mysqli_num_rows($result) <= 0) //Kiểm tra Email chưa được dùng
     {
-        // $token = md5($_POST['email']).rand(10,9999); //Sử dụng giải thuật md5 để sinh ra chuỗi ngẫu nhiên được băm
-        // // echo $token;
-        // // Lưu lại thông tin đăng kí vào CSDL (Dữ liệu lấy từ index.php [FORM] gửi sang)
-        // $email  = $_POST['email'];
-        // $confemail  = $_POST['confirm-email'];
-        // $pass   = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        // $name   = $_POST['displayname'];
-        // $ngay   = $_POST['day'];
-        // $thang   = $_POST['month'];
-        // $nam   = $_POST['year'];
-        // $gioitinh =$_POST['gender']; 
         $sql    = "INSERT INTO nguoidung(ten_nguoidung,ngay,thang,nam, email,matkhau,gioitinh ,quoctich,email_verification_link ) VALUES('$name','$ngay','$thang','$nam', '$email','$pass','$gioitinh','Việt Nam','$token')";
         // Ra lệnh lưu vào CSDL
         mysqli_query($conn, $sql);

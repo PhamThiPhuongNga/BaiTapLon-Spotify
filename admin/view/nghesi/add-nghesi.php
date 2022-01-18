@@ -29,7 +29,7 @@ include "../../../public/template/admin/header.php";
                                     <label  class='hyIrKV'><i class='material-icon text-dark bi bi-x'></i> &nbsp;&nbsp; {$_GET['error']}</label>
                                 </div>
                             </div>";}?>
-                    <form action="process-add-nghesi.php" method="post"enctype="multipart/form-data">
+                    <form action="process-add-nghesi.php" method="post" enctype="multipart/form-data">
                         <div class="form-group mb-3">
                             <label for="">Tên nghệ sĩ</label>
                             <input type="text" class="hUAscM" name="ten_nghesi"  placeholder="Điền đầy đủ Tên nghệ sĩ.">
@@ -39,7 +39,7 @@ include "../../../public/template/admin/header.php";
                             <input type="text" class="hUAscM" name="anh_nghesi" placeholder="Điền đầy đủ Link ảnh."/>
                         </div> -->
                         <div class="form-group mb-3">
-                            <label for="">Link ảnh</label>
+                            <label for="">Ảnh</label>
                             <input type="file" class="hUAscM" name="myfile" value="Upload"/>
                         </div>
                          <br>

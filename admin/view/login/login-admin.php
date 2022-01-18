@@ -62,7 +62,7 @@
                                             </div>
                                         </div>
 
-                                        <a href="" ><button class="btn btn-primary form-control-user mb-3 " type="submit" name="loginadmin">
+                                        <a href="" class="d-grid"><button class="btn btn-primary form-control-user mb-3 " type="submit" name="loginadmin">
                                         Login</button>
                                         </a>
                                         <hr>
