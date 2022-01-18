@@ -7,7 +7,15 @@
     }
    
 ?>
+<<<<<<< HEAD
+<style>
+    .ql3{
+        background-color: #2a2f30;
+    }
+</style>
+=======
 
+>>>>>>> 788be0e7ebe76c37207889fcd935186a3b928ed6
 <?php include('../../public/template/site/header_main.php');?>
 <style>
 .prolist {
@@ -31,6 +39,25 @@
 <div class="main">   
     <div class="main-inner-vien" style="width:83%;">
         <div class="bg-nen">
+<<<<<<< HEAD
+            <div class="main-bottom-t">
+                    <div class="container  ">
+                        <div class="row ">
+                        <?php
+
+                            $id = $_GET['id'];
+                            include('../../connect_db.php');
+                            $sql = "SELECT * FROM baihat bh, album ab 
+                                    WHERE bh.ma_ab = ab.ma_ab AND 
+                                    bh.ma_ab = '$id'";
+
+                            $result = mysqli_query($conn, $sql);
+                            if(mysqli_num_rows($result) > 0){
+                                $row = mysqli_fetch_assoc($result);
+
+                            ?>
+                            <div class="d-flex align-items-center">
+=======
                 <?php 
                     $id = $_GET['id'];
                     include('../../connect_db.php');
@@ -42,6 +69,7 @@
             <div class="main-bottom-t"  style="height:300px; background-image: url('../img/anh-mang-dep-nhat-24.jpg');">  
                 <!-- <div class="row "> -->
                         <div class="d-flex align-items-center">
+>>>>>>> 788be0e7ebe76c37207889fcd935186a3b928ed6
                                 <div class="flex-shrink-0 ms-3">
                                     <button class="btn-playlist align-items-center bg-dark ml-3">
                                         <img src="../../public/img/album/<?php echo $row['anh_ab']; ?>" class="my-img-list" alt="">
@@ -53,6 +81,11 @@
                                         <h1 style="font-size: 6.0rem;"><?php echo $row['ten_ab']; ?></h1>
                                     </a>
                                 </div>
+<<<<<<< HEAD
+                            </div>
+                            <?php }?>
+=======
+>>>>>>> 788be0e7ebe76c37207889fcd935186a3b928ed6
                         </div>
                 <!-- </div> -->
             </div><?php } ?>
@@ -77,6 +110,38 @@
                     $resultt = mysqli_query($conn,$sqll);
                     if(mysqli_num_rows($resultt) > 0){
                         $count=1;
+<<<<<<< HEAD
+                        while($row = mysqli_fetch_array($result)){
+                ?>
+
+            <tr class="">
+                <th scope="row">
+                    <div class="d-flex align-items-center"> 
+                        <p><?php echo $count++; ?></p> 
+                        &ensp;
+                        <img src="../../public/img/baihat/<?php echo $row['anh_bh']; ?>" class="my-img-table" alt="">
+                        &ensp;
+                        <div class="pt-2">
+                            <h6><?php echo $row['ten_bh']; ?></h6>
+                            <p class="text-secondary"><?php echo $row['ten_nghesi']; ?></p>
+                        </div>
+                    </div>
+                </th>
+               
+                <td class="pt-4"><a href="../../site/model/process-yeuthich.php?id=<?php echo $row1['ma_bh'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
+            </tr>
+                    
+            <?php
+                }}
+            // } else{
+            //     echo '<div class="alert alert-danger"><em>No records were found.</em></div>';
+            // } 
+            mysqli_close($conn);
+            ?>              
+                
+                </tbody> 
+            </table>` 
+=======
                        while($row1 = mysqli_fetch_assoc($resultt)){
                 ?> 
                 <tr class="change-bg-list">
@@ -98,6 +163,7 @@
                 <?php }} ?>
                 </tbody>
             </table>
+>>>>>>> 788be0e7ebe76c37207889fcd935186a3b928ed6
         </div>
     </div>
 </div> 

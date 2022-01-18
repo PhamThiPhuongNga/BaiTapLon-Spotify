@@ -49,12 +49,14 @@ include "../../../public/template/admin/header.php";
                                     $offset = ($current_page - 1) * $item_per_page;
                                     // Bước 02: Thực hiện truy vấn
                                     // $sql = "SELECT * FROM nguoidung";
+
                                     $result = mysqli_query($conn, "SELECT * 
                                                 FROM baihat bh, album ab, nghesi ns, categories ca
                                                 WHERE bh.ma_ab = ab.ma_ab
                                                 AND bh.id_nghesi = ns.id_nghesi
                                                 AND bh.id_category = ca.id_category
                                                 ORDER BY bh.ma_bh DESC
+
                                         LIMIT " . $item_per_page . " OFFSET " . $offset);
                                     $totalRecords = mysqli_query($conn, "SELECT * 
                                                 FROM baihat bh, album ab, nghesi ns, categories ca
