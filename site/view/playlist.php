@@ -5,13 +5,13 @@
     if(!isset($_SESSION['isLoginOK'])){
         header("location: login.php");
     }
-   
 ?>
 <style>
     .ql3{
         background-color: #2a2f30;
     }
 </style>
+
 <?php include('../../public/template/site/header_main.php');?>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <div class="contain-right">
@@ -50,6 +50,7 @@
 <div class="main">   
     <div class="main-inner-vien" style="width:83%;">
         <div class="bg-nen">
+        
             <div class="main-bottom-t">  
                 <div class="row ">
                     <div class="d-flex align-items-center">
@@ -80,91 +81,36 @@
                 </thead>
                 <tbody>
                 <tr>
+                <?php 
+            include('../../connect_db.php');
+            $search = $_POST['search'];
+            $query = "SELECT bh.ma_bh,bh.ten_bh,bh.anh_bh,bh.ngaythem,bh.link_bh,bh.quocgia,ns.ten_nghesi,ab.ten_ab 
+            FROM baihat as bh, nghesi as ns,album as ab 
+            WHERE bh.id_nghesi=ns.id_nghesi and bh.ma_ab=ab.ma_ab and ns.ten_nghesi like '%$search%' or bh.ten_bh like '%$search%'";
+            $truyvan=mysqli_query($conn,$query);
+            if(mysqli_num_rows($truyvan)>0){
+                // if(isset($_POST['ten_nghesi'])){
+                    $count=1;
+                    while($row = mysqli_fetch_array($truyvan)){
+            ?>
                     <th scope="row">
                         <div class="d-flex align-items-center"> 
-                            <p>1</p> 
+                            <p><?php echo $count++;?></p> 
                             &ensp;
-                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
+                            <img src="../../public/img/baihat/<?php echo $row['anh_bh'];?>" class="my-img-table" alt="">
                             &ensp;
                             <div class="pt-2">
-                                <h6>Hãy trao cho anh</h6>
-                                <p class="text-secondary">Sơn Tùng MTP</p>
+                                <h6><?php echo $row['ten_bh'];?></h6>
+                                <p class="text-secondary"><?php echo $row['ten_nghesi'];?></p>
                             </div>
                         </div>
                     </th>
-                    <td class="pt-4">Hãy trao cho anh</td>
-                    <td class="pt-4">9 giờ trước</td>
-                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
+                    <td class="pt-4"><?php echo $row['ten_ab'];?></td>
+                    <td class="pt-4"><?php echo $row['ngaythem'];?></td>
+                    <td class="pt-4"><a href="../../site/model/process-yeuthich.php?id=<?php echo $row ['ma_bh'];?>"class=""><i class="bi bi-suit-heart-fill"></i></a></td>
                 </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="d-flex align-items-center"> 
-                            <p>1</p> 
-                            &ensp;
-                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                            &ensp;
-                            <div class="pt-2">
-                                <h6>Hãy trao cho anh</h6>
-                                <p class="text-secondary">Sơn Tùng MTP</p>
-                            </div>
-                        </div>
-                    </th>
-                    <td class="pt-4">Hãy trao cho anh</td>
-                    <td class="pt-4">9 giờ trước</td>
-                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="d-flex align-items-center"> 
-                            <p>1</p> 
-                            &ensp;
-                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                            &ensp;
-                            <div class="pt-2">
-                                <h6>Hãy trao cho anh</h6>
-                                <p class="text-secondary">Sơn Tùng MTP</p>
-                            </div>
-                        </div>
-                    </th>
-                    <td class="pt-4">Hãy trao cho anh</td>
-                    <td class="pt-4">9 giờ trước</td>
-                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="d-flex align-items-center"> 
-                            <p>1</p> 
-                            &ensp;
-                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                            &ensp;
-                            <div class="pt-2">
-                                <h6>Hãy trao cho anh</h6>
-                                <p class="text-secondary">Sơn Tùng MTP</p>
-                            </div>
-                        </div>
-                    </th>
-                    <td class="pt-4">Hãy trao cho anh</td>
-                    <td class="pt-4">9 giờ trước</td>
-                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <div class="d-flex align-items-center"> 
-                            <p>1</p> 
-                            &ensp;
-                            <img src="https://i.scdn.co/image/ab67616d000048510ac09baba508700ed0b5d4e3" class="my-img-table" alt="">
-                            &ensp;
-                            <div class="pt-2">
-                                <h6>Hãy trao cho anh</h6>
-                                <p class="text-secondary">Sơn Tùng MTP</p>
-                            </div>
-                        </div>
-                    </th>
-                    <td class="pt-4">Hãy trao cho anh</td>
-                    <td class="pt-4">9 giờ trước</td>
-                    <td class="pt-4"><i class="bi bi-suit-heart-fill"></i></td>
-                </tr>
-                    
+                <?php }}?>
+               
                 </tbody>
             </table>
         </div>

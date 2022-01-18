@@ -39,8 +39,10 @@ if(!empty($s)){
     </div>
     <div class="box-search">
         <div class="form-search">
+
             <form class="">
                 <input class="search-input" type="text" name="search" id="search" placeholder="Nghệ sĩ, bài hát, album ..."> 
+
                 <i class=" icon-search bi bi-search"></i>
             </form>
         </div>
