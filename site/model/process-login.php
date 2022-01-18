@@ -28,11 +28,18 @@
                 // CẤP THẺ LÀM VIỆC
                 // if($passcheck){
 
+                    
+
                     $ten_nguoidung = $data['ten_nguoidung'];
                     $_SESSION['isLoginOK'] = $ten_nguoidung;
                     $id  = $data['ma_nguoidung'];
                     $_SESSION['idnguoidung'] = $id;
                     header("location:../view/index.php");
+
+
+
+
+
                 // }else{
                     // $error = "Mật khẩu chưa chính xác";
                     // header("location: ../view/login.php?error=$error");
