@@ -20,23 +20,13 @@
             $data = mysqli_fetch_assoc($result);
             if(mysqli_num_rows($result) > 0){
                 // CẤP THẺ LÀM VIỆC
-<<<<<<< HEAD
-                $passcheck = password_verify($passKH,$data['matkhau']);
-                echo $data['matkhau'];
-                echo $passKH;
-                var_dump($passcheck);
-                exit();
+
                 if($passcheck){
-                    $idkh = $data['ten_nguoidung'];
-                    $_SESSION['isLoginOK'] = $idkh;
-=======
-                // if($passcheck){
 
                     $ten_nguoidung = $data['ten_nguoidung'];
                     $_SESSION['isLoginOK'] = $ten_nguoidung;
                     $id  = $data['ma_nguoidung'];
                     $_SESSION['idnguoidung'] = $id;
->>>>>>> 788be0e7ebe76c37207889fcd935186a3b928ed6
                     header("location:../view/index.php");
                 }else{
                     $error = "Mật khẩu chưa chính xác";
