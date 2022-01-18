@@ -49,11 +49,21 @@ include "../../../public/template/admin/header.php";
                                     $offset = ($current_page - 1) * $item_per_page;
                                     // Bước 02: Thực hiện truy vấn
                                     // $sql = "SELECT * FROM nguoidung";
-                                    $result = mysqli_query($conn, "SELECT bh.ma_bh,bh.ten_bh,bh.anh_bh,bh.link_bh,bh.ngaythem,bh.quocgia,ct.ten,ab.ten_ab,ns.ten_nghesi 
-                                    FROM baihat as bh,categories as ct, album as ab, nghesi as ns 
-                                    WHERE ns.id_nghesi= bh.id_nghesi and ab.ma_ab=bh.ma_ab and ct.id_category=bh.id_category
+
+                                    $result = mysqli_query($conn, "SELECT * 
+                                                FROM baihat bh, album ab, nghesi ns, categories ca
+                                                WHERE bh.ma_ab = ab.ma_ab
+                                                AND bh.id_nghesi = ns.id_nghesi
+                                                AND bh.id_category = ca.id_category
+                                                ORDER BY bh.ma_bh DESC
+
                                         LIMIT " . $item_per_page . " OFFSET " . $offset);
-                                    $totalRecords = mysqli_query($conn, "SELECT * FROM `baihat`");
+                                    $totalRecords = mysqli_query($conn, "SELECT * 
+                                                FROM baihat bh, album ab, nghesi ns, categories ca
+                                                WHERE bh.ma_ab = ab.ma_ab
+                                                AND bh.id_nghesi = ns.id_nghesi
+                                                AND bh.id_category = ca.id_category
+                                                ORDER BY bh.ma_bh DESC");
                                     $totalRecords = $totalRecords->num_rows;
                                     $totalPages = ceil($totalRecords / $item_per_page);
                                         if(mysqli_num_rows($result)>0){

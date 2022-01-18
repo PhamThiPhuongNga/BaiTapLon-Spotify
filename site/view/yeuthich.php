@@ -81,7 +81,6 @@
                 <thead>
                     <tr>
                     <th scope="col"># TIÊU ĐỀ</th>
-                    <th scope="col">NGÀY THÊM</th>
                     <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -101,7 +100,7 @@
                         $count=1;
                        while($row1 = mysqli_fetch_assoc($resultt)){
                 ?> 
-                <tr>
+                <tr class="change-bg-list">
                     <th scope="row">
                         <div class="d-flex align-items-center" id="<?php echo $count; ?> " onClick="play_click(this.id)"> 
                             <p><?php echo $count++;?></p> 
@@ -114,7 +113,6 @@
                             </div>
                         </div>
                     </th>
-                    <td class="pt-4"><?php echo $row1['ngaythem'];?></td>
                     <td class="pt-4"><a href="process-del-yeuthich.php?id=<?php echo $row1['id'];?>"class=""><i class="bi bi-x-circle"></i></a></td>
                 </tr>
                 <?php }} ?>

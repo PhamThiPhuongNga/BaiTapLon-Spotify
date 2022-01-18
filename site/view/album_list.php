@@ -17,6 +17,11 @@
 
 >>>>>>> 788be0e7ebe76c37207889fcd935186a3b928ed6
 <?php include('../../public/template/site/header_main.php');?>
+<style>
+.prolist {
+    padding-top: 0px !important;
+}
+</style>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <div class="contain-right">
     <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
@@ -139,7 +144,7 @@
 =======
                        while($row1 = mysqli_fetch_assoc($resultt)){
                 ?> 
-                <tr>
+                <tr class="change-bg-list">
                     <th scope="row">
                         <div class="d-flex align-items-center" id="<?php echo $count; ?> " onClick="play_click(this.id)"> 
                             <p><?php echo $count++;?></p> 

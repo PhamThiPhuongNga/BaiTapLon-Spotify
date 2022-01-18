@@ -1076,6 +1076,7 @@ div.dataTables_wrapper div.dataTables_length select {
     height: 45px;
 }
 .my-table{
+    width: 98% !important;
     margin-bottom: 147px !important;
 }
 .my-img-list{

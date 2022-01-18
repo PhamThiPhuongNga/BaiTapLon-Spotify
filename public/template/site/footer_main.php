@@ -40,7 +40,7 @@
                 <div class="space mt-1">
                     <div class="current-time">00:00</div>
                     &nbsp;&nbsp;
-                    <span class="my-span-progress my-span-progress-search"><input id="progresss" class="progresss seek_slider" type="range" value="0"  min="1" max="100" onchange="seekTo()"></span>
+                    <span class="my-span-progress my-span-progress-search prolist"><input id="progresss" class="progresss seek_slider" type="range" value="0"  min="1" max="100" onchange="seekTo()"></span>
                     <audio id="audio" src=""></audio>
                     &nbsp;&nbsp;
                     <div class="total-duration">00:00</div>

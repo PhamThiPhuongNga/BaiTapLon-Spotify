@@ -9,6 +9,11 @@
 ?>
 
 <?php include('../../public/template/site/header_main.php');?>
+<style>
+.prolist {
+    padding-top: 0px !important;
+}
+</style>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <div class="contain-right">
     <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
