@@ -127,7 +127,7 @@ if(mysqli_num_rows($resulbh) > 0){
                     <h5 class=""style="font-weight:700; letter-spacing:-1.5px;">Thể loại</h5>
                 </div>
                 <div class="clear"></div>
-                <div class="row">
+                <div class="row" style="width: 1083px;  ">
                 <?php 
                     include('../../connect_db.php');
                     $sql = "SELECT * FROM `categories` $search ";
