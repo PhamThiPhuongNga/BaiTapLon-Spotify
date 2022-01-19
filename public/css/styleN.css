@@ -340,6 +340,7 @@ body{
     background-color: rgb(34, 34, 34);
     z-index: 10;
     position:fixed;
+    left: 0px;
     width: 100%;
     bottom: 1px;
 }
