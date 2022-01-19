@@ -93,7 +93,10 @@
             </div>
         </div>
     </header>   
-    <div class="container mt-3">
+    <?php 
+        header("location:../../../site/view/login.php");
+     ?>
+    <!-- <div class="container mt-3">
         <div class="card">
             <div class="card-header text-center">
                 User Account Activation by Email Verification using PHP
@@ -105,7 +108,7 @@
                 <a href="../../view/login.php" class="">Click here để đăng nhập</a>
             </div>
         </div>
-    </div>
+    </div> -->
 </body>
 
 </html>

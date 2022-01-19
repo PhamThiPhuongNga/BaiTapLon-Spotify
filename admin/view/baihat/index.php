@@ -49,21 +49,9 @@ include "../../../public/template/admin/header.php";
                                     $offset = ($current_page - 1) * $item_per_page;
                                     // Bước 02: Thực hiện truy vấn
                                     // $sql = "SELECT * FROM nguoidung";
-
-                                    $result = mysqli_query($conn, "SELECT * 
-                                                FROM baihat bh, album ab, nghesi ns, categories ca
-                                                WHERE bh.ma_ab = ab.ma_ab
-                                                AND bh.id_nghesi = ns.id_nghesi
-                                                AND bh.id_category = ca.id_category
-                                                ORDER BY bh.ma_bh DESC
-
+                                    $result = mysqli_query($conn, "SELECT * FROM `baihat`
                                         LIMIT " . $item_per_page . " OFFSET " . $offset);
-                                    $totalRecords = mysqli_query($conn, "SELECT * 
-                                                FROM baihat bh, album ab, nghesi ns, categories ca
-                                                WHERE bh.ma_ab = ab.ma_ab
-                                                AND bh.id_nghesi = ns.id_nghesi
-                                                AND bh.id_category = ca.id_category
-                                                ORDER BY bh.ma_bh DESC");
+                                    $totalRecords = mysqli_query($conn, "SELECT * FROM `baihat`");
                                     $totalRecords = $totalRecords->num_rows;
                                     $totalPages = ceil($totalRecords / $item_per_page);
                                         if(mysqli_num_rows($result)>0){
@@ -77,9 +65,9 @@ include "../../../public/template/admin/header.php";
                                         <td><?php echo $row['ngaythem']; ?></td>
                                         <?php 
                                          ?>
-                                        <td><?php echo $row['ten']; ?></td>
-                                        <td><?php echo $row['ten_ab']; ?></td>
-                                        <td><?php echo $row['ten_nghesi']; ?></td>
+                                        <td><?php echo $row['id_category']; ?></td>
+                                        <td><?php echo $row['ma_ab']; ?></td>
+                                        <td><?php echo $row['id_nghesi']; ?></td>
                                         <td>
                                             <a href="update-baihat.php?id=<?php echo $row['ma_bh']?>" title="Update Record" ><i class="fas fa-pencil-alt"></i></a>
                                             <a href="delete-baihat.php?id=<?php echo $row['ma_bh']?>" title="Delete Record" ><i class="far fa-trash-alt"></i></a>

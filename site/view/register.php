@@ -45,7 +45,11 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
             $err['emaill'] = 'x Email đã tồn tại';
         }
         else{
-                $pass_hash   = password_hash($pass, PASSWORD_DEFAULT);
+                // $pass_hash   = password_hash($pass, PASSWORD_DEFAULT);
+                $pass_hash  = crypt($pass, 'rl');
+
+                echo $pass_hash;
+               
                 $token = md5($_POST['email']).rand(10,9999); //Sử dụng giải thuật md5 để sinh ra chuỗi ngẫu nhiên được băm
                 $sql  = "INSERT INTO nguoidung(ten_nguoidung,ngay,thang,nam, email,matkhau,gioitinh ,quoctich,email_verification_link ) VALUES('$name','$ngay','$thang','$nam', '$email','$pass_hash','$gioitinh','Việt Nam','$token')";
                 // Ra lệnh lưu vào CSDL
@@ -97,8 +101,9 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
 </head>
 <body style="font-family: spotify-circular, Helvetica, Arial, sans-serif;">
-<main>
-    <div class="encore-light-theme">
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
         <div class="form-regis">
             <div class="flex-column d-flex">
                 <div class="head ">
@@ -106,16 +111,15 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                 </div>
                 <h2 class="fw-bold fs-3 text-center ">Đăng ký miễn phí để bắt đầu nghe.</h2>
             </div>
-            <div class="d-flex justify-content-around mb-3 mt-3 ">
+            <!-- <div class="d-flex justify-content-around mb-3 mt-3 ">
                 <a href="" class="fw-bold text-decoration-none fs-6">
                     <div class="signup ">Đăng ký bằng Facebook</div>
                 </a>
-            </div>
+            </div> -->
             <div class="divider">
                 <strong class="divider-title ">hoặc</strong>
             </div>
             <form method="POST" id="form" name="accounts" >
-            <!-- action="../model/process-register.php" -->
                 <div class="pb-3">
                     <div class="error"> 
                         <?php  if(isset($_GET['err'])){echo "<h6 style='color:red;'>{$_GET['err']}</h6>";}?>
@@ -126,8 +130,6 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                         <label for="email" class="">Email của bạn là gì?</label>
                     </div>
                     <input type="email" id="email" name="email" placeholder="email@address.com" value="" class="hUAscM">
-                     <!-- <i class="fas fa-exclamation-circle failure-icon"></i>
-                    <i class="far fa-check-circle success-icon"></i>  -->
                     <div class="error"> 
                         <?php if(isset($err['email'])){ echo(isset($err['email'])?$err['email']:'');}else{
                         if(isset($err['emaill'])){ echo(isset($err['emaill'])?$err['emaill']:'');}}?>
@@ -138,8 +140,6 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                         <label for="confirm"class="">Xác nhận email của bạn</label>
                     </div>
                     <input type="email"  id="confirmemail" name="confirm-email"  placeholder="Nhập lại email của bạn." value="" class="hUAscM">
-                    <!-- <i class="fas fa-exclamation-circle failure-icon"></i>
-                    <i class="far fa-check-circle success-icon"></i> -->
                     <div class="error">
                         <?php echo(isset($err['confirm-email'])?$err['confirm-email']:'')?>
                     </div>
@@ -150,9 +150,6 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                     </div>
                     <input type="password" id="password"  name="password" placeholder="Tạo mật khẩu."
                     title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." value="" class="hUAscM">
-                    <!-- <i class="fas fa-exclamation-circle failure-icon"></i>
-                    <i class="far fa-check-circle success-icon"></i> -->
-                    <!-- <div class="error"> </div> -->
                     <div class="error">
                         <?php echo(isset($err['password'])?$err['password']:'')?>
                     </div>
@@ -162,8 +159,6 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                         <label  class="">Bạn tên là gì?</label>
                     </div>
                     <input type="text" id="displayname" name="displayname" placeholder="Nhập tên hồ sơ." value="" class="hUAscM" title="Tên không được chứa kí tự đặc biệt">
-                    <!-- <i class="fas fa-exclamation-circle failure-icon"></i>
-                    <i class="far fa-check-circle success-icon"></i> -->
                     <div id="errorUser" class="error">
                         <?php echo(isset($err['displayname'])?$err['displayname']:'')?>
                     </div>
@@ -181,9 +176,6 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                                     <label class=" ">Ngày</label>
                                 </div>
                                 <input type="text"  id="day"  maxlength="2" name="day"  placeholder="DD" value="" class="hUAscM">
-                                <!-- <i class="fas fa-exclamation-circle failure-icon"></i>
-                                <i class="far fa-check-circle success-icon"></i>
-                                <div class="error"></div> -->
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -208,9 +200,6 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                                         <option value="12">Tháng 12</option>
                                     <select>
                                 </div>
-                                <!-- <i class="fas fa-exclamation-circle failure-icon"></i>
-                                <i class="far fa-check-circle success-icon"></i> -->
-                                <!-- <div class="error"></div> -->
                             </div>
                         </div>
                         <div  class=" col-md-3">
@@ -219,9 +208,6 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                                     <label class="">Năm</label>
                                 </div>
                                 <input type="text" id="year" inputmode="numeric" maxlength="4" name="year" pattern="(19[0-9]{2})|(200)[0-8]" placeholder="YYYY"  value="<?php if(isset($nam)){echo $nam;}?>" class="hUAscM">
-                                <!-- <i class="fas fa-exclamation-circle failure-icon"></i>
-                                <i class="far fa-check-circle success-icon"></i> -->
-                                <!-- <div class="error"></div> -->
                             </div>
                         </div>
                         
@@ -241,9 +227,6 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
                             <label for="gender_option_male">
                                 <span class="">Nam</span>
                             </label>
-                            <!-- <i class="fas fa-exclamation-circle failure-icon"></i>
-                            <i class="far fa-check-circle success-icon"></i>
-                            <div class="error"></div> -->
                         </div>
                         <div class=" dYEnUC">
                             <input type="radio" id="gender_option_female" name="gender"value="Nữ"class=""<?php if (isset($gender) && $gender=="Nữ") echo "checked";?>>
@@ -298,8 +281,7 @@ if(isset($_POST['btnRegister'])) //Kiểm tra Người dùng có nhấp vào nú
             </form>
         </div>
     </div>
-</main>
+    <div class="col-md-4"></div>
+</div>
 </body>
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
-<!-- <script src="../../public/js/validateForm.js"></script> -->
 </html>

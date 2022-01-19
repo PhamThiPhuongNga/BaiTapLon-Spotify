@@ -65,9 +65,9 @@
       <div class="row" >
         <div class="col-xs-12">
           <label class="control-label">
-            Địa chỉ email hoặc tên người dùng
+            Địa chỉ email
           </label>
-          <input  type="text" class="form-control" name="username" id="login-username" placeholder="Địa chỉ email hoặc tên người dùng" >
+          <input  type="text" class="form-control" name="username" id="login-username" placeholder="Địa chỉ email " >
         
         </div>
       </div>

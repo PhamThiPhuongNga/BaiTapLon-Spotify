@@ -7,17 +7,8 @@
     }
    
 ?>
-<style>
-    .ql3{
-        background-color: #2a2f30;
-    }
-</style>
+
 <?php include('../../public/template/site/header_main.php');?>
-<style>
-.prolist {
-    padding-top: 0px !important;
-}
-</style>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <div class="contain-right">
     <div class="control-page space control-page" style="margin-left:50px;margin-top:10px;">
@@ -35,23 +26,17 @@
 <div class="main">   
     <div class="main-inner-vien" style="width:83%;">
         <div class="bg-nen">
-            <div class="main-bottom-t">
-                    <div class="container  ">
-                        <div class="row ">
-                        <?php
-
-                            $id = $_GET['id'];
-                            include('../../connect_db.php');
-                            $sql = "SELECT * FROM baihat bh, album ab 
-                                    WHERE bh.ma_ab = ab.ma_ab AND 
-                                    bh.ma_ab = '$id'";
-
-                            $result = mysqli_query($conn, $sql);
-                            if(mysqli_num_rows($result) > 0){
-                                $row = mysqli_fetch_assoc($result);
-
-                            ?>
-                            <div class="d-flex align-items-center">
+                <?php 
+                    $id = $_GET['id'];
+                    include('../../connect_db.php');
+                    $sql = "SELECT * FROM album where ma_ab = '$id'";
+                    $result = mysqli_query($conn,$sql);
+                    if(mysqli_num_rows($result) > 0){
+                       $row = mysqli_fetch_assoc($result);
+                ?> 
+            <div class="main-bottom-t"  style="height:300px; background-image: url('../img/anh-mang-dep-nhat-24.jpg');">  
+                <!-- <div class="row "> -->
+                        <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0 ms-3">
                                     <button class="btn-playlist align-items-center bg-dark ml-3">
                                         <img src="../../public/img/album/<?php echo $row['anh_ab']; ?>" class="my-img-list" alt="">
@@ -63,7 +48,6 @@
                                         <h1 style="font-size: 6.0rem;"><?php echo $row['ten_ab']; ?></h1>
                                     </a>
                                 </div>
-
                         </div>
                 <!-- </div> -->
             </div><?php } ?>
@@ -88,10 +72,9 @@
                     $resultt = mysqli_query($conn,$sqll);
                     if(mysqli_num_rows($resultt) > 0){
                         $count=1;
-
                        while($row1 = mysqli_fetch_assoc($resultt)){
                 ?> 
-                <tr class="change-bg-list">
+                <tr>
                     <th scope="row">
                         <div class="d-flex align-items-center" id="<?php echo $count; ?> " onClick="play_click(this.id)"> 
                             <p><?php echo $count++;?></p> 

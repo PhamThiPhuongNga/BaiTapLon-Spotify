@@ -12,6 +12,7 @@
     if($query){
         $love=mysqli_fetch_assoc($query);
     }
+    
     $item=[
         'id'=>$love['ma_bh'],
         'tenbh'=>$love['ten_bh'],

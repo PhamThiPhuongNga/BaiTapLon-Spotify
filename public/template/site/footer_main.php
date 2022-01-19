@@ -6,7 +6,7 @@
         <div class="form-footer space">
             <div class="infor-song">
                 <div class="space " style="margin-right: 10px;padding:20px;">
-                    <img src="https://avatar-nct.nixcdn.com/song/2021/11/29/a/9/5/0/1638180197658.jpg" alt="" width="60" height="60" class="track-art">
+                    <img src="../../public/img/play.jpg" alt="" width="60" height="60" class="track-art">
                     <div class="inforn-name khoangc">
                         <h6 class="track-name">Easy On My</h6>
                         <p class="track-artist">Adele</p>
@@ -37,10 +37,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="space mt-1">
+                <div class="space ">
                     <div class="current-time">00:00</div>
                     &nbsp;&nbsp;
-                    <span class="my-span-progress my-span-progress-search prolist"><input id="progresss" class="progresss seek_slider" type="range" value="0"  min="1" max="100" onchange="seekTo()"></span>
+                    <span class="my-span-progress my-span-progress-search"><input id="progresss" class="progresss seek_slider" type="range" value="0"  min="1" max="100" onchange="seekTo()"></span>
                     <audio id="audio" src=""></audio>
                     &nbsp;&nbsp;
                     <div class="total-duration">00:00</div>
